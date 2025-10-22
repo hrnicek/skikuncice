@@ -9,7 +9,7 @@ const currentLanguage = ref('CZ')
 </script>
 
 <template>
-  <div class="w-full bg-white py-2 border-b">
+  <div class="w-full bg-muted py-1">
     <div class="flex justify-between items-center row">
       <!-- Left side: Email and Phone -->
       <div class="flex space-x-6 text-sm">

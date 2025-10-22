@@ -10,9 +10,9 @@ import { Link } from '@inertiajs/vue3';
     <header class="w-full sticky top-0 border-b py-6 z-50 bg-white">
       <div class="flex justify-between items-center row px-12!">
         <div class="flex space-x-16">
-            <div>
+            <Link href="/">
                 <img src="/img/logo.png" alt="Logo" class="h-8"></img>
-            </div>
+            </Link>
         <div>
             <AppNavbar />
         </div>

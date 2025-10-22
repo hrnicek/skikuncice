@@ -1,7 +1,41 @@
 <?php
 
+use App\Http\Controllers\AccommodationController;
+use App\Http\Controllers\AgrotourismController;
+use App\Http\Controllers\AreaMapController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CrossCountrySkiingController;
+use App\Http\Controllers\CurrentWeatherController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\KidsParadiseController;
+use App\Http\Controllers\OperatingHoursController;
+use App\Http\Controllers\PhotoGalleryController;
+use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\SkiBusController;
+use App\Http\Controllers\SkiRentalController;
+use App\Http\Controllers\SkiSchoolController;
+use App\Http\Controllers\SnowparkController;
+use App\Http\Controllers\TouristServicesCenterController;
+use App\Http\Controllers\VideosController;
+use App\Http\Controllers\WebcamsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
 Route::get('/kalendar-akci', [HomepageController::class, 'calendar'])->name('calendar');
+Route::get('/provozni-doba', [OperatingHoursController::class, 'index'])->name('operating-hours');
+Route::get('/aktualni-pocasi', [CurrentWeatherController::class, 'index'])->name('current-weather');
+Route::get('/mapa-arealu', [AreaMapController::class, 'index'])->name('area-map');
+Route::get('/webkamery', [WebcamsController::class, 'index'])->name('webcams');
+Route::get('/fotogalerie', [PhotoGalleryController::class, 'index'])->name('photo-gallery');
+Route::get('/videa', [VideosController::class, 'index'])->name('videos');
+Route::get('/lyzarska-skola', [SkiSchoolController::class, 'index'])->name('ski-school');
+Route::get('/pujcovna-lyzi', [SkiRentalController::class, 'index'])->name('ski-rental');
+Route::get('/skibus', [SkiBusController::class, 'index'])->name('ski-bus');
+Route::get('/restaurace', [RestaurantController::class, 'index'])->name('restaurant');
+Route::get('/centrum-sluzeb-turistum', [TouristServicesCenterController::class, 'index'])->name('tourist-services-center');
+Route::get('/detsky-raj', [KidsParadiseController::class, 'index'])->name('kids-paradise');
+Route::get('/bezky', [CrossCountrySkiingController::class, 'index'])->name('cross-country-skiing');
+Route::get('/agroturistika', [AgrotourismController::class, 'index'])->name('agrotourism');
+Route::get('/snowpark', [SnowparkController::class, 'index'])->name('snowpark');
+Route::get('/ubytovani', [AccommodationController::class, 'index'])->name('accommodation');
+Route::get('/kontakt', [ContactController::class, 'index'])->name('contact');

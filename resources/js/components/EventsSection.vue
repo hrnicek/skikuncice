@@ -58,9 +58,10 @@ const formatTime = (dateString: string) => {
 </script>
 
 <template>
-    <div class="row mt-16 mb-16">
+    <div class="row">
+      <div class="mt-16 mb-16 bg-muted p-8 rounded-4xl">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
                 Nadcházející akce
             </h2>
             <p class="text-muted-foreground text-lg">
@@ -75,7 +76,7 @@ const formatTime = (dateString: string) => {
                 class="bg-card rounded-lg border p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
                 <div class="mb-4">
-                    <h3 class="text-xl font-semibold text-foreground mb-2">
+                    <h3 class="text-xl font-semibold text-primary mb-2">
                         {{ event.title }}
                     </h3>
                     <div class="text-sm text-muted-foreground space-y-1">
@@ -105,5 +106,6 @@ const formatTime = (dateString: string) => {
                 Zobrazit všechny akce
             </a>
         </div>
+    </div>
     </div>
 </template>

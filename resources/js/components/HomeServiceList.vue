@@ -35,7 +35,7 @@ const services: Service[] = [
 </script>
 
 <template>
-    <section class="py-16 px-4 lg:px-16">
+    <section class="py-16">
         <div class="row">
             <h2 class="text-3xl font-bold text-center mb-12">Naše služby</h2>
 

@@ -12,7 +12,6 @@ import PartnersSection from '@/components/PartnersSection.vue';
     <Hero />
     <EventsSection />
     <HomeServiceList />
-    <PartnersSection />
   </AppLayout>
 </template>
 

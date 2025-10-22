@@ -36,14 +36,10 @@ const props = withDefaults(defineProps<PartnersSectionProps>(), {
 
 <template>
     <div class="row mt-16 mb-16">
-        <div class="text-center">
+        <div class="text-center flex items-center">
             <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-2">
                 {{ title }}
             </h2>
-            <p class="text-muted-foreground mt-1 mb-8">
-                {{ subtitle }}
-            </p>
-
             <div class="flex flex-wrap mx-auto justify-center gap-x-8 gap-y-6 lg:gap-24">
                 <img
                     v-for="(logo, index) in logos"

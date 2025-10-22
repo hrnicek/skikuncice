@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Link } from '@inertiajs/vue3'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -109,8 +110,10 @@ const services: { title: string, href: string, description: string, image: strin
   <NavigationMenu>
     <NavigationMenuList>
         <NavigationMenuItem>
-        <NavigationMenuLink href="/" :class="navigationMenuTriggerStyle()">
-          Úvod
+        <NavigationMenuLink as-child>
+          <Link href="/" :class="navigationMenuTriggerStyle()">
+            Úvod
+          </Link>
         </NavigationMenuLink>
             </NavigationMenuItem>
       <NavigationMenuItem>
@@ -119,7 +122,7 @@ const services: { title: string, href: string, description: string, image: strin
           <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] justify-items-start">
             <li v-for="item in arealItems" :key="item.title">
               <NavigationMenuLink as-child>
-                <a
+                <Link
                   :href="item.href"
                   class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                 >
@@ -127,7 +130,7 @@ const services: { title: string, href: string, description: string, image: strin
                   <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
                     {{ item.description }}
                   </p>
-                </a>
+                </Link>
               </NavigationMenuLink>
             </li>
           </ul>
@@ -139,7 +142,7 @@ const services: { title: string, href: string, description: string, image: strin
   <NavigationMenuContent>
     <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
       <li v-for="service in services" :key="service.title">
-        <a
+        <Link
           :href="service.href"
           class="flex items-center gap-3 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
         >
@@ -150,19 +153,23 @@ const services: { title: string, href: string, description: string, image: strin
               {{ service.description }}
             </p>
           </div>
-        </a>
+        </Link>
       </li>
     </ul>
   </NavigationMenuContent>
 </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuLink href="/ubytovani" :class="navigationMenuTriggerStyle()">
-          Ubytování
+        <NavigationMenuLink as-child>
+          <Link href="/ubytovani" :class="navigationMenuTriggerStyle()">
+            Ubytování
+          </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuLink href="/kontakt" :class="navigationMenuTriggerStyle()">
-          Kontakt
+        <NavigationMenuLink as-child>
+          <Link href="/kontakt" :class="navigationMenuTriggerStyle()">
+            Kontakt
+          </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenuList>
