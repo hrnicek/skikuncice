@@ -77,7 +77,7 @@ const services: Service[] = [
 
                 <!-- Bottom row cards -->
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
-                    <div class="bg-white rounded-lg overflow-hidden h-full relative group">
+                    <div class="bg-white rounded-4xl overflow-hidden h-full relative group">
                         <img :src="services[3]?.image" :alt="services[3]?.title" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -88,7 +88,7 @@ const services: Service[] = [
                 </div>
 
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
-                    <div class="bg-white rounded-lg overflow-hidden h-full relative group">
+                    <div class="bg-white rounded-4xl overflow-hidden h-full relative group">
                         <img :src="services[4]?.image" :alt="services[4]?.title" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white">

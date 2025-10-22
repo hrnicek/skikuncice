@@ -6,6 +6,7 @@ class HomepageController extends Controller
 {
     public function index()
     {
-        return inertia('Homepage');
+        return inertia('Homepage', [
+        ]);
     }
 }

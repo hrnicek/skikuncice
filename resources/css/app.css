@@ -155,3 +155,7 @@
 .row {
     @apply container mx-auto px-4 lg:px-8
 }
+
+.bg-glass {
+    @apply backdrop-blur-xs bg-white/30 shadow-inner  border-white/40 border;
+}
