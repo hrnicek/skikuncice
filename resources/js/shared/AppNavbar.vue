@@ -9,41 +9,98 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-const components: { title: string, href: string, description: string }[] = [
+const arealItems: { title: string, href: string, description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/components/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    title: "Provozní doba",
+    href: "/provozni-doba",
+    description: "Informace o otevíracích hodinách areálu.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/components/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    title: "Aktuální počasí a sněhové podmínky",
+    href: "/aktualni-pocasi",
+    description: "Aktuální počasí a stav sněhu v areálu.",
   },
   {
-    title: "Progress",
-    href: "/docs/components/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    title: "Mapa areálu",
+    href: "/mapa-arealu",
+    description: "Interaktivní mapa lyžařského areálu.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/components/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "Webkamery",
+    href: "/webkamery",
+    description: "Živé záběry z webkamer v areálu.",
   },
   {
-    title: "Tabs",
-    href: "/docs/components/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    title: "Fotogalerie",
+    href: "/fotogalerie",
+    description: "Fotografie z areálu a aktivit.",
   },
   {
-    title: "Tooltip",
-    href: "/docs/components/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    title: "Videa",
+    href: "/videa",
+    description: "Videa z lyžování a areálu.",
+  },
+  {
+    title: "Kalendář akcí",
+    href: "/kalendar-akci",
+    description: "Plánované akce a události v areálu.",
+  },
+]
+
+const services: { title: string, href: string, description: string, image: string }[] = [
+  {
+    title: "Lyžařská škola",
+    href: "/lyzarska-skola",
+    description: "Kurzy lyžování pro všechny úrovně.",
+    image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=32&h=32&fit=crop&crop=center",
+  },
+  {
+    title: "Půjčovna lyží",
+    href: "/pujcovna-lyzi",
+    description: "Pronájem lyží a vybavení.",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
+  },
+  {
+    title: "Skibus",
+    href: "/skibus",
+    description: "Doprava do areálu.",
+    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=32&h=32&fit=crop&crop=center",
+  },
+  {
+    title: "Restaurace",
+    href: "/restaurace",
+    description: "Stravování v areálu.",
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=32&h=32&fit=crop&crop=center",
+  },
+  {
+    title: "Centrum služeb turistům",
+    href: "/centrum-sluzeb-turistum",
+    description: "Informace a služby pro turisty.",
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=32&h=32&fit=crop&crop=center",
+  },
+  {
+    title: "Dětský ráj",
+    href: "/detsky-raj",
+    description: "Aktivity pro děti.",
+    image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=32&h=32&fit=crop&crop=center",
+  },
+  {
+    title: "Běžky",
+    href: "/bezky",
+    description: "Běžecké lyžování.",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=32&h=32&fit=crop&crop=center",
+  },
+  {
+    title: "Agroturistika",
+    href: "/agroturistika",
+    description: "Agroturistické služby.",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=32&h=32&fit=crop&crop=center",
+  },
+  {
+    title: "Snowpark",
+    href: "/snowpark",
+    description: "Snowpark pro freeride.",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
   },
 ]
 </script>
@@ -59,60 +116,16 @@ const components: { title: string, href: string, description: string }[] = [
       <NavigationMenuItem>
         <NavigationMenuTrigger>O areálu</NavigationMenuTrigger>
         <NavigationMenuContent>
-          <ul class="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[minmax(0,.75fr)_minmax(0,1fr)]">
-            <li class="row-span-3">
+          <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] justify-items-start">
+            <li v-for="item in arealItems" :key="item.title">
               <NavigationMenuLink as-child>
                 <a
-                  class="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                  href="/"
-                >
-                  <img src="https://www.reka-ui.com/logo.svg" class="h-6 w-6">
-                  <div class="mb-2 mt-4 text-lg font-medium">
-                    shadcn/ui
-                  </div>
-                  <p class="text-sm leading-tight text-muted-foreground">
-                    Beautifully designed components built with Radix UI and
-                    Tailwind CSS.
-                  </p>
-                </a>
-              </NavigationMenuLink>
-            </li>
-
-            <li>
-              <NavigationMenuLink as-child>
-                <a
-                  href="/docs/introduction"
+                  :href="item.href"
                   class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                 >
-                  <div class="text-sm font-medium leading-none">Introduction</div>
+                  <div class="text-sm font-medium leading-none">{{ item.title }}</div>
                   <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                    Re-usable components built using Radix UI and Tailwind CSS.
-                  </p>
-                </a>
-              </NavigationMenuLink>
-            </li>
-            <li>
-              <NavigationMenuLink as-child>
-                <a
-                  href="/docs/installation"
-                  class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                >
-                  <div class="text-sm font-medium leading-none">Installation</div>
-                  <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                    How to install dependencies and structure your app.
-                  </p>
-                </a>
-              </NavigationMenuLink>
-            </li>
-            <li>
-              <NavigationMenuLink as-child>
-                <a
-                  href="/docs/typography"
-                  class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                >
-                  <div class="text-sm font-medium leading-none">Typography</div>
-                  <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                    Styles for headings, paragraphs, lists...etc
+                    {{ item.description }}
                   </p>
                 </a>
               </NavigationMenuLink>
@@ -121,29 +134,30 @@ const components: { title: string, href: string, description: string }[] = [
         </NavigationMenuContent>
       </NavigationMenuItem>
       
+<NavigationMenuItem>
+  <NavigationMenuTrigger>Služby</NavigationMenuTrigger>
+  <NavigationMenuContent>
+    <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+      <li v-for="service in services" :key="service.title">
+        <a
+          :href="service.href"
+          class="flex items-center gap-3 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+        >
+          <img :src="service.image" alt="" class="h-12 w-12 rounded-2xl flex-shrink-0">
+          <div class="flex-1">
+            <div class="text-sm font-medium leading-none">{{ service.title }}</div>
+            <p class="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+              {{ service.description }}
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </NavigationMenuContent>
+</NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuTrigger>Služby</NavigationMenuTrigger>
-        <NavigationMenuContent>
-          <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-            <li v-for="component in components" :key="component.title">
-              <NavigationMenuLink as-child>
-                <a
-                  :href="component.href"
-                  class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                >
-                  <div class="text-sm font-medium leading-none">{{ component.title }}</div>
-                  <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                    {{ component.description }}
-                  </p>
-                </a>
-              </NavigationMenuLink>
-            </li>
-          </ul>
-        </NavigationMenuContent>
-      </NavigationMenuItem>
-        <NavigationMenuItem>
-        <NavigationMenuLink href="/kontakt" :class="navigationMenuTriggerStyle()">
-          Kalendář akcí
+        <NavigationMenuLink href="/ubytovani" :class="navigationMenuTriggerStyle()">
+          Ubytování
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>

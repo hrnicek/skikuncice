@@ -80,7 +80,7 @@
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
+    --primary: #081f54;
     --primary-foreground: oklch(0.985 0 0);
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
@@ -157,5 +157,5 @@
 }
 
 .bg-glass {
-    @apply backdrop-blur-xs bg-white/30 shadow-inner  border-white/40 border;
+    @apply backdrop-blur-xs bg-white/15 shadow-inner border-white/40 border;
 }

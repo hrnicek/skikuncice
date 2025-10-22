@@ -4,3 +4,4 @@ use App\Http\Controllers\HomepageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
+Route::get('/kalendar-akci', [HomepageController::class, 'calendar'])->name('calendar');
