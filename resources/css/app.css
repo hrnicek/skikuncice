@@ -1,12 +1,13 @@
 @import 'tailwindcss';
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
@@ -52,6 +53,7 @@
     --color-sidebar-ring: var(--sidebar-ring);
     --animate-accordion-down: accordion-down 0.2s ease-out;
     --animate-accordion-up: accordion-up 0.2s ease-out;
+
   @keyframes accordion-down {
   from {
     height: 0;
@@ -148,4 +150,8 @@
   body {
     @apply bg-background text-foreground;
     }
+}
+
+.row {
+    @apply container mx-auto px-4 lg:px-8
 }
