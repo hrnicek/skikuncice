@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { Link } from '@inertiajs/vue3'
 import { route } from 'ziggy-js'
 import PartnersSection from '@/components/PartnersSection.vue'
@@ -35,14 +36,21 @@ const services = [
   { title: "Běžky", route: "cross-country-skiing" },
   { title: "Snowpark", route: "snowpark" }
 ]
+
+import { useSeason } from '@/composables/useSeason'
+
+const { isWinter } = useSeason()
+
+const backgroundImage = computed(() => {
+  return isWinter.value ? '/img/bg-footer-winter.jpg' : '/img/bg-footer-summer.jpg'
+})
 </script>
 
 <template>
     <!-- Footer -->
     <footer class="mt-12 container rounded-4xl">
         <div class="relative overflow-hidden rounded-4xl">
-            <!-- Background Image -->
-            <img src="/img/bg-footer4.jpg" alt="pozadí footer" class="absolute inset-0 w-full h-full object-cover">
+            <img :src="backgroundImage" alt="pozadí footer" class="absolute inset-0 w-full h-full object-cover">
             
             <!-- Dark Overlay with blur for better contrast -->
             <div class="absolute inset-0 bg-black/70 backdrop-blur-xs"></div>

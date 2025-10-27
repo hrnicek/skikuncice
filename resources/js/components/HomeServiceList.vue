@@ -1,11 +1,18 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useSeason } from '@/composables/useSeason'
+
 interface Service {
     title: string;
     description: string;
     image: string;
 }
 
-const services: Service[] = [
+// Use season composable
+const { isWinter, isSummer } = useSeason()
+
+// Winter services (ski-related)
+const winterServices: Service[] = [
     {
         title: 'SKI škola',
         description: 'Vyškolení instruktoři naučí lyžovat i ty největší sportovní antitalenty. Máme moderní dětský vlek a bezpečnou sjezdovku',
@@ -32,12 +39,51 @@ const services: Service[] = [
         image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&crop=center'
     }
 ];
+
+// Summer services (outdoor activities)
+const summerServices: Service[] = [
+    {
+        title: 'TIPY PRO VÝLETY',
+        description: 'Vybrali jsme pro vás pár tipů na výlety v blízkém i trochu vzdálenějším okolí. Poznejte krásné památky, nespoutanou přírodu, horské potůčky a studánky...',
+        image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop&crop=center'
+    },
+    {
+        title: 'CYKLOVÝLETY',
+        description: 'Poznejte krásu Kunčic a Staroměstska z trochu jiného pohledu - ze sedla horského kola. Příroda Králického Sněžníku každoročně láká svojí upravenými cyklostezkami.',
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&crop=center'
+    },
+    {
+        title: 'Ubytování',
+        description: 'Spolupracujeme s majiteli hotelů a penzionů v Kunčicích. Kontaktujte nás a my vám zařídíme to nejlepší ubytování.',
+        image: '/img/services/ubytovani.jpg'
+    },
+    {
+        title: 'AGROTURISTIKA - KONĚ',
+        description: 'Díky agroturistice můžete zažít to, co byste běžně nezažili - dostanete se blíž přírodě i ke zvířatům. Vyjížďka na koních je příjemným zpestřením rodinné dovolené.',
+        image: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=300&fit=crop&crop=center'
+    },
+    {
+        title: 'Restaurace a občerstvení',
+        description: 'Posilněte se při celodenních výletech v hospůdce U Rumařů nebo si vychutnejte občerstvení s výhledem na krásnou krajinu Králického Sněžníku.',
+        image: '/img/services/restaurace.jpg'
+    }
+];
+
+// Computed property to get current services based on season
+const services = computed(() => {
+    return isSummer.value ? summerServices : winterServices
+})
+
+// Computed property for section title
+const sectionTitle = computed(() => {
+    return isSummer.value ? 'Letní aktivity' : 'Naše služby'
+})
 </script>
 
 <template>
     <section class="py-16">
         <div class="container">
-            <h2 class="text-3xl font-bold text-center mb-12">Naše služby</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">{{ sectionTitle }}</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 auto-rows-[200px]">
                 <!-- Large featured card -->

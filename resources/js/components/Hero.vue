@@ -1,26 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { usePage } from '@inertiajs/vue3'
 import HeroBento from './HeroBento.vue'
+import { useSeason } from '@/composables/useSeason'
 
-// Get season data from page props
-const page = usePage()
-const season = computed(() => page.props.season as {
-  current: string
-  label: string
-  isWinter: boolean
-  isSummer: boolean
-  available: Record<string, string>
-})
+const { isWinter } = useSeason()
 
-// Compute background image based on season
 const backgroundImage = computed(() => {
-  return season.value.isWinter ? '/img/hero-winter.jpg' : '/img/hero-summer.jpg'
+  return isWinter.value ? '/img/hero-winter.jpg' : '/img/hero-summer.jpg'
 })
 
-// Compute season-specific content
 const heroContent = computed(() => {
-  if (season.value.isWinter) {
+  if (isWinter.value) {
     return {
       title: 'Lyžovačka pro celou rodinu',
       subtitle: 'Za perfektní lyžovačkou nemusíte do Alp'
@@ -43,7 +33,7 @@ const heroContent = computed(() => {
             
             <div class="absolute inset-0 flex flex-col justify-between p-6 md:p-8">
 
-                <div class="text-left text-white mb-8 pl-4 md:pl-8">
+                <div class="text-left text-white mb-8 pl-4 md:pl-16 pt-32">
                     <h1 class="text-4xl md:text-6xl font-bold mb-4">
                        {{ heroContent.title }}
                     </h1>
