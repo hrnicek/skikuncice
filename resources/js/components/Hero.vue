@@ -3,7 +3,7 @@ import HeroBento from './HeroBento.vue'
 </script>
 
 <template>
-    <div class="row mt-4">
+    <div class="container mt-4">
         <div class="relative max-h-[700px] overflow-hidden rounded-4xl">
             <!-- Background Image -->
             <img src="/img/hero.jpg" alt="úvodní fotka" class="w-full h-full object-cover">

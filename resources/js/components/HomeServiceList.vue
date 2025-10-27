@@ -36,7 +36,7 @@ const services: Service[] = [
 
 <template>
     <section class="py-16">
-        <div class="row">
+        <div class="container">
             <h2 class="text-3xl font-bold text-center mb-12">Naše služby</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 auto-rows-[200px]">

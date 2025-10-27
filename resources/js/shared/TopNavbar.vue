@@ -10,7 +10,7 @@ const currentLanguage = ref('CZ')
 
 <template>
   <div class="w-full bg-muted py-1">
-    <div class="flex justify-between items-center row">
+    <div class="flex justify-between items-center container">
       <!-- Left side: Email and Phone -->
       <div class="flex space-x-6 text-sm">
         <a href="mailto:info@skikuncice.cz" class="text-gray-700 hover:text-gray-900">

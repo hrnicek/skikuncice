@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="row mt-4">
+  <div class="container mt-4">
     <div class="relative h-48 md:h-56 overflow-hidden rounded-4xl">
       <!-- Background Image -->
       <img :src="backgroundImage" :alt="title" class="w-full h-full object-cover">

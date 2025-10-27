@@ -35,7 +35,7 @@ const props = withDefaults(defineProps<PartnersSectionProps>(), {
 </script>
 
 <template>
-    <div class="row mt-16 mb-16">
+    <div class="container my-16">
         <div class="text-center flex items-center">
             <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-2">
                 {{ title }}

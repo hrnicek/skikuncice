@@ -58,7 +58,7 @@ const formatTime = (dateString: string) => {
 </script>
 
 <template>
-    <div class="row">
+    <div class="container">
       <div class="mt-16 mb-16 bg-muted p-8 rounded-4xl">
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">

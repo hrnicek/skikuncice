@@ -10,10 +10,14 @@ import {
     Instagram, 
     Youtube,
     MapPin,
-    Clock
+    Clock,
+    Mail,
+    Globe,
+    Mountain,
+    TrendingUp,
+    Snowflake
 } from 'lucide-vue-next'
 
-// Navigační položky z hlavní navigace
 const arealItems = [
   { title: "Provozní doba", route: "operating-hours" },
   { title: "Aktuální počasí", route: "current-weather" },
@@ -35,7 +39,7 @@ const services = [
 
 <template>
     <!-- Footer -->
-    <footer class="mt-12 row rounded-4xl mx-auto">
+    <footer class="mt-12 container rounded-4xl">
         <div class="relative overflow-hidden rounded-4xl">
             <!-- Background Image -->
             <img src="/img/bg-footer4.jpg" alt="pozadí footer" class="absolute inset-0 w-full h-full object-cover">
@@ -168,53 +172,86 @@ const services = [
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                         
                         <!-- SKITECH kontakt -->
-                        <div class="text-center md:text-left">
-                            <h4 class="text-white font-medium text-base mb-3 flex items-center justify-center md:justify-start">
-                                <Phone class="w-4 h-4 mr-2 text-brand-secondary" />
+                        <div class="text-center md:text-left border border-white/10 bg-white/5 rounded-lg p-4">
+                            <h4 class="text-white font-medium text-base mb-4 flex items-center justify-center md:justify-start">
+                                <Phone class="w-4 h-4 mr-2 text-white" />
                                 SKITECH s.r.o.
                             </h4>
-                            <div class="space-y-2 text-sm text-white">
-                                <p>
-                                    <a href="tel:+420558647111" class="hover:text-brand-secondary transition-colors duration-300 font-medium">
-                                        📞 +420 558 647 111
+                            <div class="space-y-3 text-sm">
+                                <div class="bg-white/10 rounded-lg p-3 hover:bg-white/15 transition-all duration-300 border border-white/20">
+                                    <a href="tel:+420558647111" class="text-white hover:text-white transition-colors duration-300 font-medium flex items-center">
+                                        <Phone class="w-4 h-4 mr-2 text-white" />
+                                        +420 558 647 111
                                     </a>
-                                </p>
-                                <p>
-                                    <a href="mailto:info@skitech.cz" class="hover:text-brand-secondary transition-colors duration-300 font-medium">
-                                        ✉️ info@skitech.cz
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-3 hover:bg-white/15 transition-all duration-300 border border-white/20">
+                                    <a href="mailto:info@skitech.cz" class="text-white hover:text-white transition-colors duration-300 font-medium flex items-center">
+                                        <Mail class="w-4 h-4 mr-2 text-white" />
+                                        info@skitech.cz
                                     </a>
-                                </p>
-                                <p>
-                                    <a href="https://www.skitech.cz" target="_blank" rel="noopener noreferrer" class="hover:text-brand-secondary transition-colors duration-300 font-medium">
-                                        🌐 www.skitech.cz
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-3 hover:bg-white/15 transition-all duration-300 border border-white/20">
+                                    <a href="https://www.skitech.cz" target="_blank" rel="noopener noreferrer" class="text-white hover:text-white transition-colors duration-300 font-medium flex items-center">
+                                        <Globe class="w-4 h-4 mr-2 text-white" />
+                                        www.skitech.cz
                                     </a>
-                                </p>
+                                </div>
                             </div>
                         </div>
 
                         <!-- GPS a lokace -->
-                        <div class="text-center">
-                            <h4 class="text-white font-medium text-base mb-3 flex items-center justify-center">
-                                <MapPin class="w-4 h-4 mr-2 text-brand-secondary" />
+                        <div class="text-center border border-white/10 bg-white/5 rounded-lg p-4">
+                            <h4 class="text-white font-medium text-base mb-4 flex items-center justify-center">
+                                <MapPin class="w-4 h-4 mr-2 text-white" />
                                 Lokace
                             </h4>
-                            <div class="text-sm text-white space-y-1">
-                                <p>📍 GPS: 49.6089°N, 18.1847°E</p>
-                                <p>🏔️ Moravskoslezské Beskydy</p>
-                                <p>🎿 Nadmořská výška: 580-750 m</p>
+                            <div class="text-sm space-y-3">
+                                <div class="bg-white/10 rounded-lg p-3 border border-white/20">
+                                    <p class="text-white font-medium flex items-center justify-center">
+                                        <MapPin class="w-4 h-4 mr-2 text-white" />
+                                        GPS: 49.6089°N, 18.1847°E
+                                    </p>
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-3 border border-white/20">
+                                    <p class="text-white font-medium flex items-center justify-center">
+                                        <Mountain class="w-4 h-4 mr-2 text-white" />
+                                        Moravskoslezské Beskydy
+                                    </p>
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-3 border border-white/20">
+                                    <p class="text-white font-medium flex items-center justify-center">
+                                        <TrendingUp class="w-4 h-4 mr-2 text-white" />
+                                        Nadmořská výška: 580-750 m
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Provozní doba -->
-                        <div class="text-center md:text-right">
-                            <h4 class="text-white font-medium text-base mb-3 flex items-center justify-center md:justify-end">
-                                <Clock class="w-4 h-4 mr-2 text-brand-secondary" />
+                        <div class="text-center md:text-right border border-white/10 bg-white/5 rounded-lg p-4">
+                            <h4 class="text-white font-medium text-base mb-4 flex items-center justify-center md:justify-end">
+                                <Clock class="w-4 h-4 mr-2 text-white" />
                                 Provozní doba
                             </h4>
-                            <div class="text-sm text-white space-y-1">
-                                <p>⏰ Denně: 8:00 - 16:00</p>
-                                <p>🎿 Podle sněhových podmínek</p>
-                                <p>📞 Info linka: 8:00 - 16:00</p>
+                            <div class="text-sm space-y-3">
+                                <div class="bg-white/10 rounded-lg p-3 border border-white/20">
+                                    <p class="text-white font-medium flex items-center justify-center md:justify-end">
+                                        <Clock class="w-4 h-4 mr-2 text-white" />
+                                        Denně: 8:00 - 16:00
+                                    </p>
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-3 border border-white/20">
+                                    <p class="text-white font-medium flex items-center justify-center md:justify-end">
+                                        <Snowflake class="w-4 h-4 mr-2 text-white" />
+                                        Podle sněhových podmínek
+                                    </p>
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-3 border border-white/20">
+                                    <p class="text-white font-medium flex items-center justify-center md:justify-end">
+                                        <Phone class="w-4 h-4 mr-2 text-white" />
+                                        Info linka: 8:00 - 16:00
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
