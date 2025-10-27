@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\SeasonService;
 use App\Services\WeatherService;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
@@ -36,12 +37,20 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-
         $weatherService = app(WeatherService::class);
+        $seasonService = app(SeasonService::class);
+
+        $currentSeason = $seasonService->getCurrentSeason($request);
 
         return [
             ...parent::share($request),
-            'season' => 'winter',
+            'season' => [
+                'current' => $currentSeason,
+                'label' => $seasonService->getSeasonLabel($currentSeason),
+                'isWinter' => $seasonService->isWinter($request),
+                'isSummer' => $seasonService->isSummer($request),
+                'available' => $seasonService->getAvailableSeasons(),
+            ],
             'weather' => $weatherService->getWeather(),
         ];
     }

@@ -2,6 +2,7 @@
 // Placeholder for language state - you may need to integrate with i18n library
 import { ref } from 'vue'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import SeasonToggle from '@/components/SeasonToggle.vue';
 
 const currentLanguage = ref('CZ')
 
@@ -11,8 +12,10 @@ const currentLanguage = ref('CZ')
 <template>
   <div class="w-full bg-muted py-1">
     <div class="flex justify-between items-center container">
-      <!-- Left side: Email and Phone -->
       <div class="flex space-x-6 text-sm">
+        <div>
+          <SeasonToggle />
+        </div>
         <a href="mailto:info@skikuncice.cz" class="text-gray-700 hover:text-gray-900">
           info@skikuncice.cz
         </a>

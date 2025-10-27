@@ -11,6 +11,7 @@ use App\Http\Controllers\KidsParadiseController;
 use App\Http\Controllers\OperatingHoursController;
 use App\Http\Controllers\PhotoGalleryController;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\SkiBusController;
 use App\Http\Controllers\SkiRentalController;
 use App\Http\Controllers\SkiSchoolController;
@@ -39,3 +40,9 @@ Route::get('/agroturistika', [AgrotourismController::class, 'index'])->name('agr
 Route::get('/snowpark', [SnowparkController::class, 'index'])->name('snowpark');
 Route::get('/ubytovani', [AccommodationController::class, 'index'])->name('accommodation');
 Route::get('/kontakt', [ContactController::class, 'index'])->name('contact');
+
+// Season management routes
+Route::prefix('api/season')->group(function () {
+    Route::post('/set', [SeasonController::class, 'setSeason'])->name('season.set');
+    Route::post('/toggle', [SeasonController::class, 'toggle'])->name('season.toggle');
+});
