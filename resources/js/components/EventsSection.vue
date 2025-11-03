@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { Button } from '@/components/ui/button';
+import { Calendar, Clock, MapPin } from 'lucide-vue-next';
 
 interface Event {
   id: number;
@@ -9,6 +10,7 @@ interface Event {
   date_to: string;
   published: boolean;
   note?: string;
+  image?: string;
 }
 
 // Mock data for now - in real app this would come from API
@@ -19,7 +21,8 @@ const events = ref<Event[]>([
     date_from: "2025-01-15T09:00:00",
     date_to: "2025-01-15T16:00:00",
     published: true,
-    note: "Ideální akce pro ty, kteří se učí lyžovat"
+    note: "Ideální akce pro ty, kteří se učí lyžovat",
+    image: "/img/events/skiing-beginners.jpg"
   },
   {
     id: 2,
@@ -27,7 +30,8 @@ const events = ref<Event[]>([
     date_from: "2025-01-20T18:00:00",
     date_to: "2025-01-20T22:00:00",
     published: true,
-    note: "Zábava pro celou rodinu pod hvězdami"
+    note: "Zábava pro celou rodinu pod hvězdami",
+    image: "/img/events/night-sledding.jpg"
   },
   {
     id: 3,
@@ -35,7 +39,8 @@ const events = ref<Event[]>([
     date_from: "2025-02-01T10:00:00",
     date_to: "2025-02-01T15:00:00",
     published: true,
-    note: "Soutěž pro zkušené lyžaře"
+    note: "Soutěž pro zkušené lyžaře",
+    image: "/img/events/slalom-race.jpg"
   }
 ]);
 
@@ -55,6 +60,15 @@ const formatTime = (dateString: string) => {
     minute: '2-digit'
   });
 };
+
+const handleImageError = (event: Event) => {
+  const img = event.target as HTMLImageElement;
+  img.style.display = 'none';
+  const placeholder = img.parentElement?.querySelector('.image-placeholder') as HTMLElement;
+  if (placeholder) {
+    placeholder.style.display = 'flex';
+  }
+};
 </script>
 
 <template>
@@ -73,18 +87,39 @@ const formatTime = (dateString: string) => {
             <div
                 v-for="event in events"
                 :key="event.id"
-                class="bg-card rounded-lg border p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+                class="bg-card rounded-lg border p-6 shadow-sm"
             >
                 <div class="mb-4">
+                    <div class="aspect-video bg-gradient-to-br from-[#081f54]/5 to-[#da383a]/5 rounded-lg mb-4 overflow-hidden shadow-inner">
+                    <img
+                        v-if="event.image"
+                        :src="event.image"
+                        :alt="event.title"
+                        class="w-full h-full object-cover"
+                        @error="handleImageError"
+                    />
+                    <div v-else class="image-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-[#081f54]/10 to-[#da383a]/10">
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto mb-2 bg-[#081f54]/20 rounded-full flex items-center justify-center shadow-sm">
+                                <svg class="w-8 h-8 text-[#081f54]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-[#081f54] font-medium text-sm">Událost</p>
+                        </div>
+                    </div>
+                </div>
                     <h3 class="text-xl font-semibold text-primary mb-2">
                         {{ event.title }}
                     </h3>
                     <div class="text-sm text-muted-foreground space-y-1">
-                        <p>
+                        <p class="flex items-center">
+                            <Calendar class="w-4 h-4 mr-2 text-[#081f54]" />
                             <span class="font-medium">Datum:</span>
                             {{ formatDate(event.date_from) }}
                         </p>
-                        <p>
+                        <p class="flex items-center">
+                            <Clock class="w-4 h-4 mr-2 text-[#081f54]" />
                             <span class="font-medium">Čas:</span>
                             {{ formatTime(event.date_from) }} - {{ formatTime(event.date_to) }}
                         </p>
@@ -95,7 +130,7 @@ const formatTime = (dateString: string) => {
                     {{ event.note }}
                 </div>
 
-                <Button variant="outline" size="sm" class="w-full">
+                <Button variant="outline" size="sm" class="w-full hover:bg-[#081f54] hover:text-white transition-colors">
                     Zobrazit více
                 </Button>
             </div>
