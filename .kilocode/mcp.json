@@ -1,0 +1,6 @@
+{"mcpServers":{
+    "lucide-icons": {
+      "command": "npx",
+      "args": ["lucide-icons-mcp", "--stdio"]
+    }
+}}
