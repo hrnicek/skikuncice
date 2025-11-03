@@ -9,7 +9,7 @@ import PageHeader from '@/components/PageHeader.vue';
       title="Lyžařská škola"
       subtitle="Kurzy lyžování pro všechny úrovně"
     />
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <p>Kurzy lyžování pro všechny úrovně.</p>
     </div>
   </AppLayout>

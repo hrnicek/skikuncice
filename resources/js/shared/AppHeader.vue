@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppNavbar from './AppNavbar.vue';
+import MobileMenuSheet from './MobileMenuSheet.vue';
 import { Button } from '@/components/ui/button';
 import { Link } from '@inertiajs/vue3';
 
@@ -7,22 +8,30 @@ import { Link } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <header class="w-full sticky top-0 border-b py-6 z-50 bg-white">
-      <div class="flex justify-between items-center container px-12!">
-        <div class="flex space-x-16">
-            <Link href="/">
-                <img src="/img/logo.png" alt="Logo" class="h-8"></img>
+    <header class="w-full sticky top-0 border-b py-4 md:py-6 z-50 bg-white">
+      <div class="flex justify-between items-center container px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between w-full md:w-auto md:space-x-16">
+            <Link href="/" class="flex-shrink-0">
+                <img src="/img/logo.png" alt="Logo SKI Kunčice" class="h-6 md:h-8">
             </Link>
-        <div>
-            <AppNavbar />
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden">
+                <MobileMenuSheet />
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:block">
+                <AppNavbar />
+            </div>
         </div>
-            
-        </div>
-            <Button size="lg" as-child>
-                <Link href="/cenik">
-                    Ceník 
-                </Link>
-            </Button>
+
+        <!-- Desktop CTA Button -->
+        <Button size="lg" as-child class="hidden md:inline-flex">
+            <Link href="/cenik">
+                Ceník
+            </Link>
+        </Button>
       </div>
     </header>
 </template>

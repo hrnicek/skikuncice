@@ -9,4 +9,9 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class Accommodation extends Model implements HasMedia
 {
     use InteractsWithMedia;
+
+    protected $fillalbe = [
+        'name',
+        'description',
+    ];
 }

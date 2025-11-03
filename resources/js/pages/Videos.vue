@@ -9,7 +9,7 @@ import PageHeader from '@/components/PageHeader.vue';
       title="Videa"
       subtitle="Videa z lyžování a areálu"
     />
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <p>Videa z lyžování a areálu.</p>
     </div>
   </AppLayout>

@@ -36,7 +36,7 @@ const formatTime = (dateString: string) => {
 
 <template>
   <div class="min-h-screen bg-background">
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="text-center mb-12">
         <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
           Kalendář akcí

@@ -9,7 +9,7 @@ import PageHeader from '@/components/PageHeader.vue';
       title="Dětský ráj"
       subtitle="Aktivity pro děti"
     />
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <p>Aktivity pro děti.</p>
     </div>
   </AppLayout>

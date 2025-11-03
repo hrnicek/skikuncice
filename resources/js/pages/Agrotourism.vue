@@ -9,7 +9,7 @@ import PageHeader from '@/components/PageHeader.vue';
       title="Agroturistika"
       subtitle="Agroturistické služby"
     />
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <p>Agroturistické služby.</p>
     </div>
   </AppLayout>
