@@ -1,6 +1,20 @@
-{"mcpServers":{
+{
+  "mcpServers": {
     "lucide-icons": {
       "command": "npx",
-      "args": ["lucide-icons-mcp", "--stdio"]
+      "args": [
+        "lucide-icons-mcp",
+        "--stdio"
+      ]
+    },
+    "browser-tools": {
+      "command": "npx",
+      "args": [
+        "@agentdeskai/browser-tools-mcp@1.2.0"
+      ],
+      "alwaysAllow": [
+        "getConsoleLogs"
+      ]
     }
-}}
+  }
+}

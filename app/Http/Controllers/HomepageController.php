@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Data\EventData;
+use App\Data\PostData;
 use App\Models\Event;
 use App\Models\Post;
 use App\Services\WeatherService;
@@ -17,18 +19,19 @@ class HomepageController extends Controller
 
         return inertia('Homepage', [
             'weather' => $weather,
-            'latestPost' => $latestPost,
+            'latestPost' => $latestPost ? PostData::fromModel($latestPost) : null,
         ]);
     }
 
     public function calendar()
     {
-        $events = Event::where('published', true)
+        $events = Event::published()
             ->orderBy('date_from')
+            ->with('media')
             ->get();
 
         return inertia('KalendarAkci', [
-            'events' => $events,
+            'events' => EventData::collect($events),
         ]);
     }
 }
