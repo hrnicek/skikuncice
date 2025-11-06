@@ -3,6 +3,7 @@
 import { ref } from 'vue'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import SeasonToggle from '@/components/SeasonToggle.vue';
+import { Mail, Phone } from 'lucide-vue-next'
 
 const currentLanguage = ref('CZ')
 
@@ -10,7 +11,7 @@ const currentLanguage = ref('CZ')
 </script>
 
 <template>
-  <div class="w-full bg-muted py-1">
+  <div class="w-full bg-white border-b py-1">
     <div class="flex justify-between items-center container px-4 sm:px-6 lg:px-8">
       <div class="flex items-center gap-3 md:gap-6 text-xs md:text-sm">
         <div class="flex-shrink-0">
@@ -18,17 +19,12 @@ const currentLanguage = ref('CZ')
         </div>
         <a
           href="mailto:info@skikuncice.cz"
-          class="text-gray-700 hover:text-gray-900 hidden sm:inline transition-colors"
+          class="text-gray-700 hover:text-gray-900 hidden sm:flex items-center gap-1 transition-colors"
         >
+          <Mail class="w-4 h-4" />
           info@skikuncice.cz
         </a>
-        <a
-          href="tel:+420123456789"
-          class="text-gray-700 hover:text-gray-900 transition-colors"
-        >
-          <span class="hidden sm:inline">+420 123 456 789</span>
-          <span class="sm:hidden">📞</span>
-        </a>
+       
       </div>
 
       <!-- Right side: Language Switcher -->

@@ -7,7 +7,7 @@ import PageHeader from '@/components/PageHeader.vue';
   <AppLayout>
     <PageHeader
       title="Ubytování"
-      subtitle="Možnosti ubytování"
+      subtitle="Spolupracujeme s majiteli penzionů a chat v Kunčicích, a tak pro vás najdeme to nejvhodnější ubytování. Ať už jste jen dva, nebo celá výprava!"
     />
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <p>Možnosti ubytování.</p>

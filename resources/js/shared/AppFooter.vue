@@ -1,16 +1,13 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
 import { Facebook, Instagram, Youtube, MapPin, TrendingUp, Clock, Phone, Mail, Map } from 'lucide-vue-next';
-import PartnersSection from '@/components/PartnersSection.vue';
 </script>
 
 <template>
-    <footer class="bg-white border-t py-24">
+    <footer class="bg-muted/50 border-t py-24">
         <div class="container mx-auto px-4">
-            <!-- Main Footer Content -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
-                <!-- Brand Section -->
                 <div class="md:col-span-1 lg:col-span-1">
                     <img src="/img/logo.png" alt="Ski Kunčice Logo" class="h-12 mb-6" />
                     <p class="text-gray-600 text-base leading-relaxed mb-8">
@@ -31,7 +28,6 @@ import PartnersSection from '@/components/PartnersSection.vue';
 
                 </div>
 
-                <!-- Services -->
                 <div>
                     <h4 class="font-semibold mb-6 text-gray-900 text-lg">Služby</h4>
                     <div class="grid grid-cols-1 gap-3">
@@ -45,7 +41,6 @@ import PartnersSection from '@/components/PartnersSection.vue';
                     </div>
                 </div>
 
-                <!-- Area Info -->
                 <div>
                     <h4 class="font-semibold mb-6 text-gray-900 text-lg">O areálu</h4>
                     <div class="grid grid-cols-1 gap-3">
@@ -77,7 +72,6 @@ import PartnersSection from '@/components/PartnersSection.vue';
                     </div>
                 </div>
 
-                <!-- Contact -->
                 <div>
                     <h4 class="font-semibold mb-6 text-gray-900 text-lg">Kontakt</h4>
                     <div class="space-y-4">
@@ -86,7 +80,7 @@ import PartnersSection from '@/components/PartnersSection.vue';
                                 <Phone class="w-4 h-4 mr-2 text-[#081f54]" />
                                 Půjčovna, lyž. škola
                             </p>
-                            <a href="tel:+420777719579" class="text-[#da383a] hover:text-[#b02e30] transition-colors font-semibold text-lg">
+                            <a href="tel:+420777719579" class="text-gray-900 hover:text-primary transition-colors font-semibold">
                                 +420 777 719 579
                             </a>
                             <p class="text-gray-500 text-sm mt-1">8:00 - 16:00 hod</p>
@@ -97,7 +91,7 @@ import PartnersSection from '@/components/PartnersSection.vue';
                                 <Mail class="w-4 h-4 mr-2 text-[#081f54]" />
                                 Email
                             </p>
-                            <a href="mailto:info@skikuncice.cz" class="text-gray-900 hover:text-gray-600 transition-colors font-semibold">
+                            <a href="mailto:info@skikuncice.cz" class="text-gray-900 hover:text-primary transition-colors font-semibold">
                                 info@skikuncice.cz
                             </a>
                         </div>
@@ -108,8 +102,7 @@ import PartnersSection from '@/components/PartnersSection.vue';
                                 Adresa
                             </p>
                             <p class="text-gray-900 font-medium">
-                                Kunčice pod Ondřejníkem 1<br>
-                                739 13 Kunčice pod Ondřejníkem
+                                Staré Město pod Sněžníkem,<br></br> 78832 Kunčice<br />
                             </p>
                         </div>
 
@@ -126,11 +119,10 @@ import PartnersSection from '@/components/PartnersSection.vue';
                 </div>
             </div>
 
-            <!-- Bottom Section -->
             <div class="border-t border-gray-200 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-500 text-sm mb-4 md:mb-0">
-                        © 2024 Ski Kunčice. Všechna práva vyhrazena.
+                        © 2025 Ski Kunčice. Všechna práva vyhrazena.
                     </p>
                     <div class="flex space-x-8 text-sm">
                         <a href="#" class="text-gray-500 hover:text-gray-900 transition-colors">

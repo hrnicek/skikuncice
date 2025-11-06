@@ -9,8 +9,12 @@ import PageHeader from '@/components/PageHeader.vue';
       title="Skibus"
       subtitle="Doprava do areálu"
     />
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <p>Doprava do areálu.</p>
+    <div class="container">
+      <div>
+        <p>
+          V oblasti Králický Sněžník se při dobrých podmínkách upravuje 60 km dobře značených běžkařských tras pro klasiku i bruslení. Úpravu tras zajišťuje město Staré Město pod Sněžníkem. Nejdelší trasa pokračuje až do Orlických hor. Nad skiareálem Kunčice vede upravená trasa, svezte se na vrchol naší pohodlnou čtyřsedačkovou lanovkou.
+        </p>
+      </div>
     </div>
   </AppLayout>
 </template>

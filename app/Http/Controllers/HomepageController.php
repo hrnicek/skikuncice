@@ -15,11 +15,19 @@ class HomepageController extends Controller
         $weatherService = app(WeatherService::class);
         $weather = $weatherService->getWeather();
 
-        $latestPost = Post::latest('published_at')->first();
+        $latestPost = Post::query()->latest('published_at')->first();
+        $events = Event::published()
+            ->upcoming()
+            ->orderBy('date_from')
+            ->with('media')
+            ->take(3)
+            ->get();
 
         return inertia('Homepage', [
             'weather' => $weather,
             'latestPost' => $latestPost ? PostData::fromModel($latestPost) : null,
+            'events' => EventData::collect($events),
+            'canAccessAdmin' => auth()->check() && auth()->user()->can('access_admin'),
         ]);
     }
 

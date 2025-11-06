@@ -9,8 +9,8 @@ import PageHeader from '@/components/PageHeader.vue';
       title="Mapa areálu"
       subtitle="Interaktivní mapa lyžařského areálu"
     />
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <p>Interaktivní mapa lyžařského areálu.</p>
+    <div class="container my-16">
+      <img src="/img/SKI-MAPA-2019.jpg" alt="Mapa areálu SKI Kunčice" class="w-full h-auto rounded-4xl border" />
     </div>
   </AppLayout>
 </template>

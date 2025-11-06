@@ -35,9 +35,10 @@ const props = withDefaults(defineProps<PartnersSectionProps>(), {
 </script>
 
 <template>
-    <div class="container my-16">
+  <div class="border-t py-16">
+    <div class="container">
         <div class="text-center flex items-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-2">
+            <h2 class="text-3xl font-bold text-foreground mb-2">
                 {{ title }}
             </h2>
             <div class="flex flex-wrap mx-auto justify-center gap-x-8 gap-y-6 lg:gap-24">
@@ -52,5 +53,6 @@ const props = withDefaults(defineProps<PartnersSectionProps>(), {
                 />
             </div>
         </div>
+    </div>
     </div>
 </template>

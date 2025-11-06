@@ -13,6 +13,8 @@ class EventsController extends Controller
 
     public function show(Event $event)
     {
+        $event->load('media');
+
         return inertia('Events/Show', [
             'event' => $event,
         ]);

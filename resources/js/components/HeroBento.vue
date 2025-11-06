@@ -5,7 +5,7 @@ import HeroNews from './HeroNews.vue'
 </script>
 
 <template>
-  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 max-w-7xl mx-auto w-full items-start">
+  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 container w-full items-start">
     <!-- Weather Section -->
     <div class="flex flex-col h-full">
       <h2 class="text-white text-lg sm:text-xl font-bold mb-2 sm:mb-4 drop-shadow-lg">Počasí</h2>

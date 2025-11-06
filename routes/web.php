@@ -6,6 +6,7 @@ use App\Http\Controllers\AreaMapController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CrossCountrySkiingController;
 use App\Http\Controllers\CurrentWeatherController;
+use App\Http\Controllers\EventsController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\KidsParadiseController;
 use App\Http\Controllers\OperatingHoursController;
@@ -22,7 +23,10 @@ use App\Http\Controllers\WebcamsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
-Route::get('/kalendar-akci', [HomepageController::class, 'calendar'])->name('calendar');
+
+Route::get('/kalendar-akci', [EventsController::class, 'index'])->name('events.index');
+Route::get('/udalost/{event:slug', [EventsController::class, 'show'])->name('events.show');
+
 Route::get('/provozni-doba', [OperatingHoursController::class, 'index'])->name('operating-hours');
 Route::get('/aktualni-pocasi', [CurrentWeatherController::class, 'index'])->name('current-weather');
 Route::get('/mapa-arealu', [AreaMapController::class, 'index'])->name('area-map');

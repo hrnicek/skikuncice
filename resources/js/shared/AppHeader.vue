@@ -26,12 +26,19 @@ import { Link } from '@inertiajs/vue3';
             </div>
         </div>
 
-        <!-- Desktop CTA Button -->
-        <Button size="lg" as-child class="hidden md:inline-flex">
+         <div class="flex space-x-4 ">
+            <Button variant="secondary" size="lg" as-child class="hidden md:inline-flex">
+            <Link :href="route('events.index')">
+                Kalendaíř akcí
+            </Link>
+        </Button>
+         <Button size="lg" as-child class="hidden md:inline-flex">
             <Link href="/cenik">
                 Ceník
             </Link>
         </Button>
+         </div>
+       
       </div>
     </header>
 </template>
