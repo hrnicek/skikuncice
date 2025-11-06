@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Event;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -27,8 +29,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('Kuncice2025!ski'),
         ]);
 
-        $this->call([
-            PostSeeder::class,
-        ]);
+        Post::factory(32)->create();
+        Event::factory(20)->create();
     }
 }

@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->string('season')->default('winter');
             $table->string('title');
+            $table->string('slug')->unique();
             $table->dateTime('date_from');
             $table->dateTime('date_to');
             $table->boolean('published')->default(false);

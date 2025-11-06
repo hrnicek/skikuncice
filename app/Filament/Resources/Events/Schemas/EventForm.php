@@ -6,6 +6,7 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class EventForm
@@ -14,16 +15,24 @@ class EventForm
     {
         return $schema
             ->components([
-                TextInput::make('title')
-                    ->required(),
-                DateTimePicker::make('date_from')
-                    ->required(),
-                DateTimePicker::make('date_to')
-                    ->required(),
-                Toggle::make('published')
-                    ->required(),
-                Textarea::make('note')
-                    ->columnSpanFull(),
+                Section::make()->schema([
+                    TextInput::make('title')
+                        ->label('Titulek')
+                        ->required(),
+                    DateTimePicker::make('date_from')
+                        ->label('Datum od')
+                        ->required(),
+                    DateTimePicker::make('date_to')
+                        ->label('Datum do')
+                        ->required(),
+                    Toggle::make('published')
+                        ->label('Publikováno')
+                        ->required(),
+                    Textarea::make('note')
+                        ->label('Poznámka')
+                        ->columnSpanFull(),
+                ]),
+
             ]);
     }
 }

@@ -12,6 +12,24 @@ class Accommodation extends Model implements HasMedia
 
     protected $fillalbe = [
         'name',
-        'description',
+        'address',
+        'email',
+        'phone',
+        'phone2',
+        'website',
+        'content',
+        'is_available',
     ];
+
+    public function casts(): array
+    {
+        return [
+            'is_available' => 'boolean',
+        ];
+    }
+
+    public function scopeAvailable($query)
+    {
+        return $query->where('is_available', true);
+    }
 }

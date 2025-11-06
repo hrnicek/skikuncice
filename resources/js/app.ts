@@ -5,7 +5,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import type { DefineComponent } from 'vue';
 import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
-
+import { i18nVue } from 'laravel-vue-i18n';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 import AppLayout from './layouts/AppLayout.vue';
@@ -25,6 +25,12 @@ createInertiaApp({
             .component('Link', Link)
             .component('Head', Head)
             .use(ZiggyVue, Ziggy)
+            .use(i18nVue, {
+                resolve: async lang => {
+                    const langs = import.meta.glob('../../lang/*.json');
+                    return await langs[`../../lang/${lang}.json`]();
+                },
+            })
             .mount(el);
     },
     progress: {

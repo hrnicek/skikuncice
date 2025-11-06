@@ -47,8 +47,21 @@ interface WeatherData {
   cod?: number
 }
 
+interface WeatherSettings {
+  piste_snow_depth_cm: number
+  off_piste_snow_depth_cm: number
+  new_snowfall_cm: number
+  show_stats: number
+}
+
 const page = usePage()
 const weather = ref<WeatherData>(page.props.weather as WeatherData || {})
+const weatherSettings = ref<WeatherSettings>(page.props.weatherSettings as WeatherSettings || {
+  piste_snow_depth_cm: 0,
+  off_piste_snow_depth_cm: 0,
+  new_snowfall_cm: 0,
+  show_stats: 0,
+})
 
 const weatherIcon = ref('')
 
@@ -112,6 +125,60 @@ onMounted(() => {
       <div class="mt-2">
         <div class="text-2xl font-bold text-white">{{ weather?.wind?.speed ? Math.round(weather.wind.speed * 3.6) + ' km/h' : '-- km/h' }}</div>
         <div class="text-white text-xs font-medium">Rychlost větru</div>
+      </div>
+    </div>
+
+        <!-- Hlouba sněhu na sjezdovkách -->
+    <div class="rounded-2xl p-4 bg-glass flex-1">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+            <svg class="w-4 h-4 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l.707.707A1 1 0 0012.414 11H15m-3-3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <span class="text-white text-xs font-semibold">Sníh</span>
+        </div>
+      </div>
+      <div class="mt-2">
+        <div class="text-2xl font-bold text-white">{{ weatherSettings?.piste_snow_depth_cm + ' cm' || '-- cm' }}</div>
+        <div class="text-white text-xs font-medium">na sjezdovkách</div>
+      </div>
+    </div>
+
+        <!-- Vítr karta -->
+    <div class="rounded-2xl p-4 bg-glass flex-1">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+            <svg class="w-4 h-4 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l.707.707A1 1 0 0012.414 11H15m-3-3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <span class="text-white text-xs font-semibold">Sníh</span>
+        </div>
+      </div>
+      <div class="mt-2">
+        <div class="text-2xl font-bold text-white">{{ weatherSettings?.off_piste_snow_depth_cm + ' cm' || '-- cm' }}</div>
+        <div class="text-white text-xs font-medium">mimo sjezdovky</div>
+      </div>
+    </div>
+
+        <!-- Vítr karta -->
+    <div class="rounded-2xl p-4 bg-glass flex-1">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+            <svg class="w-4 h-4 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l.707.707A1 1 0 0012.414 11H15m-3-3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <span class="text-white text-xs font-semibold">Nový sníh</span>
+        </div>
+      </div>
+      <div class="mt-2">
+        <div class="text-2xl font-bold text-white">{{ weatherSettings?.new_snowfall_cm + ' cm' || '-- cm' }}</div>
+        <div class="text-white text-xs font-medium">za posledních 24 hodin</div>
       </div>
     </div>
 

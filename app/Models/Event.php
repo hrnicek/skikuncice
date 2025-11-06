@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Event extends Model implements HasMedia
 {
     use HasFactory;
+    use HasSlug;
     use InteractsWithMedia;
 
     protected $fillable = [
@@ -27,9 +30,21 @@ class Event extends Model implements HasMedia
         'published' => 'boolean',
     ];
 
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
+    }
+
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('image')->singleFile();
+        $this->addMediaCollection('image')
+            ->useFallbackUrl('https://picsum.photos/600/600')
+            ->singleFile();
     }
 
     public function scopePublished($query): Builder

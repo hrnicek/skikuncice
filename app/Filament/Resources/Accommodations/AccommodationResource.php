@@ -20,6 +20,18 @@ class AccommodationResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    protected static ?string $navigationLabel = 'Ubytování';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::available()->count();
+    }
+
+    public static function getNavigationBadgeTooltip(): ?string
+    {
+        return 'Aktuálně dostupné ubytování';
+    }
+
     public static function form(Schema $schema): Schema
     {
         return AccommodationForm::configure($schema);

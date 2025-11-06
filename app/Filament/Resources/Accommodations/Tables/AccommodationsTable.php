@@ -15,10 +15,12 @@ class AccommodationsTable
         return $table
             ->columns([
                 TextColumn::make('created_at')
+                    ->label('Vytvořeno')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label('Upraveno')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

@@ -1,5 +1,7 @@
 <?php
 
+use App\Settings\WeatherSettings;
+
 return [
 
     /*
@@ -7,7 +9,7 @@ return [
      * put them (manually) here.
      */
     'settings' => [
-
+        WeatherSettings::class,
     ],
 
     /*

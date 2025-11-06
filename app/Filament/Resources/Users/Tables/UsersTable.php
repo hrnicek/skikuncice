@@ -15,18 +15,22 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('Jméno')
                     ->searchable(),
                 TextColumn::make('email')
-                    ->label('Email address')
+                    ->label('Emailová adresa')
                     ->searchable(),
                 TextColumn::make('email_verified_at')
+                    ->label('Datum ověření emailu')
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('created_at')
+                    ->label('Vytvořeno')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label('Upraveno')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

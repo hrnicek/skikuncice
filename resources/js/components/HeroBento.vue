@@ -5,9 +5,9 @@ import HeroNews from './HeroNews.vue'
 </script>
 
 <template>
-  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 container w-full items-start">
+  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4 container w-full items-start">
     <!-- Weather Section -->
-    <div class="flex flex-col h-full">
+    <div class="flex flex-col h-full col-span-3">
       <h2 class="text-white text-lg sm:text-xl font-bold mb-2 sm:mb-4 drop-shadow-lg">Počasí</h2>
       <HeroWeather />
     </div>
@@ -19,7 +19,7 @@ import HeroNews from './HeroNews.vue'
     </div>
 
     <!-- News Section -->
-    <div class="flex flex-col h-full col-span-2 md:col-span-2 lg:col-span-1">
+    <div class="flex flex-col h-full col-span-2 md:col-span-2 lg:col-span-2">
       <h2 class="text-white text-lg sm:text-xl font-bold mb-2 sm:mb-4 drop-shadow-lg">Aktuální informace</h2>
       <HeroNews />
     </div>
