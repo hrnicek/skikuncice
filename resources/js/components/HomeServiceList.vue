@@ -16,7 +16,7 @@ const { isWinter, isSummer } = useSeason()
 // Winter services (ski-related)
 const winterServices: Service[] = [
     {
-        title: 'SKI škola',
+        title: 'Lyžařská škola',
         description: 'Vyškolení instruktoři naučí lyžovat i ty největší sportovní antitalenty. Máme moderní dětský vlek a bezpečnou sjezdovku',
         image: '/img/services/skiskola.jpg',
         link: route('ski-school')
