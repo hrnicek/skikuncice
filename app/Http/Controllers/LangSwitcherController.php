@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class LangSwitcherController extends Controller
@@ -12,7 +13,7 @@ class LangSwitcherController extends Controller
 
         $url = LaravelLocalization::getLocalizedURL($locale, url()->previous(), [], true);
 
-        return redirect($url);
+        return Inertia::location($url);
 
     }
 }

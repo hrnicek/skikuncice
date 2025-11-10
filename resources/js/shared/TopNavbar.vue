@@ -30,14 +30,13 @@ const languages = [
 ]
 
 watch(currentLanguage, () => {
-  switchLanguage(currentLanguage.value)
+  switchLanguage(<string>currentLanguage.value)
 })
 
 const switchLanguage = (language: string) => {
-   router.visit(`/set-lang/${language}`, {
-    onSuccess: () => {
-      router.reload()
-    }
+   router.get(`/set-lang/${language}`, {
+     preserveState: false,
+     preserveScroll: true
    })
 }
 
