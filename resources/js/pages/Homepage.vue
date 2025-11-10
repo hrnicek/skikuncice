@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
 import Hero from '@/components/Hero.vue';
+import NearnestEventSection from '@/components/NearnestEventSection.vue';
 import EventsSection from '@/components/EventsSection.vue';
 import HomeServiceList from '@/components/HomeServiceList.vue';
 import PartnersSection from '@/components/PartnersSection.vue';
@@ -10,6 +11,7 @@ import CallToActionScholl from '@/components/CallToActionScholl.vue';
 
 defineProps<{
   events: Array<any>;
+  nearestEvent: any;
 }>();
 
 </script>
@@ -17,6 +19,7 @@ defineProps<{
 <template>
   <AppLayout>
     <Hero />
+    <NearnestEventSection v-if="nearestEvent" :event="nearestEvent" />
     <HomeServiceList />
     <EventsSection :events="events" />
     <HomeRestaurantSection />

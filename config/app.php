@@ -78,11 +78,24 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'cs'),
 
-    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+    /*
+    |--------------------------------------------------------------------------
+    | Application Available Locale Configuration
+    |--------------------------------------------------------------------------
+    |
+    | The application locale determines the available locales that will be used
+    | by the translation service provider. You are free to set this array
+    | to any of the locales which will be supported by the application.
+    |
+    */
 
-    'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
+    'available_locales' => ['cs', 'pl'],
+
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'cs'),
+
+    'faker_locale' => env('APP_FAKER_LOCALE', 'cs_CZ'),
 
     /*
     |--------------------------------------------------------------------------

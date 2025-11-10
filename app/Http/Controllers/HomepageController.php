@@ -25,10 +25,13 @@ class HomepageController extends Controller
             ->take(3)
             ->get();
 
+        $nearestEvent = Event::nearnest()->first();
+
         return inertia('Homepage', [
             'weather' => $weather,
             'latestPost' => $latestPost ? PostData::fromModel($latestPost) : null,
             'events' => EventData::collect($events),
+            'nearestEvent' => $nearestEvent ? EventData::fromModel($nearestEvent) : null,
         ]);
     }
 

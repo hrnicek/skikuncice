@@ -76,8 +76,8 @@ class Event extends Model implements HasMedia
         return $query->where('date_from', '<=', now())->where('date_to', '>=', now());
     }
 
-    public function scopeFuture($query): Builder
+    public function scopeNearnest($query): Builder
     {
-        return $query->where('date_from', '>=', now());
+        return $query->where('date_from', '>', now())->orderBy('date_from');
     }
 }
