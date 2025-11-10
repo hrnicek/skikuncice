@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cf325569a297fdeb5968e00e59ad39b",
+    "content-hash": "4d887965448a41796756a119460a78a3",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -124,6 +124,91 @@
                 "source": "https://github.com/archtechx/enums/tree/v1.1.2"
             },
             "time": "2025-06-06T23:15:09+00:00"
+        },
+        {
+            "name": "astrotomic/laravel-translatable",
+            "version": "v11.16.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Astrotomic/laravel-translatable.git",
+                "reference": "3edd5a3083b45948942af83903845954c3352652"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Astrotomic/laravel-translatable/zipball/3edd5a3083b45948942af83903845954c3352652",
+                "reference": "3edd5a3083b45948942af83903845954c3352652",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0 || ^10.0 || ^11.0 || ^12.0",
+                "illuminate/database": "^9.0 || ^10.0 || ^11.0 || ^12.0",
+                "illuminate/support": "^9.0 || ^10.0 || ^11.0 || ^12.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.0 || ^3.0",
+                "laravel/legacy-factories": "^1.0.4",
+                "laravel/pint": "^1.0",
+                "mockery/mockery": "^1.3.3",
+                "orchestra/testbench": "^7.0 || ^8.0 || ^9.0 || ^10.0",
+                "phpunit/phpunit": "^10.0 || ^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Astrotomic\\Translatable\\TranslatableServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Astrotomic\\Translatable\\": "src/Translatable/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tom Witkowski",
+                    "email": "gummibeer@astrotomic.info",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dimitrios Savvopoulos",
+                    "email": "ds@dimsav.com",
+                    "homepage": "http://dimsav.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel package for multilingual models",
+            "homepage": "https://astrotomic.info",
+            "keywords": [
+                "database",
+                "language",
+                "laravel",
+                "translation"
+            ],
+            "support": {
+                "docs": "https://docs.astrotomic.info/laravel-translatable",
+                "email": "dev@astrotomic.info",
+                "issues": "https://github.com/Astrotomic/laravel-translatable/issues",
+                "source": "https://github.com/Astrotomic/laravel-translatable"
+            },
+            "funding": [
+                {
+                    "url": "https://forest.astrotomic.info",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Gummibeer",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-07-09T14:05:02+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2179,6 +2264,84 @@
                 "source": "https://github.com/filamentphp/filament"
             },
             "time": "2025-10-21T10:01:25+00:00"
+        },
+        {
+            "name": "filamerce/filament-translatable",
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filamerce/filament-translatable.git",
+                "reference": "bf273d70e1d1fd96dc3d39c91aaeacef7c20a696"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filamerce/filament-translatable/zipball/bf273d70e1d1fd96dc3d39c91aaeacef7c20a696",
+                "reference": "bf273d70e1d1fd96dc3d39c91aaeacef7c20a696",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^4.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "astrotomic/laravel-translatable": "^11.16",
+                "larastan/larastan": "^3.0",
+                "laravel/pint": "^1.0",
+                "orchestra/testbench": "^9.14|^10.0",
+                "pestphp/pest": "^3.0",
+                "pestphp/pest-plugin-laravel": "^3.0",
+                "pestphp/pest-plugin-livewire": "^3.0"
+            },
+            "suggest": {
+                "astrotomic/laravel-translatable": "Alternative way for handling translations in Laravel using separate database tables.",
+                "spatie/laravel-translatable": "For handling translations in Laravel using JSON fields."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Filamerce\\FilamentTranslatable\\FilamentTranslatableServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Filamerce\\FilamentTranslatable\\": "src/",
+                    "Filamerce\\FilamentTranslatable\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bartlomiej Gajda",
+                    "email": "code@webard.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Highly customizable Translation component for FilamentPHP.",
+            "homepage": "https://github.com/filamerce/filament-translatable",
+            "keywords": [
+                "astrotomic-translatable",
+                "filament",
+                "filament-translatable",
+                "filament-translate-field",
+                "filamentphp",
+                "filamerce",
+                "laravel",
+                "laravel-translatable",
+                "locale",
+                "spatie-translatable",
+                "translations",
+                "webard"
+            ],
+            "support": {
+                "issues": "https://github.com/filamerce/filament-translatable/issues",
+                "source": "https://github.com/filamerce/filament-translatable"
+            },
+            "time": "2025-10-23T19:35:38+00:00"
         },
         {
             "name": "fruitcake/php-cors",

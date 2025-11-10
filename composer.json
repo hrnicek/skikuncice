@@ -7,9 +7,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "astrotomic/laravel-translatable": "^11.16",
         "filament/filament": "^4.0",
         "filament/spatie-laravel-media-library-plugin": "^4.0",
         "filament/spatie-laravel-settings-plugin": "^4.0",
+        "filamerce/filament-translatable": "^3.1",
         "honeystone/laravel-seo": "^2.0",
         "inertiajs/inertia-laravel": "^2.0",
         "laravel-lang/common": "^6.7",
