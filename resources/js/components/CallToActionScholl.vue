@@ -8,7 +8,6 @@ import { Motion } from 'motion-v'
   <section class="relative overflow-hidden bg-gradient-to-br from-white to-gray-50">
     <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-12 lg:px-8">
       
-      <!-- Text -->
       <Motion
         :initial="{ opacity: 0, y: 40 }"
         :whileInView="{ opacity: 1, y: 0 }"
@@ -31,13 +30,13 @@ import { Motion } from 'motion-v'
 
         <div class="mt-10 flex flex-wrap items-center gap-4">
           <Button as-child size="lg" class="shadow-md hover:shadow-lg transition-all duration-300">
-            <Link href="/kontakt">Kontaktujte nás</Link>
+            <Link :href="route('contact')">Kontaktujte nás</Link>
           </Button>
           <Link 
-            href="/o-nas"
+            :href="route('about')"
             class="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors"
           >
-            Více o nás →
+            Více o nás
           </Link>
         </div>
       </Motion>
