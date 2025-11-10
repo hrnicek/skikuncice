@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Filamerce\FilamentTranslatable\Traits\AstrotomicTranslatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
@@ -9,16 +11,22 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
-class Post extends Model implements HasMedia
+class Post extends Model implements HasMedia, TranslatableContract
 {
+    use AstrotomicTranslatable;
     use HasFactory;
     use HasSlug;
     use InteractsWithMedia;
 
+    protected $with = ['translations'];
+
     protected $fillable = [
+        'published_at',
+    ];
+
+    public $translatedAttributes = [
         'title',
         'content',
-        'published_at',
     ];
 
     public function casts(): array

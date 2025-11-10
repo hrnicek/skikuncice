@@ -24,3 +24,6 @@ Homestead.yaml
 Thumbs.db
 AGENTS.md
 public/sitemap.xml
+lang/php_pl.json
+lang/php_en.json
+lang/php_cs.json

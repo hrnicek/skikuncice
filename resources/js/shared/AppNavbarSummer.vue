@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { trans, wTrans } from 'laravel-vue-i18n'
 import { Link } from '@inertiajs/vue3'
 import {
   NavigationMenu,
@@ -13,36 +14,31 @@ import {
 // Main navigation items based on the provided structure
 const mainItems: { title: string, href: string, description: string }[] = [
   {
-    title: "Léto",
+    title: wTrans('navbar.summer'),
     href: "/leto",
     description: "Letní aktivity a služby v areálu.",
-  },
-  {
-    title: "Region Kunčice",
-    href: "/region-kuncice",
-    description: "Informace o regionu Kunčice pod Ondřejníkem.",
   },
 ]
 
 // Vacation tips for different groups
 const vacationTips: { title: string, href: string, description: string }[] = [
   {
-    title: "Tipy na dovolenou pro rodiny s dětmi",
+    title: wTrans('navbar.tips_for_families'),
     href: "/tipy-rodiny-deti",
     description: "Doporučení pro rodinnou dovolenou s dětmi.",
   },
   {
-    title: "Tipy na dovolenou pro seniory",
+    title: wTrans('navbar.tips_for_seniors'),
     href: "/tipy-seniory",
     description: "Speciální nabídka pro starší návštěvníky.",
   },
   {
-    title: "Tipy na dovolenou pro zamilovaný pár",
+    title: wTrans('navbar.tips_for_couples'),
     href: "/tipy-zamilovany-par",
     description: "Romantické tipy pro páry.",
   },
   {
-    title: "Tipy na dovolenou pro partu mladých",
+    title: wTrans('navbar.tips_for_youth'),
     href: "/tipy-partu-mladych",
     description: "Aktivity pro skupiny mladých lidí.",
   },
@@ -51,42 +47,42 @@ const vacationTips: { title: string, href: string, description: string }[] = [
 // Additional services and activities
 const additionalServices: { title: string, href: string, description: string }[] = [
   {
-    title: "Webkamery",
+    title: wTrans('navbar.webcams'),
     href: "/webkamery",
     description: "Živé záběry z webkamer v areálu.",
   },
   {
-    title: "Kalendář akcí",
+    title: wTrans('navbar.events_calendar'),
     href: "/kalendar-akci",
     description: "Letní akce a události v areálu.",
   },
   {
-    title: "Aktivity",
+    title: wTrans('navbar.activities'),
     href: "/aktivity",
     description: "Všechny dostupné letní aktivity.",
   },
   {
-    title: "Zajímavé cíle v regionu",
+    title: wTrans('navbar.interesting_places'),
     href: "/zajimave-cile-regionu",
     description: "Turistické atrakce v okolí.",
   },
   {
-    title: "Cyklovýlety",
+    title: wTrans('navbar.bike_trips'),
     href: "/cyklovylety",
     description: "Cyklistické trasy a výlety.",
   },
   {
-    title: "Koloběžky",
+    title: wTrans('navbar.scooters'),
     href: "/kolobezky",
     description: "Půjčovna a trasy pro koloběžky.",
   },
   {
-    title: "Agroturistika",
+    title: wTrans('navbar.agrotourism'),
     href: "/agroturistika",
     description: "Agroturistické služby a farma.",
   },
   {
-    title: "Cyklocentrum",
+    title: wTrans('navbar.bike_center'),
     href: "/cyklocentrum",
     description: "Centrum pro cyklisty a servis.",
   },
@@ -100,7 +96,7 @@ const additionalServices: { title: string, href: string, description: string }[]
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
           <Link href="/" :class="navigationMenuTriggerStyle()">
-            Úvod
+            {{ trans('navbar.home') }}
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
@@ -116,7 +112,7 @@ const additionalServices: { title: string, href: string, description: string }[]
 
       <!-- Vacation Tips -->
       <NavigationMenuItem>
-        <NavigationMenuTrigger>Tipy na dovolenou</NavigationMenuTrigger>
+        <NavigationMenuTrigger>{{ trans('navbar.vacation_tips') }}</NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
             <li v-for="tip in vacationTips" :key="tip.title">
@@ -138,7 +134,7 @@ const additionalServices: { title: string, href: string, description: string }[]
 
       <!-- Additional Services & Activities -->
       <NavigationMenuItem>
-        <NavigationMenuTrigger>Služby a aktivity</NavigationMenuTrigger>
+        <NavigationMenuTrigger>{{ trans('navbar.services_and_activities') }}</NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
             <li v-for="service in additionalServices" :key="service.title">
@@ -162,7 +158,7 @@ const additionalServices: { title: string, href: string, description: string }[]
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
           <Link href="/ubytovani" :class="navigationMenuTriggerStyle()">
-            Ubytování
+            {{ trans('navbar.accommodation') }}
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
@@ -171,7 +167,7 @@ const additionalServices: { title: string, href: string, description: string }[]
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
           <Link href="/restaurace" :class="navigationMenuTriggerStyle()">
-            Restaurace
+            {{ trans('navbar.restaurant') }}
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
@@ -180,7 +176,7 @@ const additionalServices: { title: string, href: string, description: string }[]
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
           <Link href="/kontakt" :class="navigationMenuTriggerStyle()">
-            Kontakt
+            {{ trans('navbar.contact') }}
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>

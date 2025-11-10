@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { trans, wTrans } from 'laravel-vue-i18n'
 import { Link } from '@inertiajs/vue3'
 import {
   NavigationMenu,
@@ -12,37 +13,37 @@ import {
 
 const arealItems: { title: string, href: string, description: string }[] = [
    {
-    title: "O nás",
+    title: wTrans('navbar.about_us'),
     href: "/o-arealu",
     description: "Nejdelší historie v Králickém Sněžníku.",
   },
   {
-    title: "Provozní doba",
+    title: wTrans('navbar.operating_hours'),
     href: "/provozni-doba",
     description: "Informace o otevíracích hodinách areálu.",
   },
     {
-    title: "Kalendář akcí",
+    title: wTrans('navbar.events_calendar'),
     href: "/kalendar-akci",
     description: "Zimní akce a události v areálu.",
   },
   {
-    title: "Mapa areálu",
+    title: wTrans('navbar.area_map'),
     href: "/mapa-arealu",
     description: "Interaktivní mapa lyžařského areálu.",
   },
   {
-    title: "Webkamery",
+    title: wTrans('navbar.webcams'),
     href: "/webkamery",
     description: "Živé záběry z webkamer v areálu.",
   },
   {
-    title: "Fotogalerie",
+    title: wTrans('navbar.photo_gallery'),
     href: "/fotogalerie",
     description: "Fotografie z areálu a zimních aktivit.",
   },
   {
-    title: "Videa",
+    title: wTrans('navbar.videos'),
     href: "/videa",
     description: "Videa z lyžování a zimních aktivit.",
   },
@@ -50,55 +51,55 @@ const arealItems: { title: string, href: string, description: string }[] = [
 
 const services: { title: string, href: string, description: string, image: string }[] = [
   {
-    title: "Lyžařská škola",
+    title: wTrans('navbar.ski_school'),
     href: "/lyzarska-skola",
     description: "Kurzy lyžování pro všechny úrovně.",
     image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=32&h=32&fit=crop&crop=center",
   },
   {
-    title: "Půjčovna lyží",
+    title: wTrans('navbar.ski_rental'),
     href: "/pujcovna-lyzi",
     description: "Pronájem lyží a zimního vybavení.",
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
   },
   {
-    title: "Skibus",
+    title: wTrans('navbar.skibus'),
     href: "/skibus",
     description: "Doprava do areálu v zimní sezóně.",
     image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=32&h=32&fit=crop&crop=center",
   },
   {
-    title: "Restaurace",
+    title: wTrans('navbar.restaurant'),
     href: "/restaurace",
     description: "Teplé občerstvení po lyžování.",
     image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=32&h=32&fit=crop&crop=center",
   },
   {
-    title: "Centrum služeb turistům",
+    title: wTrans('navbar.tourist_service_center'),
     href: "/centrum-sluzeb-turistum",
     description: "Informace a služby pro zimní turisty.",
     image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=32&h=32&fit=crop&crop=center",
   },
   {
-    title: "Dětský snowpark",
+    title: wTrans('navbar.children_snowpark'),
     href: "/detsky-raj",
     description: "Zimní aktivity pro děti.",
     image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=32&h=32&fit=crop&crop=center",
   },
   {
-    title: "Běžky",
+    title: wTrans('navbar.cross_country_skiing'),
     href: "/bezky",
     description: "Běžecké lyžování a trasy.",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=32&h=32&fit=crop&crop=center",
   },
   {
-    title: "Snowpark",
+    title: wTrans('navbar.snowpark'),
     href: "/snowpark",
     description: "Snowpark pro freeride a freestyle.",
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
   },
   {
-    title: "Večerní lyžování",
+    title: wTrans('navbar.evening_skiing'),
     href: "/vecerni-lyzovani",
     description: "Lyžování pod umělým osvětlením.",
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
@@ -112,12 +113,12 @@ const services: { title: string, href: string, description: string, image: strin
         <NavigationMenuItem>
         <NavigationMenuLink as-child>
           <Link href="/" :class="navigationMenuTriggerStyle()">
-            Úvod
+            {{ trans('navbar.home') }}
           </Link>
         </NavigationMenuLink>
             </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuTrigger>O areálu</NavigationMenuTrigger>
+        <NavigationMenuTrigger>{{ trans('navbar.about_area') }}</NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] justify-items-start">
             <li v-for="item in arealItems" :key="item.title">
@@ -138,7 +139,7 @@ const services: { title: string, href: string, description: string, image: strin
       </NavigationMenuItem>
       
 <NavigationMenuItem>
-  <NavigationMenuTrigger>Zimní služby</NavigationMenuTrigger>
+  <NavigationMenuTrigger>{{ trans('navbar.winter_services') }}</NavigationMenuTrigger>
   <NavigationMenuContent>
     <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
       <li v-for="service in services" :key="service.title">
@@ -161,14 +162,14 @@ const services: { title: string, href: string, description: string, image: strin
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
           <Link href="/ubytovani" :class="navigationMenuTriggerStyle()">
-            Ubytování
+            {{ trans('navbar.accommodation') }}
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
           <Link href="/kontakt" :class="navigationMenuTriggerStyle()">
-            Kontakt
+            {{ trans('navbar.contact') }}
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>

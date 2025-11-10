@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import SeasonToggle from '@/components/SeasonToggle.vue';
 import { Mail } from 'lucide-vue-next'
+import { router, usePage } from '@inertiajs/vue3'
 
-const currentLanguage = ref('cs')
+const currentLocale = usePage().props.locale
+
+const currentLanguage = ref(currentLocale)
 
 const languages = [
   {
@@ -25,6 +28,14 @@ const languages = [
     </svg>`
   }
 ]
+
+watch(currentLanguage, () => {
+  switchLanguage(currentLanguage.value)
+})
+
+const switchLanguage = (language: string) => {
+   router.visit(`/set-lang/${language}`)
+}
 
 </script>
 

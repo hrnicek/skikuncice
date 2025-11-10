@@ -7,6 +7,7 @@ use App\Services\WeatherService;
 use App\Settings\WeatherSettings;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -46,6 +47,8 @@ class HandleInertiaRequests extends Middleware
 
         return [
             ...parent::share($request),
+            'locale' => LaravelLocalization::getCurrentLocale(),
+            'available_locales' => config('app.available_locales'),
             'season' => [
                 'current' => $currentSeason,
                 'label' => $seasonService->getSeasonLabel($currentSeason),

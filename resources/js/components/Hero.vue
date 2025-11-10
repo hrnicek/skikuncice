@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import HeroBento from './HeroBento.vue'
 import { useSeason } from '@/composables/useSeason'
+import { trans } from 'laravel-vue-i18n'
 
 const { isWinter } = useSeason()
 
@@ -12,13 +13,13 @@ const backgroundImage = computed(() => {
 const heroContent = computed(() => {
   if (isWinter.value) {
     return {
-      title: 'Lyžovačka pro celou rodinu',
-      subtitle: 'Za perfektní lyžovačkou nemusíte do Alp'
+      title: trans('hero.winter.title'),
+      subtitle: trans('hero.winter.subtitle')
     }
   } else {
     return {
-      title: 'Letní aktivity pro celou rodinu',
-      subtitle: 'Objevte krásy Jeseníků i v létě'
+      title: trans('hero.summer.title'),
+      subtitle: trans('hero.summer.subtitle')
     }
   }
 })
