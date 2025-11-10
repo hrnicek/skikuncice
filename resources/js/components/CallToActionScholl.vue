@@ -1,0 +1,66 @@
+<script setup>
+import { Button } from '@/components/ui/button'
+import { Link } from '@inertiajs/vue3'
+import { Motion } from 'motion-v'
+</script>
+
+<template>
+  <section class="relative overflow-hidden bg-gradient-to-br from-white to-gray-50">
+    <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-12 lg:px-8">
+      
+      <!-- Text -->
+      <Motion
+        :initial="{ opacity: 0, y: 40 }"
+        :whileInView="{ opacity: 1, y: 0 }"
+        :transition="{ duration: 0.6, ease: 'easeOut' }"
+        :viewport="{ once: true }"
+        class="lg:w-1/2"
+      >
+        <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+          Lyžařské kurzy pro školy
+        </h2>
+        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+          Zajistíme kompletní organizaci vašich školních lyžařských kurzů. 
+          Vy se soustřeďte na výuku – my se postaráme o 
+          <span class="font-medium text-gray-900">ubytování</span>, 
+          <span class="font-medium text-gray-900">stravu</span>, 
+          <span class="font-medium text-gray-900">instruktory</span> i 
+          <span class="font-medium text-gray-900">dopravu</span>.
+          Vydejte se na hory bez jediné starosti.
+        </p>
+
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <Button as-child size="lg" class="shadow-md hover:shadow-lg transition-all duration-300">
+            <Link href="/kontakt">Kontaktujte nás</Link>
+          </Button>
+          <Link 
+            href="/o-nas"
+            class="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors"
+          >
+            Více o nás →
+          </Link>
+        </div>
+      </Motion>
+
+      <!-- Image -->
+      <Motion
+        :initial="{ opacity: 0, scale: 0.95 }"
+        :whileInView="{ opacity: 1, scale: 1 }"
+        :transition="{ duration: 0.6, delay: 0.2, ease: 'easeOut' }"
+        :viewport="{ once: true }"
+        class="relative mt-16 lg:mt-0 lg:w-1/2"
+      >
+        <div class="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-gray-200">
+          <img 
+            src="/img/cta-skoly.jpg" 
+            alt="Lyžařské kurzy pro školy" 
+            class="h-80 w-full object-cover lg:h-full"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+        </div>
+      </Motion>
+
+    </div>
+  </section>
+</template>

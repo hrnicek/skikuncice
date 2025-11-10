@@ -14,4 +14,9 @@ class Album extends Model implements HasMedia
         'title',
         'description',
     ];
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('photos');
+    }
 }

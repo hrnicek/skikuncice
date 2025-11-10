@@ -6,6 +6,7 @@ use App\Filament\Pages\ManageWeather;
 use App\Filament\Resources\Accommodations\AccommodationResource;
 use App\Filament\Resources\Events\EventResource;
 use App\Filament\Resources\Posts\PostResource;
+use App\Filament\Resources\RestaurantMenus\RestaurantMenuResource;
 use App\Filament\Resources\Users\UserResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -86,6 +87,13 @@ class AdminPanelProvider extends PanelProvider
                         ->url(ManageWeather::getUrl())
                         ->icon('heroicon-o-sun')
                         ->sort(1),
+                ]),
+        ]);
+
+        $builder->groups([
+            NavigationGroup::make('Restaurace')
+                ->items([
+                    ...RestaurantMenuResource::getNavigationItems(),
                 ]),
         ]);
 

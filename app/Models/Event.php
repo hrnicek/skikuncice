@@ -18,9 +18,12 @@ class Event extends Model implements HasMedia
 
     protected $fillable = [
         'title',
+        'perex',
         'date_from',
         'date_to',
         'published',
+        'content',
+        'program',
         'note',
     ];
 
@@ -28,6 +31,7 @@ class Event extends Model implements HasMedia
         'date_from' => 'datetime',
         'date_to' => 'datetime',
         'published' => 'boolean',
+        'program' => 'array',
     ];
 
     /**
@@ -43,7 +47,7 @@ class Event extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('image')
-            ->useFallbackUrl('https://picsum.photos/600/600')
+            ->useFallbackUrl('https://picsum.photos/800/400')
             ->singleFile();
     }
 

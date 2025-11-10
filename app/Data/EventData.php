@@ -12,6 +12,8 @@ class EventData extends Data
     public function __construct(
         public int $id,
         public string $title,
+        public ?string $slug,
+        public ?string $perex,
         public Carbon $date_from,
         public Carbon $date_to,
         public bool $published,
@@ -24,6 +26,8 @@ class EventData extends Data
         return new self(
             id: $event->id,
             title: $event->title,
+            slug: $event->slug,
+            perex: $event->perex,
             date_from: $event->date_from,
             date_to: $event->date_to,
             published: $event->published,

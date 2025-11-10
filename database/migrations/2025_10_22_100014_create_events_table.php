@@ -16,8 +16,11 @@ return new class extends Migration
             $table->string('season')->default('winter');
             $table->string('title');
             $table->string('slug')->unique();
+            $table->text('perex')->nullable();
             $table->dateTime('date_from');
             $table->dateTime('date_to');
+            $table->longText('content');
+            $table->json('program')->nullable();
             $table->boolean('published')->default(false);
             $table->text('note')->nullable();
             $table->timestamps();

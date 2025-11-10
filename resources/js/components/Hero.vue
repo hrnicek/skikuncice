@@ -27,8 +27,8 @@ const heroContent = computed(() => {
 <template>
     <div>
         <div class="relative h-screen md:h-[650px] overflow-hidden">
-            <img :src="backgroundImage" alt="úvodní fotka" class="absolute inset-0 w-full h-full object-cover">
-
+            <img v-if="!isWinter" :src="backgroundImage" alt="úvodní fotka" class="absolute inset-0 w-full h-full object-cover">
+            <video v-else src="/videos/kuncice-spot.mp4" autoplay loop muted class="absolute inset-0 w-full h-full object-cover"></video>
             <div class="absolute inset-0 bg-black/30"></div>
 
             <div class="relative container z-10 flex flex-col justify-between h-full p-4 sm:p-6 md:p-8">

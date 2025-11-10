@@ -1,13 +1,31 @@
 <script setup lang="ts">
-// Placeholder for language state - you may need to integrate with i18n library
 import { ref } from 'vue'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import SeasonToggle from '@/components/SeasonToggle.vue';
-import { Mail, Phone } from 'lucide-vue-next'
+import { Mail } from 'lucide-vue-next'
 
-const currentLanguage = ref('CZ')
+const currentLanguage = ref('cs')
 
-// TODO: Implement actual language switching logic
+const languages = [
+  {
+    code: 'cs',
+    name: 'Čeština',
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+      <rect width="900" height="600" fill="#d7141a"/>
+      <rect width="900" height="300" fill="#fff"/>
+      <path d="M 450,300 0,0 V 600 z" fill="#11457e"/>
+    </svg>`
+  },
+  {
+    code: 'pl',
+    name: 'Polski',
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10">
+      <rect width="16" height="10" fill="#fff"/>
+      <rect width="16" height="5" fill="#dc143c"/>
+    </svg>`
+  }
+]
+
 </script>
 
 <template>
@@ -29,12 +47,30 @@ const currentLanguage = ref('CZ')
 
       <!-- Right side: Language Switcher -->
       <Select v-model="currentLanguage">
-        <SelectTrigger class="w-[60px] md:w-[70px] h-8">
-          <SelectValue />
+        <SelectTrigger class="w-[70px] h-8 border-gray-200 hover:border-gray-300 focus:outline-none transition-colors">
+          <SelectValue>
+              <div
+                class="size-4 border border-gray-100"
+                v-html="languages.find(lang => lang.code === currentLanguage)?.flag"
+              >
+            </div>
+          </SelectValue>
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="CZ">CZ</SelectItem>
-          <SelectItem value="PL">PL</SelectItem>
+          <SelectItem
+            v-for="language in languages"
+            :key="language.code"
+            :value="language.code"
+            class="cursor-pointer"
+          >
+            <div class="flex items-center gap-2">
+              <div
+                class="w-5 h-4 rounded-sm overflow-hidden border border-gray-200"
+                v-html="language.flag"
+              ></div>
+              <span class="text-sm">{{ language.name }}</span>
+            </div>
+          </SelectItem>
         </SelectContent>
       </Select>
     </div>

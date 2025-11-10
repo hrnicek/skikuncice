@@ -11,6 +11,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\KidsParadiseController;
 use App\Http\Controllers\OperatingHoursController;
 use App\Http\Controllers\PhotoGalleryController;
+use App\Http\Controllers\PricingController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\SkiBusController;
@@ -25,8 +26,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomepageController::class, 'index'])->name('home');
 
 Route::get('/kalendar-akci', [EventsController::class, 'index'])->name('events.index');
-Route::get('/udalost/{event:slug', [EventsController::class, 'show'])->name('events.show');
+Route::get('/udalost/{event:slug}', [EventsController::class, 'show'])->name('events.show');
+Route::get('/kalendar-akci/archiv', [EventsController::class, 'past'])->name('events.past');
 
+Route::get('/cenik', [PricingController::class, 'index'])->name('pricing');
 Route::get('/provozni-doba', [OperatingHoursController::class, 'index'])->name('operating-hours');
 Route::get('/aktualni-pocasi', [CurrentWeatherController::class, 'index'])->name('current-weather');
 Route::get('/mapa-arealu', [AreaMapController::class, 'index'])->name('area-map');

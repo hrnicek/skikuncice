@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Events\Schemas;
 
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -19,12 +20,20 @@ class EventForm
                     TextInput::make('title')
                         ->label('Titulek')
                         ->required(),
+                    Textarea::make('perex')
+                        ->label('Perex')
+                        ->required()
+                        ->columnSpanFull(),
                     DateTimePicker::make('date_from')
                         ->label('Datum od')
                         ->required(),
                     DateTimePicker::make('date_to')
                         ->label('Datum do')
                         ->required(),
+                    RichEditor::make('content')
+                        ->label('Obsah')
+                        ->required()
+                        ->columnSpanFull(),
                     Toggle::make('published')
                         ->label('Publikováno')
                         ->required(),

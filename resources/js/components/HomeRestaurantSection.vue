@@ -10,7 +10,7 @@ import { ArrowRight } from 'lucide-vue-next';
         </div>
         <div class="container">
         <div class="grid grid-cols-12 gap-8">
-            <div class="col-span-4">
+            <div class="lg:col-span-4 col-span-12">
                 <div class="h-[500px] relative bg-primary rounded-md flex flex-col items-start text-base font-base text-foreground">
                     <img src="/img/pizza.avif" alt="Pizza" class="absolute inset-0 w-full h-full object-cover pointer-events-none rounded-md" />
                     <div class="absolute bottom-0 left-0 bg-overlay w-full text-white p-8">
@@ -32,10 +32,10 @@ import { ArrowRight } from 'lucide-vue-next';
                    </div>
                 </div>
             </div>
-            <div class="col-span-8">
+            <div class="lg:col-span-8 col-span-12">
             <div class="relative h-[500px] rounded-md container overflow-hidden mb-16">
                 <img src="/img/home/restaurace.jpg" alt="Restaurace" class="absolute inset-0 w-full h-full object-cover pointer-events-none rounded-md" />
-                <div class="absolute bottom-0 left-0 right-0 px-16 py-8 text-white bg-overlay">
+                <div class="absolute bottom-0 left-0 right-0 px-4 lg:px-16 px- py-8 text-white bg-overlay">
                     <div>
                         <p class="font-bold text-xl mb-3">
                             Hospoda U Rumařů

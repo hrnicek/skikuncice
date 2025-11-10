@@ -12,6 +12,8 @@ class HomepageController extends Controller
 {
     public function index()
     {
+        seo()->title('Ski Kunčice - Lyžařský areál v srdci Beskyd');
+
         $weatherService = app(WeatherService::class);
         $weather = $weatherService->getWeather();
 
@@ -27,7 +29,6 @@ class HomepageController extends Controller
             'weather' => $weather,
             'latestPost' => $latestPost ? PostData::fromModel($latestPost) : null,
             'events' => EventData::collect($events),
-            'canAccessAdmin' => auth()->check() && auth()->user()->can('access_admin'),
         ]);
     }
 

@@ -9,7 +9,7 @@ import { i18nVue } from 'laravel-vue-i18n';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 import AppLayout from './layouts/AppLayout.vue';
-import { Link, Head } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
 
 createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
@@ -21,10 +21,9 @@ createInertiaApp({
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
             .use(plugin)
+            .use(ZiggyVue, Ziggy)
             .component('AppLayout', AppLayout)
             .component('Link', Link)
-            .component('Head', Head)
-            .use(ZiggyVue, Ziggy)
             .use(i18nVue, {
                 resolve: async lang => {
                     const langs = import.meta.glob('../../lang/*.json');

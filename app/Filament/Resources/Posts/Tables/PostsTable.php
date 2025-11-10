@@ -27,16 +27,6 @@ class PostsTable
                     ->label('Datum publikování')
                     ->dateTime()
                     ->sortable(),
-                TextColumn::make('created_at')
-                    ->label('Vytvořeno')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->label('Upraveno')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

@@ -1,0 +1,50 @@
+<script setup lang="ts">
+import { computed } from 'vue';
+
+interface Photo {
+    id: number;
+    url: string;
+    alt?: string;
+}
+
+const props = defineProps<{
+    photos?: Photo[];
+}>();
+
+// Generate 12 placeholder photos
+const displayPhotos = computed(() => {
+    if (props.photos && props.photos.length > 0) {
+        return props.photos.slice(0, 8); // Limit to 12 photos
+    }
+
+    // Generate 12 placeholder photos
+    return Array.from({ length: 8 }, (_, i) => ({
+        id: i + 1,
+        url: `https://picsum.photos/300/300?random=${i + 1}`,
+        alt: `Fotografie ${i + 1}`
+    }));
+});
+</script>
+
+<template>
+    <div class="container py-12">
+        <div class="mb-6">
+            <p class="text-center text-lg mb-1 uppercase font-semibold">Sledujte nás na Instagramu</p>
+            <p class="text-center">@skikuncice</p>
+        </div>
+        <div class="grid grid-cols-8 gap-1 md:gap-2">
+            <div
+                v-for="photo in displayPhotos"
+                :key="photo.id"
+                class="aspect-square overflow-hidden bg-gray-200 rounded-sm"
+            >
+                <img
+                    :src="photo.url"
+                    :alt="photo.alt || 'Fotografie'"
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-200 cursor-pointer"
+                    loading="lazy"
+                />
+            </div>
+        </div>
+    </div>
+</template>

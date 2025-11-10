@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Accommodations\Schemas;
 
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
@@ -20,6 +21,11 @@ class AccommodationForm
                     Textarea::make('description')
                         ->label('Popis')
                         ->columnSpanFull(),
+                ]),
+                Section::make('Média')->schema([
+                    SpatieMediaLibraryFileUpload::make('image')
+                        ->label('Náhledový obrázek')
+                        ->collection('image'),
                 ]),
             ]);
     }

@@ -6,6 +6,8 @@ class ContactController extends Controller
 {
     public function index()
     {
+        seo()->title('Kontakt');
+
         return inertia('Contact');
     }
 }

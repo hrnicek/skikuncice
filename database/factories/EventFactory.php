@@ -20,9 +20,11 @@ class EventFactory extends Factory
 
         return [
             'title' => fake()->sentence(3),
+            'perex' => fake()->optional(0.8)->paragraph(),
             'date_from' => $dateFrom,
             'date_to' => fake()->dateTimeBetween($dateFrom, $dateFrom->format('Y-m-d H:i:s').' +7 days'),
             'published' => fake()->boolean(70), // 70% chance of being published
+            'content' => fake()->paragraphs(5, true),
             'note' => fake()->optional(0.8)->paragraph(),
         ];
     }
