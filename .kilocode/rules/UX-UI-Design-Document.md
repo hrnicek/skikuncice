@@ -25,6 +25,9 @@
 - **Cards**: Zaoblené rohy (rounded-4xl), stíny pro hloubku
 - **Images**: Vysoké rozlišení, overlay efekty pro text
 
+### Icons
+- use icons from lucide-vue-next
+
 ## Sitemap in Mermaid Diagram Format
 
 ```mermaid
