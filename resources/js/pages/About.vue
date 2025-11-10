@@ -13,8 +13,9 @@ import PageHeader from '@/components/PageHeader.vue';
       <!-- Hero Section -->
       <div class="text-center mb-12">
         <h1 class="text-4xl font-bold text-primary mb-4">O Skiareálu Kunčice</h1>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Skiareál Kunčice najdete na úpatí masivu Králického Sněžníku, 3 km za obcí Staré Město pod Sněžníkem, v nadmořské výšce 600 až 800 metrů. Provozní doba lanovky a vleků: 8:30 - 16:00.
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <strong>Skiareál Kunčice</strong> najdete na úpatí masivu <strong>Králického Sněžníku</strong>, 3 km za obcí <strong>Staré Město pod Sněžníkem</strong>, v nadmořské výšce <strong>600 až 800 metrů</strong>.<br>
+          <em>Provozní doba lanovky a vleků: 8:30 - 16:00.</em>
         </p>
       </div>
 

@@ -7,8 +7,8 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   title: 'Webkamera',
-  description: 'Pohled na sjezdovky',
-  link: '#'
+  description: 'Pohled na sjezdovky a areál',
+  link: route('webcams')
 })
 </script>
 
@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<Props>(), {
       <div class="text-white text-xs font-medium">{{ description }}</div>
     </div>
     <div class="mt-2 flex items-center text-orange-300 group-hover:text-orange-200 text-xs font-medium transition-colors">
-      Zobrazit kameru
+      Zobrazit živě
       <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
       </svg>
