@@ -6,7 +6,6 @@ use App\Http\Controllers\AgrotourismController;
 use App\Http\Controllers\AreaMapController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CrossCountrySkiingController;
-use App\Http\Controllers\CurrentWeatherController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\KidsParadiseController;
@@ -33,7 +32,6 @@ Route::get('/kalendar-akci/archiv', [EventsController::class, 'past'])->name('ev
 Route::get('o-arealu', [AboutController::class, 'index'])->name('about');
 Route::get('/cenik', [PricingController::class, 'index'])->name('pricing');
 Route::get('/provozni-doba', [OperatingHoursController::class, 'index'])->name('operating-hours');
-Route::get('/aktualni-pocasi', [CurrentWeatherController::class, 'index'])->name('current-weather');
 Route::get('/mapa-arealu', [AreaMapController::class, 'index'])->name('area-map');
 Route::get('/webkamery', [WebcamsController::class, 'index'])->name('webcams');
 Route::get('/fotogalerie', [PhotoGalleryController::class, 'index'])->name('photo-gallery');

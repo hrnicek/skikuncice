@@ -35,7 +35,7 @@ import { Facebook, Instagram, Youtube, MapPin, TrendingUp, Clock, Phone, Mail, M
             <li><Link :href="route('ski-rental')" class="footer-link">Půjčovna lyží</Link></li>
             <li><Link :href="route('ski-school')" class="footer-link">Lyžařská škola</Link></li>
             <li><Link :href="route('restaurant')" class="footer-link">Restaurace</Link></li>
-            <li><Link :href="route('kids-paradise')" class="footer-link">Dětský ráj</Link></li>
+            <li><Link :href="route('kids-paradise')" class="footer-link">Dětský snowpark</Link></li>
             <li><Link :href="route('cross-country-skiing')" class="footer-link">Běžky</Link></li>
             <li><Link :href="route('snowpark')" class="footer-link">Snowpark</Link></li>
             <li><Link :href="route('accommodation')" class="footer-link">Ubytování</Link></li>
@@ -48,7 +48,6 @@ import { Facebook, Instagram, Youtube, MapPin, TrendingUp, Clock, Phone, Mail, M
           <ul class="space-y-3">
             <li><Link :href="route('area-map')" class="footer-link">Mapa areálu</Link></li>
             <li><Link :href="route('webcams')" class="footer-link">Webkamery</Link></li>
-            <li><Link :href="route('current-weather')" class="footer-link">Aktuální počasí</Link></li>
             <li><Link :href="route('operating-hours')" class="footer-link">Provozní doba</Link></li>
             <li><Link :href="route('photo-gallery')" class="footer-link">Fotogalerie</Link></li>
           </ul>

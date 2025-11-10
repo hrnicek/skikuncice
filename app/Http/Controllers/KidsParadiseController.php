@@ -6,7 +6,7 @@ class KidsParadiseController extends Controller
 {
     public function index()
     {
-        seo()->title('Dětský ráj');
+        seo()->title('Dětský snowpark');
 
         return inertia('KidsParadise');
     }

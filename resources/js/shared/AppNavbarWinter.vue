@@ -80,7 +80,7 @@ const services: { title: string, href: string, description: string, image: strin
     image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=32&h=32&fit=crop&crop=center",
   },
   {
-    title: "Dětský ráj",
+    title: "Dětský snowpark",
     href: "/detsky-raj",
     description: "Zimní aktivity pro děti.",
     image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=32&h=32&fit=crop&crop=center",
