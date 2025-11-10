@@ -21,10 +21,10 @@ const arealItems: { title: string, href: string, description: string }[] = [
     href: "/provozni-doba",
     description: "Informace o otevíracích hodinách areálu.",
   },
-  {
-    title: "Aktuální počasí a sněhové podmínky",
-    href: "/aktualni-pocasi",
-    description: "Aktuální počasí a stav sněhu v areálu.",
+    {
+    title: "Kalendář akcí",
+    href: "/kalendar-akci",
+    description: "Zimní akce a události v areálu.",
   },
   {
     title: "Mapa areálu",
@@ -45,11 +45,6 @@ const arealItems: { title: string, href: string, description: string }[] = [
     title: "Videa",
     href: "/videa",
     description: "Videa z lyžování a zimních aktivit.",
-  },
-  {
-    title: "Kalendář akcí",
-    href: "/kalendar-akci",
-    description: "Zimní akce a události v areálu.",
   },
 ]
 
