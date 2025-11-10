@@ -11,6 +11,11 @@ import {
 } from "@/components/ui/navigation-menu"
 
 const arealItems: { title: string, href: string, description: string }[] = [
+   {
+    title: "O nás",
+    href: "/o-arealu",
+    description: "Nejdelší historie v Králickém Sněžníku.",
+  },
   {
     title: "Provozní doba",
     href: "/provozni-doba",

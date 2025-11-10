@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccommodationController;
 use App\Http\Controllers\AgrotourismController;
 use App\Http\Controllers\AreaMapController;
@@ -29,6 +30,7 @@ Route::get('/kalendar-akci', [EventsController::class, 'index'])->name('events.i
 Route::get('/udalost/{event:slug}', [EventsController::class, 'show'])->name('events.show');
 Route::get('/kalendar-akci/archiv', [EventsController::class, 'past'])->name('events.past');
 
+Route::get('o-arealu', [AboutController::class, 'index'])->name('about');
 Route::get('/cenik', [PricingController::class, 'index'])->name('pricing');
 Route::get('/provozni-doba', [OperatingHoursController::class, 'index'])->name('operating-hours');
 Route::get('/aktualni-pocasi', [CurrentWeatherController::class, 'index'])->name('current-weather');
