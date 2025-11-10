@@ -28,7 +28,7 @@ const displayPhotos = computed(() => {
 
 <template>
     <div class="container py-12">
-        <div class="mb-6">
+        <div class="mb-6 text-center">
             <p class="text-center text-lg mb-1 uppercase font-semibold">Sledujte nás na Instagramu</p>
             <a href="https://www.instagram.com/skiareal_kuncice/" target="_blank" class="text-center hover:underline">@skiareal_kuncice</a>
         </div>
