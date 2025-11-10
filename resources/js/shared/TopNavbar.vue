@@ -34,7 +34,11 @@ watch(currentLanguage, () => {
 })
 
 const switchLanguage = (language: string) => {
-   router.visit(`/set-lang/${language}`)
+   router.visit(`/set-lang/${language}`, {
+    onSuccess: () => {
+      router.reload()
+    }
+   })
 }
 
 </script>
