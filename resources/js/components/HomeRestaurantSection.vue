@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-vue-next';
 
 </script>
@@ -44,8 +45,12 @@ import { ArrowRight } from 'lucide-vue-next';
                     <div class="max-w-xl">
                         Během dne stráveného na svahu budete potřebovat nabrat síly a dostatečně se osvěžit. Využijte některé z našich gastro zařízení, které máte ve skiareálu Kunčice přímo u sjezdovek!
                     </div>
-                    <div>
-
+                    <div class="mt-3">
+                        <Button variant="outline" as-child>
+                            <Link :href="route('restaurant')">
+                                Více informací
+                            </Link>
+                        </Button>
                     </div>
                 </div>
             </div>
