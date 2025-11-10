@@ -30,7 +30,7 @@ const displayPhotos = computed(() => {
     <div class="container py-12">
         <div class="mb-6">
             <p class="text-center text-lg mb-1 uppercase font-semibold">Sledujte nás na Instagramu</p>
-            <p class="text-center">@skikuncice</p>
+            <a href="https://www.instagram.com/skiareal_kuncice/" target="_blank" class="text-center hover:underline">@skiareal_kuncice</a>
         </div>
         <div class="grid grid-cols-8 gap-1 md:gap-2">
             <div
