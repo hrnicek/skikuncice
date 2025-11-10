@@ -36,7 +36,7 @@ const route = (window as any).route;
           Nejbližší akce
         </h2>
 
-        <div class="bg-card rounded-4xl border p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-card rounded-md border p-6 shadow-sm hover:shadow-md transition-shadow">
           <div class="flex flex-col md:flex-row gap-6">
             <!-- Obrázek -->
             <div class="flex-shrink-0">
