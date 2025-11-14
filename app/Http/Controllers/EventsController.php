@@ -11,7 +11,7 @@ class EventsController extends Controller
     {
         seo()->title('Kalendář akcí');
 
-        $events = Event::with('media')->upcoming()->get();
+        $events = Event::season()->with('media')->upcoming()->get();
 
         return inertia('Events/Index', [
             'events' => $events,
@@ -20,6 +20,10 @@ class EventsController extends Controller
 
     public function show(Event $event)
     {
+        if (! $event->published) {
+            abort(404);
+        }
+
         seo()->title($event->title);
 
         $event->load('media');

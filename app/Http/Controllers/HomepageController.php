@@ -18,14 +18,14 @@ class HomepageController extends Controller
         $weather = $weatherService->getWeather();
 
         $latestPost = Post::query()->latest('published_at')->first();
-        $events = Event::published()
+        $events = Event::season()->published()
             ->upcoming()
             ->orderBy('date_from')
             ->with('media')
             ->take(3)
             ->get();
 
-        $nearestEvent = Event::nearnest()->first();
+        $nearestEvent = Event::season()->nearnest()->first();
 
         return inertia('Homepage', [
             'weather' => $weather,

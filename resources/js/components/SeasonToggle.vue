@@ -28,9 +28,8 @@ const setSeason = async (seasonType: 'winter' | 'summer') => {
   router.visit('/api/season/set', {
     method: 'post',
     data: { season: seasonType },
-    preserveState: true,
+    preserveState: false,
     preserveScroll: true,
-    only: ['season'],
     onSuccess: () => {
       console.log('Sezóna změněna na:', seasonType)
     },

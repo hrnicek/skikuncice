@@ -36,7 +36,7 @@ watch(currentLanguage, () => {
 const switchLanguage = (language: string) => {
    router.get(`/set-lang/${language}`, {
      preserveState: false,
-     preserveScroll: true
+     preserveScroll: true,  
    })
 }
 

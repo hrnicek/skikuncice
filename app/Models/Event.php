@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasSeason;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,6 +14,7 @@ use Spatie\Sluggable\SlugOptions;
 class Event extends Model implements HasMedia
 {
     use HasFactory;
+    use HasSeason;
     use HasSlug;
     use InteractsWithMedia;
 
