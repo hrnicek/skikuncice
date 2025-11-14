@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
 import PageHeader from '@/components/PageHeader.vue';
+import { trans } from 'laravel-vue-i18n';
 </script>
 
 <template>
   <AppLayout>
     <PageHeader
-      title="Běžky"
-      subtitle="Běžecké lyžování"
+      :title="trans('cross_country_skiing.page_header.title')"
+      :subtitle="trans('cross_country_skiing.page_header.subtitle')"
     />
     <div class="container">
       <div>
         <p>
-          V oblasti Králický Sněžník se při dobrých podmínkách upravuje 60 km dobře značených běžkařských tras pro klasiku i bruslení. Úpravu tras zajišťuje město Staré Město pod Sněžníkem. Nejdelší trasa pokračuje až do Orlických hor. Nad skiareálem Kunčice vede upravená trasa, svezte se na vrchol naší pohodlnou čtyřsedačkovou lanovkou.
+          {{ trans('cross_country_skiing.content') }}
         </p>
       </div>
     </div>

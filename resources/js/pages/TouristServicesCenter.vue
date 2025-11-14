@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
 import PageHeader from '@/components/PageHeader.vue';
+import { trans } from 'laravel-vue-i18n';
 </script>
 
 <template>
   <AppLayout>
     <PageHeader
-      title="Centrum služeb turistům"
-      subtitle="Informace a služby pro turisty"
+      :title="trans('tourist_services_center.page_header.title')"
+      :subtitle="trans('tourist_services_center.page_header.subtitle')"
     />
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <p>Informace a služby pro turisty.</p>
+      <p>{{ trans('tourist_services_center.content') }}</p>
     </div>
   </AppLayout>
 </template>

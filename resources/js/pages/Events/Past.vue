@@ -2,6 +2,7 @@
 import PageHeader from '@/components/PageHeader.vue';
 import AppLayout from '@/layouts/AppLayout.vue';
 import CardEvent from '@/components/CardEvent.vue';
+import { trans } from 'laravel-vue-i18n';
 
 defineProps<{
     events: Array<any>;
@@ -11,7 +12,7 @@ defineProps<{
 
 <template>
     <AppLayout>
-        <PageHeader title="Kalendář akcí - archiv" subtitle="Přehled všech probělých akcí a událostí" />
+        <PageHeader :title="trans('events.past.page_header.title')" :subtitle="trans('events.past.page_header.subtitle')" />
         <div class="container py-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <CardEvent

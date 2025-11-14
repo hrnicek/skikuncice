@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { trans } from 'laravel-vue-i18n';
 
 interface Event {
   id: number;
@@ -39,10 +40,10 @@ const formatTime = (dateString: string) => {
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="text-center mb-12">
         <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
-          Kalendář akcí
+          {{ trans('kalendar_akci.title') }}
         </h1>
         <p class="text-muted-foreground text-lg">
-          Všechny naše nadcházející události a aktivity
+          {{ trans('kalendar_akci.subtitle') }}
         </p>
       </div>
 
@@ -58,11 +59,11 @@ const formatTime = (dateString: string) => {
             </h3>
             <div class="text-sm text-muted-foreground space-y-1">
               <p>
-                <span class="font-medium">Datum:</span>
+                <span class="font-medium">{{ trans('kalendar_akci.date') }}:</span>
                 {{ formatDate(event.date_from) }}
               </p>
               <p>
-                <span class="font-medium">Čas:</span>
+                <span class="font-medium">{{ trans('kalendar_akci.time') }}:</span>
                 {{ formatTime(event.date_from) }} - {{ formatTime(event.date_to) }}
               </p>
             </div>
@@ -76,7 +77,7 @@ const formatTime = (dateString: string) => {
 
       <div v-if="events.length === 0" class="text-center py-12">
         <p class="text-muted-foreground text-lg">
-          Momentálně nejsou naplánované žádné akce.
+          {{ trans('kalendar_akci.no_events') }}
         </p>
       </div>
     </div>

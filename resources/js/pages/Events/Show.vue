@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
 import { Calendar, Clock, MapPin, Info } from 'lucide-vue-next';
+import { trans } from 'laravel-vue-i18n';
 
 interface Event {
     id: number;
@@ -92,7 +93,7 @@ const isSameDay = () => {
                         <Info class="w-5 h-5 text-amber-600 dark:text-amber-400 mt-0.5 shrink-0" />
                         <div>
                             <h3 class="font-semibold text-amber-800 dark:text-amber-200 mb-2">
-                                Důležité informace
+                                {{ trans('events.show.important_info') }}
                             </h3>
                             <div v-html="event.note" class="text-amber-700 dark:text-amber-300 leading-relaxed"></div>
                         </div>
@@ -104,12 +105,12 @@ const isSameDay = () => {
             <div class="space-y-6">
                 <!-- Event Info Card -->
                 <div class="bg-card rounded-xl border p-6 shadow-sm">
-                    <h3 class="text-lg font-semibold mb-4 text-primary">Informace o akci</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-primary">{{ trans('events.show.event_info') }}</h3>
                     <div class="space-y-4">
                         <div class="flex items-start gap-3">
                             <Calendar class="w-5 h-5 text-[#081f54] mt-0.5 shrink-0" />
                             <div>
-                                <div class="font-medium">Datum</div>
+                                <div class="font-medium">{{ trans('events.show.date') }}</div>
                                 <div class="text-sm text-muted-foreground">
                                     {{ formatDate(event.date_from) }}
                                     <template v-if="!isSameDay()">
@@ -122,7 +123,7 @@ const isSameDay = () => {
                         <div class="flex items-start gap-3">
                             <Clock class="w-5 h-5 text-[#081f54] mt-0.5 shrink-0" />
                             <div>
-                                <div class="font-medium">Čas</div>
+                                <div class="font-medium">{{ trans('events.show.time') }}</div>
                                 <div class="text-sm text-muted-foreground">
                                     {{ formatTime(event.date_from) }}
                                     <template v-if="isSameDay()">
@@ -135,9 +136,9 @@ const isSameDay = () => {
                         <div class="flex items-start gap-3">
                             <MapPin class="w-5 h-5 text-[#081f54] mt-0.5 shrink-0" />
                             <div>
-                                <div class="font-medium">Místo</div>
+                                <div class="font-medium">{{ trans('events.show.place') }}</div>
                                 <div class="text-sm text-muted-foreground">
-                                    Ski Kunčice
+                                    {{ trans('events.show.place_value') }}
                                 </div>
                             </div>
                         </div>

@@ -6,6 +6,7 @@ import { Link } from '@inertiajs/vue3';
 import { route } from 'ziggy-js';
 import CardEvent from '@/components/CardEvent.vue';
 import type { Event } from '@/types';
+import { trans } from 'laravel-vue-i18n';
 
 // Mock data for now - in real app this would come from API
 defineProps<{
@@ -21,10 +22,10 @@ defineProps<{
       <div class="rounded-md">
         <div class="text-left mb-6">
             <h2 class="text-3xl font-bold text-foreground mb-2">
-                Nadcházející akce
+                {{ trans('events_section.title') }}
             </h2>
             <p class="text-muted-foreground text-lg">
-                Podívejte se na naše plánované události a aktivity
+                {{ trans('events_section.subtitle') }}
             </p>
         </div>
 
@@ -38,7 +39,7 @@ defineProps<{
         <div class="text-center mt-12">
             <Button size="lg" as-child>
               <Link :href="route('events.index')">
-                    Zobrazit všechny akce
+                    {{ trans('events_section.show_all_events') }}
                     <ArrowRight class="w-5 h-5 ml-2" />
               </Link>
             </Button>

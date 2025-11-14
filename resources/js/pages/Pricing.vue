@@ -2,21 +2,22 @@
 import AppLayout from '@/layouts/AppLayout.vue';
 import PageHeader from '@/components/PageHeader.vue';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { trans } from 'laravel-vue-i18n';
 </script>
 
 <template>
   <AppLayout>
     <PageHeader
-      title="Ceník"
-      subtitle="Informace o našich cenách a službách"
+      :title="trans('pricing.page_header.title')"
+      :subtitle="trans('pricing.page_header.subtitle')"
     />
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
 
       <!-- Ceník skipasů sezona 2024/2025 -->
       <Card>
         <CardHeader>
-          <CardTitle class="text-2xl text-primary">Ceník skipasů - sezona 2025/2026</CardTitle>
-          <p class="text-muted-foreground">Ceník skipasů platný od 1. 12. 2025</p>
+          <CardTitle class="text-2xl text-primary">{{ trans('pricing.skipass.title') }}</CardTitle>
+          <p class="text-muted-foreground">{{ trans('pricing.skipass.subtitle') }}</p>
         </CardHeader>
         <CardContent>
           <div class="overflow-x-auto">
@@ -24,48 +25,48 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
               <thead>
                 <tr class="bg-gray-50">
                   <th class="border border-gray-300 px-4 py-2 text-left font-semibold"></th>
-                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold">Děti 7 až 12 let</th>
-                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold">Dospělí</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold">{{ trans('pricing.skipass.table.h1') }}</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold">{{ trans('pricing.skipass.table.h2') }}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">4 hod.</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.skipass.table.r1.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">450 Kč</td>
                   <td class="border border-gray-300 px-4 py-2">600 Kč</td>
                 </tr>
                 <tr class="bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2 font-medium">Denní (8:30 - 16:00)</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.skipass.table.r2.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">500 Kč</td>
                   <td class="border border-gray-300 px-4 py-2">700 Kč</td>
                 </tr>
                 <tr>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">50 bodů</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.skipass.table.r3.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">400 Kč</td>
                   <td class="border border-gray-300 px-4 py-2">500 Kč</td>
                 </tr>
                 <tr class="bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2 font-medium">od 14 -16 hod.</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.skipass.table.r4.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">300 Kč</td>
                   <td class="border border-gray-300 px-4 py-2">400 Kč</td>
                 </tr>
                 <tr>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">Večerní (17:30 - 20:00)</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.skipass.table.r5.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">300 Kč</td>
                   <td class="border border-gray-300 px-4 py-2">450 Kč</td>
                 </tr>
                 <tr class="bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2 font-medium">2 dny</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.skipass.table.r6.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">900 Kč</td>
                   <td class="border border-gray-300 px-4 py-2">1300 Kč</td>
                 </tr>
                 <tr>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">3 dny</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.skipass.table.r7.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">1250 Kč</td>
                   <td class="border border-gray-300 px-4 py-2">1950 Kč</td>
                 </tr>
                 <tr class="bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2 font-medium">5 dnů ze 7</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.skipass.table.r8.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">1900 Kč</td>
                   <td class="border border-gray-300 px-4 py-2">2800 Kč</td>
                 </tr>
@@ -73,7 +74,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
             </table>
           </div>
           <div class="mt-4 space-y-2 text-sm text-muted-foreground">
-            <p><strong>Děti do 6ti let včetně lyžují zdarma</strong>, senioři od 65 let včetně lyžují za jízdné pro děti od 7 do 12 let</p>
+            <p><strong v-html="trans('pricing.skipass.note')"></strong></p>
           </div>
         </CardContent>
       </Card>
@@ -81,16 +82,16 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
       <!-- Dětský lyžařský park -->
       <Card>
         <CardHeader>
-          <CardTitle class="text-xl text-primary">Dětský lyžařský park</CardTitle>
+          <CardTitle class="text-xl text-primary">{{ trans('pricing.kids_park.title') }}</CardTitle>
         </CardHeader>
         <CardContent>
           <div class="space-y-2">
-            <p><strong>Vstup do dětského lyžařského parku - dětský vlek:</strong></p>
+            <p><strong>{{ trans('pricing.kids_park.subtitle') }}</strong></p>
             <ul class="list-disc list-inside space-y-1 ml-4">
-              <li>Celý den: 150 Kč</li>
-              <li>12.00 - 16.00: 100 Kč</li>
+              <li>{{ trans('pricing.kids_park.o1') }}: 150 Kč</li>
+              <li>{{ trans('pricing.kids_park.o2') }}: 100 Kč</li>
             </ul>
-            <p class="text-sm text-muted-foreground mt-2">Platba v lyžařské škole</p>
+            <p class="text-sm text-muted-foreground mt-2">{{ trans('pricing.kids_park.note') }}</p>
           </div>
         </CardContent>
       </Card>
@@ -98,33 +99,33 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
       <!-- Rodinné skipasy -->
       <Card>
         <CardHeader>
-          <CardTitle class="text-xl text-primary">Rodinné skipasy</CardTitle>
-          <p class="text-muted-foreground">Dospělí + děti od 7 do 12 let</p>
+          <CardTitle class="text-xl text-primary">{{ trans('pricing.family_skipass.title') }}</CardTitle>
+          <p class="text-muted-foreground">{{ trans('pricing.family_skipass.subtitle') }}</p>
         </CardHeader>
         <CardContent>
           <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300">
               <thead>
                 <tr class="bg-gray-50">
-                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold">Typ</th>
-                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold">Cena</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold">{{ trans('pricing.family_skipass.table.h1') }}</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left font-semibold">{{ trans('pricing.family_skipass.table.h2') }}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">Denní - 1 Dospělý + 2 Děti</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.family_skipass.table.r1.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">1500 Kč</td>
                 </tr>
                 <tr class="bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2 font-medium">Denní - 2 Dospělí + 1 Dítě</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.family_skipass.table.r2.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">1700 Kč</td>
                 </tr>
                 <tr>
-                  <td class="border border-gray-300 px-4 py-2 font-medium">Denní - 2 Dospělí + 2 Děti</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.family_skipass.table.r3.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">2100 Kč</td>
                 </tr>
                 <tr class="bg-gray-50">
-                  <td class="border border-gray-300 px-4 py-2 font-medium">Denní - 2 Dospělí + 3 Děti</td>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.family_skipass.table.r4.c1') }}</td>
                   <td class="border border-gray-300 px-4 py-2">2400 Kč</td>
                 </tr>
               </tbody>
@@ -136,45 +137,45 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
       <!-- Lyžařské kurzy sezona 2025/2026 -->
       <Card>
         <CardHeader>
-          <CardTitle class="text-xl text-primary">Lyžařské kurzy - sezona 2025/2026</CardTitle>
-          <p class="text-muted-foreground">Jmenný seznam s razítkem školy podmínkou. Na každých 10 žáků 1 skipas pro instruktora zdarma. Uzamykatelné lyžárny zdarma.</p>
+          <CardTitle class="text-xl text-primary">{{ trans('pricing.ski_courses.title') }}</CardTitle>
+          <p class="text-muted-foreground">{{ trans('pricing.ski_courses.subtitle') }}</p>
         </CardHeader>
         <CardContent>
           <div class="grid md:grid-cols-2 gap-6">
             <!-- Bez skibusu -->
             <div>
-              <h3 class="text-lg font-semibold mb-4 text-primary">Cena bez skibusu</h3>
+              <h3 class="text-lg font-semibold mb-4 text-primary">{{ trans('pricing.ski_courses.without_bus.title') }}</h3>
               <div class="overflow-x-auto">
                 <table class="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr class="bg-gray-50">
-                      <th class="border border-gray-300 px-4 py-2 text-left font-semibold">Typ kurzu</th>
-                      <th class="border border-gray-300 px-4 py-2 text-left font-semibold">Cena</th>
+                      <th class="border border-gray-300 px-4 py-2 text-left font-semibold">{{ trans('pricing.ski_courses.table.h1') }}</th>
+                      <th class="border border-gray-300 px-4 py-2 text-left font-semibold">{{ trans('pricing.ski_courses.table.h2') }}</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 1 den</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r1.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">450 Kč</td>
                     </tr>
                     <tr class="bg-gray-50">
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 2 dny</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r2.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">850 Kč</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 3 dny</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r3.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">1180 Kč</td>
                     </tr>
                     <tr class="bg-gray-50">
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 4 dny</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r4.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">1480 Kč</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 5 dnů</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r5.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">1810 Kč</td>
                     </tr>
                     <tr class="bg-gray-50">
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 6 dnů</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r6.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">1920 Kč</td>
                     </tr>
                   </tbody>
@@ -184,38 +185,38 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
             <!-- S skibusem -->
             <div>
-              <h3 class="text-lg font-semibold mb-4 text-primary">Cena včetně skibusu</h3>
+              <h3 class="text-lg font-semibold mb-4 text-primary">{{ trans('pricing.ski_courses.with_bus.title') }}</h3>
               <div class="overflow-x-auto">
                 <table class="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr class="bg-gray-50">
-                      <th class="border border-gray-300 px-4 py-2 text-left font-semibold">Typ kurzu</th>
-                      <th class="border border-gray-300 px-4 py-2 text-left font-semibold">Cena</th>
+                      <th class="border border-gray-300 px-4 py-2 text-left font-semibold">{{ trans('pricing.ski_courses.table.h1') }}</th>
+                      <th class="border border-gray-300 px-4 py-2 text-left font-semibold">{{ trans('pricing.ski_courses.table.h2') }}</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 1 den</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r1.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">530 Kč</td>
                     </tr>
                     <tr class="bg-gray-50">
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 2 dny</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r2.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">1010 Kč</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 3 dny</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r3.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">1420 Kč</td>
                     </tr>
                     <tr class="bg-gray-50">
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 4 dny</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r4.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">1800 Kč</td>
                     </tr>
                     <tr>
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 5 dnů</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r5.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">2210 Kč</td>
                     </tr>
                     <tr class="bg-gray-50">
-                      <td class="border border-gray-300 px-4 py-2 font-medium">Lyžařský kurz (ZŠ,SŠ) - 6 dnů</td>
+                      <td class="border border-gray-300 px-4 py-2 font-medium">{{ trans('pricing.ski_courses.table.r6.c1') }}</td>
                       <td class="border border-gray-300 px-4 py-2">2400 Kč</td>
                     </tr>
                   </tbody>
@@ -229,27 +230,27 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
       <!-- Důležité informace -->
       <Card>
         <CardHeader>
-          <CardTitle class="text-xl text-primary">Důležité informace</CardTitle>
+          <CardTitle class="text-xl text-primary">{{ trans('pricing.important_info.title') }}</CardTitle>
         </CardHeader>
         <CardContent class="space-y-4">
           <div class="space-y-2">
-            <p><strong>Skipasy zakoupíte na čipové kartě.</strong> Vratná záloha na kartu je 100 Kč</p>
-            <p><strong>Bodový systém:</strong></p>
+            <p><strong v-html="trans('pricing.important_info.i1.p1')"></strong></p>
+            <p><strong v-html="trans('pricing.important_info.i1.p2')"></strong></p>
             <ul class="list-disc list-inside space-y-1 ml-4">
-              <li>LD Triangl 1 jízda = 7 bodů</li>
-              <li>vlek H130 = 6 bodů</li>
-              <li>vlek Hájovna = 5 bodů</li>
+              <li>{{ trans('pricing.important_info.i1.o1') }}</li>
+              <li>{{ trans('pricing.important_info.i1.o2') }}</li>
+              <li>{{ trans('pricing.important_info.i1.o3') }}</li>
             </ul>
-            <p>Zbylé body je možné použít na poslední jízdu na lanovce i vlecích.</p>
+            <p>{{ trans('pricing.important_info.i1.p3') }}</p>
           </div>
 
           <div class="space-y-2">
-            <p><strong>Dětské jízdné platí pro děti od 7 do 12ti let a seniory od 65 let</strong></p>
-            <p><strong>Děti do 6ti let včetně lyžují zdarma</strong>, senioři od 65 let včetně lyžují za dětské jízdné</p>
+            <p><strong v-html="trans('pricing.important_info.i2.p1')"></strong></p>
+            <p><strong v-html="trans('pricing.important_info.i2.p2')"></strong></p>
           </div>
 
           <div class="space-y-2">
-            <p><strong>Platba možná v hotovosti, nebo platební kartou</strong></p>
+            <p><strong v-html="trans('pricing.important_info.i3.p1')"></strong></p>
           </div>
         </CardContent>
       </Card>

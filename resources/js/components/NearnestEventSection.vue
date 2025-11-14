@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Calendar, Clock } from 'lucide-vue-next';
 import { Link } from '@inertiajs/vue3';
 import type { Event } from '@/types';
+import { trans } from 'laravel-vue-i18n';
 
 defineProps<{
   event: Event;
@@ -33,7 +34,7 @@ const route = (window as any).route;
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-2xl font-bold text-primary mb-6 text-center">
-          Nejbližší akce
+          {{ trans('nearnest_event_section.title') }}
         </h2>
 
         <div class="bg-card rounded-md border p-6 shadow-sm hover:shadow-md transition-shadow">
@@ -58,18 +59,18 @@ const route = (window as any).route;
               <div class="text-sm text-muted-foreground space-y-1 mb-3">
                 <p class="flex items-center">
                   <Calendar class="w-4 h-4 mr-2 text-[#081f54]" />
-                  <span class="font-medium">Datum:</span>
+                  <span class="font-medium">{{ trans('nearnest_event_section.date') }}:</span>
                   {{ formatDate(event.date_from) }}
                 </p>
                 <p class="flex items-center">
                   <Clock class="w-4 h-4 mr-2 text-[#081f54]" />
-                  <span class="font-medium">Čas:</span>
+                  <span class="font-medium">{{ trans('nearnest_event_section.time') }}:</span>
                   {{ formatTime(event.date_from) }} - {{ formatTime(event.date_to) }}
                 </p>
               </div>
 
               <p class="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-4">
-                {{ event.perex || 'Popis akce není k dispozici.' }}
+                {{ event.perex || trans('nearnest_event_section.no_description') }}
               </p>
             </div>
 
@@ -77,7 +78,7 @@ const route = (window as any).route;
             <div class="flex-shrink-0 flex items-end">
               <Button size="sm" as-child>
                 <Link :href="route('events.show', { event: event.slug })">
-                  Zobrazit více
+                  {{ trans('nearnest_event_section.show_more') }}
                 </Link>
               </Button>
             </div>

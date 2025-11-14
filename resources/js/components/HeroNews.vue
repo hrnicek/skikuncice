@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { usePage } from '@inertiajs/vue3'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { trans } from 'laravel-vue-i18n';
 
 interface Post {
   id: number
@@ -30,7 +31,7 @@ const dialogOpen = ref(false)
               <h4 class="text-white text-sm font-semibold line-clamp-2 group-hover:text-cyan-200 transition-colors">{{ latestPost.title }}</h4>
               <p class="text-white text-xs mt-1 line-clamp-3 font-medium">{{ latestPost.content }}</p>
               <div class="flex items-center justify-between mt-2">
-                <span class="text-white/70 text-xs hover:text-cyan-200 transition-colors cursor-pointer">více informace</span>
+                <span class="text-white/70 text-xs hover:text-cyan-200 transition-colors cursor-pointer">{{ trans('hero_news.more_info') }}</span>
                 <span class="text-white/50 text-xs">{{ new Date(latestPost.published_at).toLocaleDateString('cs-CZ') }}</span>
               </div>
             </div>
@@ -42,7 +43,7 @@ const dialogOpen = ref(false)
         <DialogHeader>
           <DialogTitle>{{ latestPost?.title }}</DialogTitle>
           <DialogDescription>
-            Publikováno {{ new Date(latestPost?.published_at || '').toLocaleDateString('cs-CZ') }}
+            {{ trans('hero_news.published') }} {{ new Date(latestPost?.published_at || '').toLocaleDateString('cs-CZ') }}
           </DialogDescription>
         </DialogHeader>
         <div class="mt-4">
@@ -60,8 +61,8 @@ const dialogOpen = ref(false)
           </svg>
         </div>
         <div class="flex-1">
-          <h4 class="text-white text-sm font-medium">Žádné novinky</h4>
-          <p class="text-white/70 text-xs mt-1">Aktuálně nejsou k dispozici žádné příspěvky.</p>
+          <h4 class="text-white text-sm font-medium">{{ trans('hero_news.no_news') }}</h4>
+          <p class="text-white/70 text-xs mt-1">{{ trans('hero_news.no_news_subtitle') }}</p>
         </div>
       </div>
     </div>

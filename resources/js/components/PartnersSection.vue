@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { trans } from 'laravel-vue-i18n';
+
 interface Logo {
   name: string;
   logo: string;
@@ -12,8 +14,8 @@ interface PartnersSectionProps {
 }
 
 const props = withDefaults(defineProps<PartnersSectionProps>(), {
-  title: "Partneři areálu",
-  subtitle: "Spolupracujeme s předními společnostmi v oboru",
+  title: trans('partners_section.title'),
+  subtitle: trans('partners_section.subtitle'),
   logos: () => [
     {
       name: "ELEKTROURBANEK",

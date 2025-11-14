@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Calendar, Clock } from 'lucide-vue-next';
 import { Link } from '@inertiajs/vue3';
 import type { Event } from '@/types';
+import { trans } from 'laravel-vue-i18n';
 
 defineProps<{
   event: Event;
@@ -42,24 +43,24 @@ const formatTime = (dateString: string) => {
             <div class="text-sm text-muted-foreground space-y-1">
                 <p class="flex items-center">
                     <Calendar class="w-4 h-4 mr-2 text-[#081f54]" />
-                    <span class="font-medium">Datum:</span>
+                    <span class="font-medium">{{ trans('card_event.date') }}:</span>
                     {{ formatDate(event.date_from) }}
                 </p>
                 <p class="flex items-center">
                     <Clock class="w-4 h-4 mr-2 text-[#081f54]" />
-                    <span class="font-medium">Čas:</span>
+                    <span class="font-medium">{{ trans('card_event.time') }}:</span>
                     {{ formatTime(event.date_from) }} - {{ formatTime(event.date_to) }}
                 </p>
             </div>
         </div>
 
         <div class="text-muted-foreground text-sm leading-relaxed flex-grow min-h-[3rem]">
-            {{ event.perex || 'Popis akce není k dispozici.' }}
+            {{ event.perex || trans('card_event.no_description') }}
         </div>
 
         <Button class="w-full mt-4" size="sm" as-child>
             <Link :href="route('events.show', { event: event.slug })">
-                Zobrazit více
+                {{ trans('card_event.show_more') }}
             </Link>
         </Button>
     </div>

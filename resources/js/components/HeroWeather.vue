@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { usePage } from '@inertiajs/vue3'
+import { trans } from 'laravel-vue-i18n';
 
 interface WeatherData {
   coord?: {
@@ -83,12 +84,12 @@ onMounted(() => {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
             </svg>
           </div>
-          <span class="text-white text-xs font-semibold">Teplota</span>
+          <span class="text-white text-xs font-semibold">{{ trans('hero_weather.temperature') }}</span>
         </div>
       </div>
       <div class="mt-2">
         <div class="text-2xl font-bold text-white">{{ weather?.main?.temp ? Math.round(weather.main.temp) + '°C' : '--°C' }}</div>
-        <div class="text-white text-xs font-medium">{{ weather?.weather?.[0]?.description || 'Načítání...' }}</div>
+        <div class="text-white text-xs font-medium">{{ weather?.weather?.[0]?.description || trans('hero_weather.loading') }}</div>
       </div>
     </div>
 
@@ -101,12 +102,12 @@ onMounted(() => {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
             </svg>
           </div>
-          <span class="text-white text-xs font-semibold">Vlhkost</span>
+          <span class="text-white text-xs font-semibold">{{ trans('hero_weather.humidity') }}</span>
         </div>
       </div>
       <div class="mt-2">
         <div class="text-2xl font-bold text-white">{{ weather?.main?.humidity || '--' }}%</div>
-        <div class="text-white text-xs font-medium">Relativní vlhkost</div>
+        <div class="text-white text-xs font-medium">{{ trans('hero_weather.relative_humidity') }}</div>
       </div>
     </div>
 
@@ -119,12 +120,12 @@ onMounted(() => {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l.707.707A1 1 0 0012.414 11H15m-3-3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <span class="text-white text-xs font-semibold">Vítr</span>
+          <span class="text-white text-xs font-semibold">{{ trans('hero_weather.wind') }}</span>
         </div>
       </div>
       <div class="mt-2">
         <div class="text-2xl font-bold text-white">{{ weather?.wind?.speed ? Math.round(weather.wind.speed * 3.6) + ' km/h' : '-- km/h' }}</div>
-        <div class="text-white text-xs font-medium">Rychlost větru</div>
+        <div class="text-white text-xs font-medium">{{ trans('hero_weather.wind_speed') }}</div>
       </div>
     </div>
 
@@ -137,12 +138,12 @@ onMounted(() => {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l.707.707A1 1 0 0012.414 11H15m-3-3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <span class="text-white text-xs font-semibold">Sníh</span>
+          <span class="text-white text-xs font-semibold">{{ trans('hero_weather.snow') }}</span>
         </div>
       </div>
       <div class="mt-2">
         <div class="text-2xl font-bold text-white">{{ weatherSettings?.piste_snow_depth_cm + ' cm' || '-- cm' }}</div>
-        <div class="text-white text-xs font-medium">na sjezdovkách</div>
+        <div class="text-white text-xs font-medium">{{ trans('hero_weather.on_piste') }}</div>
       </div>
     </div>
 
@@ -155,12 +156,12 @@ onMounted(() => {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l.707.707A1 1 0 0012.414 11H15m-3-3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <span class="text-white text-xs font-semibold">Sníh</span>
+          <span class="text-white text-xs font-semibold">{{ trans('hero_weather.snow') }}</span>
         </div>
       </div>
       <div class="mt-2">
         <div class="text-2xl font-bold text-white">{{ weatherSettings?.off_piste_snow_depth_cm + ' cm' || '-- cm' }}</div>
-        <div class="text-white text-xs font-medium">mimo sjezdovky</div>
+        <div class="text-white text-xs font-medium">{{ trans('hero_weather.off_piste') }}</div>
       </div>
     </div>
 
@@ -173,12 +174,12 @@ onMounted(() => {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l.707.707A1 1 0 0012.414 11H15m-3-3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <span class="text-white text-xs font-semibold">Nový sníh</span>
+          <span class="text-white text-xs font-semibold">{{ trans('hero_weather.new_snow') }}</span>
         </div>
       </div>
       <div class="mt-2">
         <div class="text-2xl font-bold text-white">{{ weatherSettings?.new_snowfall_cm + ' cm' || '-- cm' }}</div>
-        <div class="text-white text-xs font-medium">za posledních 24 hodin</div>
+        <div class="text-white text-xs font-medium">{{ trans('hero_weather.last_24h') }}</div>
       </div>
     </div>
 

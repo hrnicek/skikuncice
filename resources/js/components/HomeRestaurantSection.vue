@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-vue-next';
+import { trans } from 'laravel-vue-i18n';
+import { Link } from '@inertiajs/vue3';
 
 </script>
 
 <template>
     <section class="mt-16">
         <div class="container mb-6">
-            <h2 class="text-3xl font-bold text-left mb-6">Restaurace & Bar</h2>
+            <h2 class="text-3xl font-bold text-left mb-6">{{ trans('home_restaurant_section.title') }}</h2>
         </div>
         <div class="container">
         <div class="grid grid-cols-12 gap-8">
@@ -15,17 +17,17 @@ import { ArrowRight } from 'lucide-vue-next';
                 <div class="h-[500px] relative bg-primary rounded-md flex flex-col items-start text-base font-base text-foreground">
                     <img src="/img/pizza.avif" alt="Pizza" class="absolute inset-0 w-full h-full object-cover pointer-events-none rounded-md" />
                     <div class="absolute bottom-0 left-0 bg-overlay w-full text-white p-8">
-                       <p class="font-bold mb-3 text-xl">Otevírací doba</p>
-                        <p>Pondělí - Neděle: 9:00 - 20:00</p>
+                       <p class="font-bold mb-3 text-xl">{{ trans('home_restaurant_section.opening_hours') }}</p>
+                        <p>{{ trans('home_restaurant_section.opening_hours_value') }}</p>
                     </div>
                     <div class="relative m-8 z-20">
                     <div class="p-4 text-white flex items-center bg-primary hover:bg-primary rounded-md mb-4">
-                        <p>Jídelní lístek</p>
+                        <p>{{ trans('home_restaurant_section.menu') }}</p>
                         <ArrowRight class="w-6 h-6 ml-4" />
                     </div>
                      <div class="p-4 text-white flex items-center bg-primary hover:bg-primary rounded-md w-full">
                         <p>
-                            Nápojový lístek
+                            {{ trans('home_restaurant_section.drinks_menu') }}
                         </p>
                         <ArrowRight class="w-6 h-6 ml-4" />
                     </div>
@@ -39,16 +41,16 @@ import { ArrowRight } from 'lucide-vue-next';
                 <div class="absolute bottom-0 left-0 right-0 px-4 lg:px-16 px- py-8 text-white bg-overlay">
                     <div>
                         <p class="font-bold text-xl mb-3">
-                            Hospoda U Rumařů
+                            {{ trans('home_restaurant_section.restaurant_name') }}
                         </p>
                     </div>
                     <div class="max-w-xl">
-                        Během dne stráveného na svahu budete potřebovat nabrat síly a dostatečně se osvěžit. Využijte některé z našich gastro zařízení, které máte ve skiareálu Kunčice přímo u sjezdovek!
+                        {{ trans('home_restaurant_section.restaurant_description') }}
                     </div>
                     <div class="mt-3">
                         <Button variant="outline" as-child>
                             <Link :href="route('restaurant')">
-                                Více informací
+                                {{ trans('home_restaurant_section.more_info') }}
                             </Link>
                         </Button>
                     </div>

@@ -1,53 +1,54 @@
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
 import PageHeader from '@/components/PageHeader.vue';
+import { trans } from 'laravel-vue-i18n';
 </script>
 
 <template>
   <AppLayout>
     <PageHeader
-      title="Provozní doba"
-      subtitle="Informace o otevíracích hodinách areálu"
+      :title="trans('operating_hours.page_header.title')"
+      :subtitle="trans('operating_hours.page_header.subtitle')"
     />
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
       <!-- Hero Section -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold text-primary mb-4">Provozní doby všech služeb v areálu</h1>
+        <h1 class="text-4xl font-bold text-primary mb-4">{{ trans('operating_hours.hero.title') }}</h1>
         <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Aktuální informace o otevíracích hodinách všech služeb v Skiareálu Kunčice. Provozní doby se mohou měnit podle sezóny a aktuálních podmínek.
+          {{ trans('operating_hours.hero.subtitle') }}
         </p>
       </div>
 
       <!-- Main Services -->
       <div class="bg-white rounded-md shadow-lg p-8">
-        <h2 class="text-2xl font-semibold text-primary mb-6">Hlavní služby</h2>
+        <h2 class="text-2xl font-semibold text-primary mb-6">{{ trans('operating_hours.main_services.title') }}</h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-4">
             <div class="border-l-4 border-primary pl-4">
-              <h3 class="text-xl font-semibold text-primary">Lanovka a vleky</h3>
-              <p class="text-gray-700"><strong>Denně:</strong> 8:30 - 16:00</p>
+              <h3 class="text-xl font-semibold text-primary">{{ trans('operating_hours.main_services.s1.title') }}</h3>
+              <p class="text-gray-700"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:30 - 16:00</p>
             </div>
 
             <div class="border-l-4 border-secondary pl-4">
-              <h3 class="text-xl font-semibold text-primary">Večerní lyžování</h3>
-              <p class="text-gray-700"><strong>Středa, sobota:</strong> 17:30 - 20:00 - dle aktuální situace</p>
+              <h3 class="text-xl font-semibold text-primary">{{ trans('operating_hours.main_services.s2.title') }}</h3>
+              <p class="text-gray-700"><strong>{{ trans('operating_hours.main_services.wed_sat') }}:</strong> 17:30 - 20:00 - {{ trans('operating_hours.main_services.disclaimer') }}</p>
             </div>
 
             <div class="border-l-4 border-primary pl-4">
-              <h3 class="text-xl font-semibold text-primary">Pokladny</h3>
-              <p class="text-gray-700"><strong>Denně:</strong> 8:00 - 16:15</p>
+              <h3 class="text-xl font-semibold text-primary">{{ trans('operating_hours.main_services.s3.title') }}</h3>
+              <p class="text-gray-700"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:00 - 16:15</p>
             </div>
           </div>
 
           <div class="space-y-4">
             <div class="border-l-4 border-primary pl-4">
-              <h3 class="text-xl font-semibold text-primary">Centrum služeb</h3>
-              <p class="text-gray-700"><strong>Denně:</strong> 8:30 - 16:00</p>
+              <h3 class="text-xl font-semibold text-primary">{{ trans('operating_hours.main_services.s4.title') }}</h3>
+              <p class="text-gray-700"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:30 - 16:00</p>
             </div>
 
             <div class="border-l-4 border-primary pl-4">
-              <h3 class="text-xl font-semibold text-primary">Škola a půjčovna</h3>
-              <p class="text-gray-700"><strong>Denně:</strong> 8:30 - 16:00</p>
+              <h3 class="text-xl font-semibold text-primary">{{ trans('operating_hours.main_services.s5.title') }}</h3>
+              <p class="text-gray-700"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:30 - 16:00</p>
             </div>
           </div>
         </div>
@@ -55,24 +56,24 @@ import PageHeader from '@/components/PageHeader.vue';
 
       <!-- Restaurants -->
       <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-md p-8">
-        <h2 class="text-2xl font-semibold text-primary mb-6">Restaurace a občerstvení</h2>
+        <h2 class="text-2xl font-semibold text-primary mb-6">{{ trans('operating_hours.restaurants.title') }}</h2>
         <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
           <div class="bg-white rounded-md p-6 shadow-sm">
-            <h3 class="text-xl font-semibold text-primary mb-3">Restaurace Hájovna</h3>
-            <p class="text-gray-700"><strong>Jen lyžařská sezóna</strong></p>
-            <p class="text-gray-700">Denně: 8:30 - 16:00</p>
+            <h3 class="text-xl font-semibold text-primary mb-3">{{ trans('operating_hours.restaurants.r1.title') }}</h3>
+            <p class="text-gray-700"><strong>{{ trans('operating_hours.restaurants.ski_season_only') }}</strong></p>
+            <p class="text-gray-700">{{ trans('operating_hours.restaurants.daily') }}: 8:30 - 16:00</p>
           </div>
 
           <div class="bg-white rounded-md p-6 shadow-sm">
-            <h3 class="text-xl font-semibold text-primary mb-3">Restaurace U Rumařů</h3>
-            <p class="text-gray-700"><strong>Pondělí - pátek:</strong> 11:00 - 15:00</p>
-            <p class="text-gray-700"><strong>SOBOTA A NEDĚLE: ZAVŘENO</strong></p>
+            <h3 class="text-xl font-semibold text-primary mb-3">{{ trans('operating_hours.restaurants.r2.title') }}</h3>
+            <p class="text-gray-700"><strong>{{ trans('operating_hours.restaurants.mon_fri') }}:</strong> 11:00 - 15:00</p>
+            <p class="text-gray-700"><strong>{{ trans('operating_hours.restaurants.sat_sun_closed') }}</strong></p>
           </div>
 
           <div class="bg-white rounded-md p-6 shadow-sm">
-            <h3 class="text-xl font-semibold text-primary mb-3">Skibar Kulaťák</h3>
-            <p class="text-gray-700"><strong>Jen lyžařská sezóna</strong></p>
-            <p class="text-gray-700">Denně: 9:00 - 15:30</p>
+            <h3 class="text-xl font-semibold text-primary mb-3">{{ trans('operating_hours.restaurants.r3.title') }}</h3>
+            <p class="text-gray-700"><strong>{{ trans('operating_hours.restaurants.ski_season_only') }}</strong></p>
+            <p class="text-gray-700">{{ trans('operating_hours.restaurants.daily') }}: 9:00 - 15:30</p>
           </div>
         </div>
       </div>
@@ -86,9 +87,9 @@ import PageHeader from '@/components/PageHeader.vue';
             </svg>
           </div>
           <div class="ml-3">
-            <h3 class="text-sm font-medium text-yellow-800">Důležité upozornění</h3>
+            <h3 class="text-sm font-medium text-yellow-800">{{ trans('operating_hours.important_notes.title') }}</h3>
             <div class="mt-2 text-sm text-yellow-700">
-              <p>Provozní doby se mohou měnit v závislosti na počasí, sněhových podmínkách a aktuální situaci. Doporučujeme sledovat aktuální informace na našich webových stránkách nebo sociálních sítích.</p>
+              <p>{{ trans('operating_hours.important_notes.content') }}</p>
             </div>
           </div>
         </div>
