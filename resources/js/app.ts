@@ -5,7 +5,8 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import type { DefineComponent } from 'vue';
 import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
-import { i18nVue } from 'laravel-vue-i18n';
+import { i18nVue } from 'laravel-vue-i18n'
+
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 import AppLayout from './layouts/AppLayout.vue';
@@ -19,16 +20,18 @@ createInertiaApp({
             import.meta.glob<DefineComponent>('./pages/**/*.vue'),
         ),
     setup({ el, App, props, plugin }) {
+                            
         createApp({ render: () => h(App, props) })
             .use(plugin)
-            .use(ZiggyVue, Ziggy)
+            .use(ZiggyVue)
             .component('AppLayout', AppLayout)
             .component('Link', Link)
             .use(i18nVue, {
-                resolve: async lang => {
-                    const langs = import.meta.glob('../../lang/*.json');
+                lang: props.initialPage.props.locale,
+                resolve: async (lang: string) => {
+                    const langs: any = import.meta.glob("../../lang/*.json");
                     return await langs[`../../lang/${lang}.json`]();
-                },
+                }
             })
             .mount(el);
     },
