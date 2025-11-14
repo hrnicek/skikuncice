@@ -177,7 +177,7 @@ import { trans } from 'laravel-vue-i18n';
       </div>
 
       <!-- Operating Information -->
-      <div class="border border-neutral-200 rounded-lg p-6 md:p-8 mt-8">
+      <div class="border border-neutral-200 rounded-lg p-6 md:p-8 mt-8 mb-8">
         <h3 class="text-lg md:text-xl font-semibold text-neutral-900 mb-4 md:mb-6 text-center">{{ trans('contact.operating_info.title') }}</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <div class="text-center">
