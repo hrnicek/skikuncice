@@ -22,6 +22,35 @@ import { trans } from 'laravel-vue-i18n';
           <a href="#facilities" class="inline-flex items-center rounded-full bg-[var(--primary)]/10 px-3 py-2 text-sm font-medium text-[var(--primary)] transition hover:bg-[var(--primary)]/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary)]">Zázemí</a>
         </div>
       </nav>
+
+      <Card id="downloads" class="scroll-mt-24 rounded-2xl shadow-lg ring-1 ring-black/5">
+        <CardHeader>
+          <CardTitle class="text-xl font-semibold text-[var(--primary)]">Menu ke stažení</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div class="grid gap-4 md:grid-cols-3">
+            <div class="rounded-xl border border-slate-200 p-4">
+              <div class="text-sm font-semibold text-slate-900">Hospoda U Rumařů</div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <a aria-label="Jídelní lístek U Rumařů" href="#" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)] opacity-50 pointer-events-none">Jídelní lístek (PDF)</a>
+                <a aria-label="Nápojový lístek U Rumařů" href="#" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)] opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
+              </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-4">
+              <div class="text-sm font-semibold text-slate-900">Restaurace Hájovna</div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <a aria-label="Nápojový lístek Hájovna" href="#" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)] opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
+              </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-4">
+              <div class="text-sm font-semibold text-slate-900">Skibar Kulaťák</div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <a aria-label="Nápojový lístek Kulaťák" href="#" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)] opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
       <div class="rounded-2xl bg-white/80 shadow-xl ring-1 ring-black/5 p-6 md:p-8">
         <div class="flex items-center gap-4">
           <img src="/img/icons/restaurace.png" alt="Restaurace" class="h-10 w-10" />
@@ -51,8 +80,8 @@ import { trans } from 'laravel-vue-i18n';
             </div>
             <p class="mt-3 text-slate-700">Jednou za čas si můžete na terase pochutnat i na grilovaném selátku.</p>
             <div class="mt-4 flex flex-wrap gap-3">
-              <a href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)]">Jídelní lístek</a>
-              <a href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)]">Nápojový lístek</a>
+              <a aria-label="Jídelní lístek U Rumařů" href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)] opacity-50 pointer-events-none">Jídelní lístek (PDF)</a>
+              <a aria-label="Nápojový lístek U Rumařů" href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)] opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
             </div>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
@@ -80,6 +109,9 @@ import { trans } from 'laravel-vue-i18n';
                 <img src="/img/cta-skoly.jpg" alt="Výhled na dětský vlek" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
             </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a aria-label="Nápojový lístek Hájovna" href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)] opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
+            </div>
           </CardContent>
         </Card>
 
@@ -97,6 +129,9 @@ import { trans } from 'laravel-vue-i18n';
               <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
                 <img src="/img/hero-summer.jpg" alt="Skibar Kulaťák léto" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a aria-label="Nápojový lístek Kulaťák" href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)] opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
             </div>
           </CardContent>
         </Card>

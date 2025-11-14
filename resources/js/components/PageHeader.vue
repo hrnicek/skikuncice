@@ -11,22 +11,22 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="container mt-4">
-    <div class="relative h-48 md:h-56 overflow-hidden rounded-md">
-      <img :src="backgroundImage" :alt="title" class="w-full h-full object-cover">
-
-      <div class="absolute inset-0 bg-black/40"></div>
-
-      <div class="absolute inset-0 flex items-center justify-center p-6 md:p-8">
-        <div class="text-center text-white">
-          <h1 class="text-2xl md:text-4xl font-bold mb-2">
+  <div class="container mt-6">
+    <div class="relative overflow-hidden rounded-2xl shadow-xl">
+      <img :src="backgroundImage" :alt="title" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-b from-[var(--primary)]/70 via-[var(--primary)]/40 to-black/60"></div>
+      <div class="relative z-10 flex items-center justify-center px-6 py-16 md:px-10 md:py-24">
+        <div class="mx-auto max-w-3xl text-center text-white">
+          <div class="mx-auto mb-3 h-0.5 w-16 bg-[var(--brand-secondary)]"></div>
+          <h1 class="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
             {{ title }}
           </h1>
-          <p v-if="subtitle" class="text-base md:text-base max-w-3xl mx-auto">
+          <p v-if="subtitle" class="mt-4 text-base md:text-lg text-white/80">
             {{ subtitle }}
           </p>
         </div>
       </div>
+      <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent"></div>
     </div>
   </div>
 </template>
