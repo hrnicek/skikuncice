@@ -13,6 +13,15 @@ import { trans } from 'laravel-vue-i18n';
     />
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <nav aria-label="Navigace sekcí" class="sticky top-2 z-20 mb-6">
+        <div class="flex flex-wrap gap-2 rounded-full bg-white/80 p-2 shadow ring-1 ring-black/5">
+          <a href="#rumaru" class="inline-flex items-center rounded-full bg-[var(--primary)]/10 px-3 py-2 text-sm font-medium text-[var(--primary)] transition hover:bg-[var(--primary)]/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary)]">Hospoda U Rumařů</a>
+          <a href="#hajovna" class="inline-flex items-center rounded-full bg-[var(--primary)]/10 px-3 py-2 text-sm font-medium text-[var(--primary)] transition hover:bg-[var(--primary)]/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary)]">Restaurace Hájovna</a>
+          <a href="#kulatak" class="inline-flex items-center rounded-full bg-[var(--primary)]/10 px-3 py-2 text-sm font-medium text-[var(--primary)] transition hover:bg-[var(--primary)]/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary)]">Skibar Kulaťák</a>
+          <a href="#hours" class="inline-flex items-center rounded-full bg-[var(--primary)]/10 px-3 py-2 text-sm font-medium text-[var(--primary)] transition hover:bg-[var(--primary)]/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary)]">Otevírací doba</a>
+          <a href="#facilities" class="inline-flex items-center rounded-full bg-[var(--primary)]/10 px-3 py-2 text-sm font-medium text-[var(--primary)] transition hover:bg-[var(--primary)]/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary)]">Zázemí</a>
+        </div>
+      </nav>
       <div class="rounded-2xl bg-white/80 shadow-xl ring-1 ring-black/5 p-6 md:p-8">
         <div class="flex items-center gap-4">
           <img src="/img/icons/restaurace.png" alt="Restaurace" class="h-10 w-10" />
@@ -25,7 +34,7 @@ import { trans } from 'laravel-vue-i18n';
       </div>
 
       <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <Card class="rounded-2xl shadow-lg ring-1 ring-black/5">
+        <Card id="rumaru" class="scroll-mt-24 rounded-2xl shadow-lg ring-1 ring-black/5">
           <CardHeader>
             <CardTitle class="text-xl font-semibold text-[var(--primary)]">Hospoda u Rumařů</CardTitle>
           </CardHeader>
@@ -42,45 +51,39 @@ import { trans } from 'laravel-vue-i18n';
             </div>
             <p class="mt-3 text-slate-700">Jednou za čas si můžete na terase pochutnat i na grilovaném selátku.</p>
             <div class="mt-4 flex flex-wrap gap-3">
-              <a href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)]">Jídelní lístek</a>
-              <a href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)]">Nápojový lístek</a>
+              <a href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)]">Jídelní lístek</a>
+              <a href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)]">Nápojový lístek</a>
             </div>
-            <div class="mt-6 grid gap-4 md:grid-cols-3">
+            <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
-                <img src="/img/services/restaurace.jpg" alt="Hospoda u Rumařů" class="h-36 w-full object-cover" />
+                <img src="/img/services/restaurace.jpg" alt="Hospoda u Rumařů" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
-                <img src="/img/home/restaurace.jpg" alt="Interiér restaurace" class="h-36 w-full object-cover" />
-              </div>
-              <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
-                <img src="/img/pizza.avif" alt="Nabídka občerstvení" class="h-36 w-full object-cover" />
+                <img src="/img/home/restaurace.jpg" alt="Interiér restaurace" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card class="rounded-2xl shadow-lg ring-1 ring-black/5">
+        <Card id="hajovna" class="scroll-mt-24 rounded-2xl shadow-lg ring-1 ring-black/5">
           <CardHeader>
             <CardTitle class="text-xl font-semibold text-[var(--primary)]">Restaurace u vleku Hájovna</CardTitle>
           </CardHeader>
           <CardContent>
             <p class="text-slate-700">Stravování a osvěžení na Hájovně zajišťuje restaurace s obsluhou s 50 místy k sezení.</p>
             <p class="mt-3 text-slate-700">Za příznivého počasí potěší slunečná terasa se závětřím a výhledem na hřebeny hor, dětské hřiště a dětský vlek.</p>
-            <div class="mt-6 grid gap-4 md:grid-cols-3">
+            <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
-                <img src="/img/hero-winter.jpg" alt="Terasa u Hájovny" class="h-36 w-full object-cover" />
+                <img src="/img/hero-winter.jpg" alt="Terasa u Hájovny" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
-                <img src="/img/bg-ice.jpg" alt="Zázemí Hájovna" class="h-36 w-full object-cover" />
-              </div>
-              <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
-                <img src="/img/cta-skoly.jpg" alt="Výhled na dětský vlek" class="h-36 w-full object-cover" />
+                <img src="/img/cta-skoly.jpg" alt="Výhled na dětský vlek" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card class="rounded-2xl shadow-lg ring-1 ring-black/5">
+        <Card id="kulatak" class="scroll-mt-24 rounded-2xl shadow-lg ring-1 ring-black/5">
           <CardHeader>
             <CardTitle class="text-xl font-semibold text-[var(--primary)]">Skibar Kulaťák</CardTitle>
           </CardHeader>
@@ -89,16 +92,16 @@ import { trans } from 'laravel-vue-i18n';
             <p class="mt-3 text-slate-700">Za příznivého počasí se můžete těšit na neopakovatelné výhledy na okolní panoramata našich krásných hor.</p>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
-                <img src="/img/hero-winter.jpg" alt="Skibar Kulaťák zima" class="h-36 w-full object-cover" />
+                <img src="/img/hero-winter.jpg" alt="Skibar Kulaťák zima" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
-                <img src="/img/hero-summer.jpg" alt="Skibar Kulaťák léto" class="h-36 w-full object-cover" />
+                <img src="/img/hero-summer.jpg" alt="Skibar Kulaťák léto" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card class="rounded-2xl shadow-lg ring-1 ring-black/5 md:col-span-2 lg:col-span-3">
+        <Card id="hours" class="scroll-mt-24 rounded-2xl shadow-lg ring-1 ring-black/5 md:col-span-2 lg:col-span-3">
           <CardHeader>
             <CardTitle class="text-xl font-semibold text-[var(--primary)]">Otevírací doba</CardTitle>
           </CardHeader>
@@ -120,7 +123,7 @@ import { trans } from 'laravel-vue-i18n';
           </CardContent>
         </Card>
 
-        <Card class="rounded-2xl shadow-lg ring-1 ring-black/5 md:col-span-2 lg:col-span-3">
+        <Card id="facilities" class="scroll-mt-24 rounded-2xl shadow-lg ring-1 ring-black/5 md:col-span-2 lg:col-span-3">
           <CardHeader>
             <CardTitle class="text-xl font-semibold text-[var(--primary)]">Vyhřívané převlékárny a toalety</CardTitle>
           </CardHeader>
@@ -129,11 +132,15 @@ import { trans } from 'laravel-vue-i18n';
             <p class="mt-3 text-slate-700">Dobře fungující zázemí doplňují vyhřívané a udržované toalety s teplou vodou. Jsou přístupné u dolní stanice lanovky Triangl a vleku Hájovna a dojedete k nim i na lyžích, protože nemusíte nikam do schodů.</p>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
-                <img src="/img/services/restaurace.jpg" alt="Zázemí u nástupních stanic" class="h-56 w-full object-cover" />
+                <img src="/img/services/restaurace.jpg" alt="Zázemí u nástupních stanic" class="h-56 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-xl ring-1 ring-slate-200">
-                <img src="/img/pizza.avif" alt="Občerstvení" class="h-56 w-full object-cover" />
+                <img src="/img/pizza.avif" alt="Občerstvení" class="h-56 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="tel:+420777719579" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)]">+420&nbsp;777&nbsp;719&nbsp;579</a>
+              <a href="mailto:skikuncice@seznam.cz" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)]">skikuncice@seznam.cz</a>
             </div>
           </CardContent>
         </Card>
