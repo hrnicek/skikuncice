@@ -37,7 +37,6 @@ import { Facebook, Instagram, Youtube, MapPin, TrendingUp, Clock, Phone, Mail, M
             <li><Link :href="route('restaurant')" class="footer-link">Restaurace</Link></li>
             <li><Link :href="route('kids-paradise')" class="footer-link">Dětský snowpark</Link></li>
             <li><Link :href="route('cross-country-skiing')" class="footer-link">Běžky</Link></li>
-            <li><Link :href="route('snowpark')" class="footer-link">Snowpark</Link></li>
             <li><Link :href="route('accommodation')" class="footer-link">Ubytování</Link></li>
           </ul>
         </div>

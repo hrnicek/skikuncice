@@ -93,12 +93,6 @@ const services: { title: string, href: string, description: string, image: strin
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=32&h=32&fit=crop&crop=center",
   },
   {
-    title: wTrans('navbar.snowpark'),
-    href: "/snowpark",
-    description: "Snowpark pro freeride a freestyle.",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
-  },
-  {
     title: wTrans('navbar.evening_skiing'),
     href: "/vecerni-lyzovani",
     description: "Lyžování pod umělým osvětlením.",
