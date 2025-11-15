@@ -11,7 +11,7 @@ import { trans } from 'laravel-vue-i18n';
       :subtitle="trans('area_map.page_header.subtitle')"
     />
     <div class="container my-16">
-      <img src="/img/SKI-MAPA-2019.jpg" :alt="trans('area_map.map_alt')" class="w-full h-auto rounded-md border" />
+      <img src="/img/SKI-MAPA-2019.jpg" :alt="trans('area_map.map_alt')" class="w-full h-auto rounded-lg border" />
     </div>
   </AppLayout>
 </template>

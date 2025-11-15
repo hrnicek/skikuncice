@@ -14,72 +14,72 @@ import { trans } from 'laravel-vue-i18n';
       <!-- Hero Section -->
       <div class="text-center mb-12">
         <h1 class="text-4xl font-bold text-primary mb-4">{{ trans('operating_hours.hero.title') }}</h1>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        <p class="text-lg text-foreground/80 max-w-3xl mx-auto">
           {{ trans('operating_hours.hero.subtitle') }}
         </p>
       </div>
 
       <!-- Main Services -->
-      <div class="bg-white rounded-md shadow-lg p-8">
-        <h2 class="text-2xl font-semibold text-primary mb-6">{{ trans('operating_hours.main_services.title') }}</h2>
+      <div class="bg-card rounded-lg shadow-lg p-8 border">
+        <h2 class="text-2xl font-semibold text-foreground mb-6">{{ trans('operating_hours.main_services.title') }}</h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-4">
             <div class="border-l-4 border-primary pl-4">
-              <h3 class="text-xl font-semibold text-primary">{{ trans('operating_hours.main_services.s1.title') }}</h3>
-              <p class="text-gray-700"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:30 - 16:00</p>
+              <h3 class="text-xl font-semibold text-foreground">{{ trans('operating_hours.main_services.s1.title') }}</h3>
+              <p class="text-foreground/80"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:30 - 16:00</p>
             </div>
 
-            <div class="border-l-4 border-secondary pl-4">
-              <h3 class="text-xl font-semibold text-primary">{{ trans('operating_hours.main_services.s2.title') }}</h3>
-              <p class="text-gray-700"><strong>{{ trans('operating_hours.main_services.wed_sat') }}:</strong> 17:30 - 20:00 - {{ trans('operating_hours.main_services.disclaimer') }}</p>
+            <div class="border-l-4 border-brand-secondary pl-4">
+              <h3 class="text-xl font-semibold text-foreground">{{ trans('operating_hours.main_services.s2.title') }}</h3>
+              <p class="text-foreground/80"><strong>{{ trans('operating_hours.main_services.wed_sat') }}:</strong> 17:30 - 20:00 - {{ trans('operating_hours.main_services.disclaimer') }}</p>
             </div>
 
             <div class="border-l-4 border-primary pl-4">
-              <h3 class="text-xl font-semibold text-primary">{{ trans('operating_hours.main_services.s3.title') }}</h3>
-              <p class="text-gray-700"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:00 - 16:15</p>
+              <h3 class="text-xl font-semibold text-foreground">{{ trans('operating_hours.main_services.s3.title') }}</h3>
+              <p class="text-foreground/80"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:00 - 16:15</p>
             </div>
           </div>
 
           <div class="space-y-4">
             <div class="border-l-4 border-primary pl-4">
-              <h3 class="text-xl font-semibold text-primary">{{ trans('operating_hours.main_services.s4.title') }}</h3>
-              <p class="text-gray-700"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:30 - 16:00</p>
+              <h3 class="text-xl font-semibold text-foreground">{{ trans('operating_hours.main_services.s4.title') }}</h3>
+              <p class="text-foreground/80"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:30 - 16:00</p>
             </div>
 
             <div class="border-l-4 border-primary pl-4">
-              <h3 class="text-xl font-semibold text-primary">{{ trans('operating_hours.main_services.s5.title') }}</h3>
-              <p class="text-gray-700"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:30 - 16:00</p>
+              <h3 class="text-xl font-semibold text-foreground">{{ trans('operating_hours.main_services.s5.title') }}</h3>
+              <p class="text-foreground/80"><strong>{{ trans('operating_hours.main_services.daily') }}:</strong> 8:30 - 16:00</p>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Restaurants -->
-      <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-md p-8">
-        <h2 class="text-2xl font-semibold text-primary mb-6">{{ trans('operating_hours.restaurants.title') }}</h2>
+      <div class="bg-card rounded-lg p-8 border">
+        <h2 class="text-2xl font-semibold text-foreground mb-6">{{ trans('operating_hours.restaurants.title') }}</h2>
         <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
-          <div class="bg-white rounded-md p-6 shadow-sm">
-            <h3 class="text-xl font-semibold text-primary mb-3">{{ trans('operating_hours.restaurants.r1.title') }}</h3>
-            <p class="text-gray-700"><strong>{{ trans('operating_hours.restaurants.ski_season_only') }}</strong></p>
-            <p class="text-gray-700">{{ trans('operating_hours.restaurants.daily') }}: 8:30 - 16:00</p>
+          <div class="bg-card rounded-lg p-6 shadow-sm border">
+            <h3 class="text-xl font-semibold text-foreground mb-3">{{ trans('operating_hours.restaurants.r1.title') }}</h3>
+            <p class="text-foreground/80"><strong>{{ trans('operating_hours.restaurants.ski_season_only') }}</strong></p>
+            <p class="text-foreground/80">{{ trans('operating_hours.restaurants.daily') }}: 8:30 - 16:00</p>
           </div>
 
-          <div class="bg-white rounded-md p-6 shadow-sm">
-            <h3 class="text-xl font-semibold text-primary mb-3">{{ trans('operating_hours.restaurants.r2.title') }}</h3>
-            <p class="text-gray-700"><strong>{{ trans('operating_hours.restaurants.mon_fri') }}:</strong> 11:00 - 15:00</p>
-            <p class="text-gray-700"><strong>{{ trans('operating_hours.restaurants.sat_sun_closed') }}</strong></p>
+          <div class="bg-card rounded-lg p-6 shadow-sm border">
+            <h3 class="text-xl font-semibold text-foreground mb-3">{{ trans('operating_hours.restaurants.r2.title') }}</h3>
+            <p class="text-foreground/80"><strong>{{ trans('operating_hours.restaurants.mon_fri') }}:</strong> 11:00 - 15:00</p>
+            <p class="text-foreground/80"><strong>{{ trans('operating_hours.restaurants.sat_sun_closed') }}</strong></p>
           </div>
 
-          <div class="bg-white rounded-md p-6 shadow-sm">
-            <h3 class="text-xl font-semibold text-primary mb-3">{{ trans('operating_hours.restaurants.r3.title') }}</h3>
-            <p class="text-gray-700"><strong>{{ trans('operating_hours.restaurants.ski_season_only') }}</strong></p>
-            <p class="text-gray-700">{{ trans('operating_hours.restaurants.daily') }}: 9:00 - 15:30</p>
+          <div class="bg-card rounded-lg p-6 shadow-sm border">
+            <h3 class="text-xl font-semibold text-foreground mb-3">{{ trans('operating_hours.restaurants.r3.title') }}</h3>
+            <p class="text-foreground/80"><strong>{{ trans('operating_hours.restaurants.ski_season_only') }}</strong></p>
+            <p class="text-foreground/80">{{ trans('operating_hours.restaurants.daily') }}: 9:00 - 15:30</p>
           </div>
         </div>
       </div>
 
       <!-- Important Notes -->
-      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-md">
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
         <div class="flex">
           <div class="flex-shrink-0">
             <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">

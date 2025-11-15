@@ -11,7 +11,7 @@ import { trans } from 'laravel-vue-i18n';
       :subtitle="trans('agrotourism.page_header.subtitle')"
     />
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <p>{{ trans('agrotourism.content') }}</p>
+      <p class="text-foreground">{{ trans('agrotourism.content') }}</p>
     </div>
   </AppLayout>
 </template>
