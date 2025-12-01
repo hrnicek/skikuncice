@@ -56,7 +56,7 @@ import { trans } from 'laravel-vue-i18n';
           <h3 class="text-xl font-semibold text-[var(--primary)]">Rezervace karavan stání</h3>
           <p class="mt-3 text-slate-700">Parkovací místo pro karavan rezervujte emailem nebo telefonicky.</p>
           <div class="mt-4 flex flex-wrap gap-3">
-            <a href="mailto:skikuncice@seznam.cz" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)]">skikuncice@seznam.cz</a>
+            <a href="mailto:info@skikuncice.cz" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)]">info@skikuncice.cz</a>
             <a href="tel:+420734647679" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-[var(--brand-secondary)] shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--brand-secondary)]">+420&nbsp;734&nbsp;647&nbsp;679</a>
           </div>
         </div>

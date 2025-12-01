@@ -175,7 +175,7 @@ import { trans } from 'laravel-vue-i18n';
             </div>
             <div class="mt-6 flex flex-wrap gap-3">
               <a href="tel:+420777719579" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">+420&nbsp;777&nbsp;719&nbsp;579</a>
-              <a href="mailto:skikuncice@seznam.cz" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">skikuncice@seznam.cz</a>
+              <a href="mailto:info@skikuncice.cz" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">info@skikuncice.cz</a>
             </div>
           </CardContent>
         </Card>

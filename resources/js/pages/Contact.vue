@@ -34,12 +34,6 @@ import { trans } from 'laravel-vue-i18n';
               <div class="space-y-2">
                 <div class="flex items-center gap-3">
                   <Mail class="size-4 text-primary" />
-                  <a href="mailto:skikuncice@seznam.cz" class="text-primary hover:underline">
-                    skikuncice@seznam.cz
-                  </a>
-                </div>
-                <div class="flex items-center gap-3">
-                  <Mail class="size-4 text-primary" />
                   <a href="mailto:info@skikuncice.cz" class="text-primary hover:underline">
                     info@skikuncice.cz
                   </a>
@@ -82,15 +76,6 @@ import { trans } from 'laravel-vue-i18n';
               <span class="text-sm text-foreground/80">{{ trans('contact.phone_contacts.c3') }}</span>
             </div>
 
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-3 border-b border gap-2">
-              <div class="flex items-center gap-3">
-                <Phone class="size-4 text-primary flex-shrink-0" />
-                <a href="tel:+420734647679" class="font-medium text-foreground hover:text-primary break-all">
-                  +420 734 647 679
-                </a>
-              </div>
-              <span class="text-sm text-foreground/80">{{ trans('contact.phone_contacts.c4') }}</span>
-            </div>
 
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-3 gap-2">
               <div class="flex items-center gap-3">
