@@ -95,7 +95,7 @@ import { trans } from 'laravel-vue-i18n';
             <thead>
               <tr class="bg-primary/5 text-primary">
                 <th class="p-3 text-left font-semibold">Půjčovna</th>
-                <th class="p-3 text-left">1/2 dne</th>
+                <th class="p-3 text-left">4 hodiny</th>
                 <th class="p-3 text-left">1 den</th>
                 <th class="p-3 text-left">2 dny</th>
                 <th class="p-3 text-left">3 dny</th>
@@ -107,42 +107,42 @@ import { trans } from 'laravel-vue-i18n';
             </thead>
             <tbody class="text-gray-700">
               <tr class="border-t">
-                <td class="p-3 font-medium">Ski/SNB komplet</td>
-                <td class="p-3">280 Kč</td>
+                <td class="p-3 font-medium">Ski/SNB set bez helmy a brýlí</td>
+                <td class="p-3">300 Kč</td>
                 <td class="p-3">450 Kč</td>
-                <td class="p-3">700 Kč</td>
-                <td class="p-3">950 Kč</td>
-                <td class="p-3">1200 Kč</td>
-                <td class="p-3">1450 Kč</td>
-                <td class="p-3">1700 Kč</td>
+                <td class="p-3">725 Kč</td>
+                <td class="p-3">1000 Kč</td>
+                <td class="p-3">1275 Kč</td>
+                <td class="p-3">1550 Kč</td>
+                <td class="p-3">1800 Kč</td>
                 <td class="p-3">2000 Kč</td>
               </tr>
               <tr class="border-t">
                 <td class="p-3 font-medium">Ski/SNB</td>
-                <td class="p-3">230 Kč</td>
+                <td class="p-3">250 Kč</td>
                 <td class="p-3">400 Kč</td>
-                <td class="p-3">650 Kč</td>
-                <td class="p-3">850 Kč</td>
-                <td class="p-3">1050 Kč</td>
-                <td class="p-3">1250 Kč</td>
-                <td class="p-3">1450 Kč</td>
+                <td class="p-3">670 Kč</td>
+                <td class="p-3">890 Kč</td>
+                <td class="p-3">1110 Kč</td>
+                <td class="p-3">1330 Kč</td>
+                <td class="p-3">1550 Kč</td>
                 <td class="p-3">1500 Kč</td>
               </tr>
               <tr class="border-t">
                 <td class="p-3 font-medium">Ski/SNB boty</td>
-                <td class="p-3">180 Kč</td>
+                <td class="p-3">200 Kč</td>
                 <td class="p-3">300 Kč</td>
-                <td class="p-3">400 Kč</td>
-                <td class="p-3">500 Kč</td>
-                <td class="p-3">600 Kč</td>
-                <td class="p-3">700 Kč</td>
-                <td class="p-3">800 Kč</td>
+                <td class="p-3">410 Kč</td>
+                <td class="p-3">520 Kč</td>
+                <td class="p-3">630 Kč</td>
+                <td class="p-3">740 Kč</td>
+                <td class="p-3">850 Kč</td>
                 <td class="p-3">500 Kč</td>
               </tr>
               <tr class="border-t">
-                <td class="p-3 font-medium">Hole/Brýle/Helma</td>
-                <td class="p-3">130 Kč</td>
-                <td class="p-3">200 Kč</td>
+                <td class="p-3 font-medium">Hole/Brýle/Helma za kus</td>
+                <td class="p-3">100 Kč</td>
+                <td class="p-3">180 Kč</td>
                 <td class="p-3">300 Kč</td>
                 <td class="p-3">400 Kč</td>
                 <td class="p-3">500 Kč</td>
@@ -153,12 +153,12 @@ import { trans } from 'laravel-vue-i18n';
               <tr class="border-t">
                 <td class="p-3 font-medium">VIP set Rossignol</td>
                 <td class="p-3">450 Kč</td>
-                <td class="p-3">800 Kč</td>
-                <td class="p-3">1200 Kč</td>
-                <td class="p-3">1600 Kč</td>
-                <td class="p-3">2000 Kč</td>
-                <td class="p-3">2400 Kč</td>
-                <td class="p-3">2800 Kč</td>
+                <td class="p-3">600 Kč</td>
+                <td class="p-3">1000 Kč</td>
+                <td class="p-3">1400 Kč</td>
+                <td class="p-3">1800 Kč</td>
+                <td class="p-3">2200 Kč</td>
+                <td class="p-3">2600 Kč</td>
                 <td class="p-3">3000 Kč</td>
               </tr>
             </tbody>
@@ -184,7 +184,7 @@ import { trans } from 'laravel-vue-i18n';
             </div>
             <div class="rounded-md bg-primary/5 p-4">
               <div class="text-sm text-gray-700">2 hod</div>
-              <div class="font-semibold">200 Kč</div>
+              <div class="font-semibold">250 Kč</div>
             </div>
           </div>
           <div class="mt-3 text-sm text-gray-700">Ski/SNB komplet vč. helmy</div>
@@ -196,7 +196,7 @@ import { trans } from 'laravel-vue-i18n';
         <div class="grid md:grid-cols-2 gap-4">
           <div class="flex items-center justify-between">
             <span class="text-gray-700">Voskování lyží</span>
-            <span class="font-semibold">180 Kč</span>
+            <span class="font-semibold">200 Kč</span>
           </div>
           <div class="flex items-center justify-between">
             <span class="text-gray-700">Voskování SNB</span>
