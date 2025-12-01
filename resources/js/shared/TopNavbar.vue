@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import SeasonToggle from '@/components/SeasonToggle.vue';
 import { Mail } from 'lucide-vue-next'
 import { router, usePage } from '@inertiajs/vue3'
 
@@ -20,11 +19,14 @@ const languages = [
     </svg>`
   },
   {
-    code: 'pl',
-    name: 'Polski',
-    flag: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10">
-      <rect width="16" height="10" fill="#fff"/>
-      <rect width="16" height="5" fill="#dc143c"/>
+    code: 'en',
+    name: 'English',
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+      <rect width="60" height="30" fill="#012169"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+      <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#c8102e" stroke-width="4"/>
+      <path d="M30,0 V30 M0,15 H60" stroke="#c8102e" stroke-width="6"/>
     </svg>`
   }
 ]
@@ -46,9 +48,6 @@ const switchLanguage = (language: string) => {
   <div class="w-full bg-white border-b py-1">
     <div class="flex justify-between items-center container px-4 sm:px-6 lg:px-8">
       <div class="flex items-center gap-3 md:gap-6 text-xs md:text-sm">
-        <!-- <div class="flex-shrink-0">
-          <SeasonToggle />
-        </div> -->
         <a
           href="mailto:info@skikuncice.cz"
           class="text-gray-700 hover:text-gray-900 hidden sm:flex items-center gap-1 transition-colors"
@@ -79,7 +78,7 @@ const switchLanguage = (language: string) => {
           >
             <div class="flex items-center gap-2">
               <div
-                class="w-5 h-4 rounded-sm overflow-hidden border border-gray-200"
+                class="w-5 h-auto rounded-sm overflow-hidden"
                 v-html="language.flag"
               ></div>
               <span class="text-sm">{{ language.name }}</span>

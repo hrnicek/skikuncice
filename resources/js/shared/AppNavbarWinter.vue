@@ -53,12 +53,6 @@ const services: { title: string, href: string, description: string, image: strin
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
   },
   {
-    title: wTrans('navbar.skibus'),
-    href: "/skibus",
-    description: "Doprava do areálu v zimní sezóně.",
-    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=32&h=32&fit=crop&crop=center",
-  },
-  {
     title: wTrans('navbar.restaurant'),
     href: "/restaurace",
     description: "Teplé občerstvení po lyžování.",
