@@ -36,17 +36,7 @@ const arealItems: { title: string, href: string, description: string }[] = [
     title: wTrans('navbar.webcams'),
     href: "/webkamery",
     description: "Živé záběry z webkamer v areálu.",
-  },
-  {
-    title: wTrans('navbar.photo_gallery'),
-    href: "/fotogalerie",
-    description: "Fotografie z areálu a zimních aktivit.",
-  },
-  {
-    title: wTrans('navbar.videos'),
-    href: "/videa",
-    description: "Videa z lyžování a zimních aktivit.",
-  },
+  }
 ]
 
 const services: { title: string, href: string, description: string, image: string }[] = [
@@ -104,13 +94,6 @@ const services: { title: string, href: string, description: string, image: strin
 <template>
   <NavigationMenu>
     <NavigationMenuList>
-        <NavigationMenuItem>
-        <NavigationMenuLink as-child>
-          <Link href="/" :class="navigationMenuTriggerStyle()">
-            {{ trans('navbar.home') }}
-          </Link>
-        </NavigationMenuLink>
-            </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuTrigger>{{ trans('navbar.about_area') }}</NavigationMenuTrigger>
         <NavigationMenuContent>
@@ -153,6 +136,13 @@ const services: { title: string, href: string, description: string, image: strin
     </ul>
   </NavigationMenuContent>
 </NavigationMenuItem>
+      <NavigationMenuItem>
+        <NavigationMenuLink as-child>
+          <Link href="/restaurace" :class="navigationMenuTriggerStyle()">
+            {{ trans('navbar.restaurant') }}
+          </Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
           <Link href="/ubytovani" :class="navigationMenuTriggerStyle()">

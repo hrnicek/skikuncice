@@ -57,7 +57,7 @@ class AdminPanelProvider extends PanelProvider
                 ->displayFlagsInLocaleLabels(true)
                 ->locales([
                     'cs' => 'Čeština',
-                    'pl' => 'Polština',
+                    'en' => 'English',
                 ]))
             ->middleware([
                 EncryptCookies::class,

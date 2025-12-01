@@ -46,9 +46,9 @@ const switchLanguage = (language: string) => {
   <div class="w-full bg-white border-b py-1">
     <div class="flex justify-between items-center container px-4 sm:px-6 lg:px-8">
       <div class="flex items-center gap-3 md:gap-6 text-xs md:text-sm">
-        <div class="flex-shrink-0">
+        <!-- <div class="flex-shrink-0">
           <SeasonToggle />
-        </div>
+        </div> -->
         <a
           href="mailto:info@skikuncice.cz"
           class="text-gray-700 hover:text-gray-900 hidden sm:flex items-center gap-1 transition-colors"

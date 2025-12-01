@@ -48,7 +48,6 @@ import { Facebook, Instagram, Youtube, MapPin, TrendingUp, Clock, Phone, Mail, M
             <li><Link :href="route('area-map')" class="footer-link">Mapa areálu</Link></li>
             <li><Link :href="route('webcams')" class="footer-link">Webkamery</Link></li>
             <li><Link :href="route('operating-hours')" class="footer-link">Provozní doba</Link></li>
-            <li><Link :href="route('photo-gallery')" class="footer-link">Fotogalerie</Link></li>
           </ul>
 
           <div class="mt-6 space-y-3">
