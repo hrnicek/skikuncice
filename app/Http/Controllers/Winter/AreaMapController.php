@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Winter;
 
-class AreaMapController extends Controller
+class AreaMapController extends \App\Http\Controllers\Controller
 {
     public function index()
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Winter;
 
-class RestaurantController extends Controller
+class RestaurantController extends \App\Http\Controllers\Controller
 {
     public function index()
     {

@@ -1,26 +1,24 @@
 <?php
 
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccommodationController;
 use App\Http\Controllers\AgrotourismController;
-use App\Http\Controllers\AreaMapController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\CrossCountrySkiingController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\HomepageController;
-use App\Http\Controllers\KidsParadiseController;
 use App\Http\Controllers\LangSwitcherController;
-use App\Http\Controllers\OperatingHoursController;
-use App\Http\Controllers\PhotoGalleryController;
-use App\Http\Controllers\PricingController;
-use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\SeasonController;
-use App\Http\Controllers\SkiBusController;
-use App\Http\Controllers\SkiRentalController;
-use App\Http\Controllers\SkiSchoolController;
-use App\Http\Controllers\TouristServicesCenterController;
-use App\Http\Controllers\VideosController;
-use App\Http\Controllers\WebcamsController;
+use App\Http\Controllers\Winter\AboutController;
+use App\Http\Controllers\Winter\AreaMapController;
+use App\Http\Controllers\Winter\CrossCountrySkiingController;
+use App\Http\Controllers\Winter\KidsParadiseController;
+use App\Http\Controllers\Winter\OperatingHoursController;
+use App\Http\Controllers\Winter\PricingController;
+use App\Http\Controllers\Winter\RestaurantController;
+use App\Http\Controllers\Winter\SkiBusController;
+use App\Http\Controllers\Winter\SkiRentalController;
+use App\Http\Controllers\Winter\SkiSchoolController;
+use App\Http\Controllers\Winter\TouristServicesCenterController;
+use App\Http\Controllers\Winter\WebcamsController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -35,6 +33,8 @@ Route::group(
         Route::get('/kalendar-akci', [EventsController::class, 'index'])->name('events.index');
         Route::get('/udalost/{event:slug}', [EventsController::class, 'show'])->name('events.show');
         Route::get('/kalendar-akci/archiv', [EventsController::class, 'past'])->name('events.past');
+        Route::get('/ubytovani', [AccommodationController::class, 'index'])->name('accommodation');
+        Route::get('/kontakt', [ContactController::class, 'index'])->name('contact');
 
         // winter
         Route::get('o-arealu', [AboutController::class, 'index'])->name('about');
@@ -42,8 +42,6 @@ Route::group(
         Route::get('/provozni-doba', [OperatingHoursController::class, 'index'])->name('operating-hours');
         Route::get('/mapa-arealu', [AreaMapController::class, 'index'])->name('area-map');
         Route::get('/webkamery', [WebcamsController::class, 'index'])->name('webcams');
-        Route::get('/fotogalerie', [PhotoGalleryController::class, 'index'])->name('photo-gallery');
-        Route::get('/videa', [VideosController::class, 'index'])->name('videos');
         Route::get('/lyzarska-skola', [SkiSchoolController::class, 'index'])->name('ski-school');
         Route::get('/pujcovna-lyzi', [SkiRentalController::class, 'index'])->name('ski-rental');
         Route::get('/skibus', [SkiBusController::class, 'index'])->name('ski-bus');
@@ -51,9 +49,10 @@ Route::group(
         Route::get('/centrum-sluzeb-turistum', [TouristServicesCenterController::class, 'index'])->name('tourist-services-center');
         Route::get('/detsky-raj', [KidsParadiseController::class, 'index'])->name('kids-paradise');
         Route::get('/bezky', [CrossCountrySkiingController::class, 'index'])->name('cross-country-skiing');
+
+        // Summer
         Route::get('/agroturistika', [AgrotourismController::class, 'index'])->name('agrotourism');
-        Route::get('/ubytovani', [AccommodationController::class, 'index'])->name('accommodation');
-        Route::get('/kontakt', [ContactController::class, 'index'])->name('contact');
+     
     });
 
 Route::get('set-lang/{locale}', [LangSwitcherController::class, 'switch'])->name('lang.switch');

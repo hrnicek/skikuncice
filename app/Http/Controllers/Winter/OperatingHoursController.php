@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Winter;
 
-class OperatingHoursController extends Controller
+class OperatingHoursController extends \App\Http\Controllers\Controller
 {
     public function index()
     {

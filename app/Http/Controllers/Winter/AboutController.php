@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Winter;
 
-class AboutController extends Controller
+class AboutController extends \App\Http\Controllers\Controller
 {
     public function index()
     {

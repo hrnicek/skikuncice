@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Winter;
 
-class WebcamsController extends Controller
+class WebcamsController extends \App\Http\Controllers\Controller
 {
     public function index()
     {
