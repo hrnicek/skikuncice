@@ -30,10 +30,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Post::factory(32)->create();
-        Event::factory(20)->create();
 
         $this->call([
             AccommodationSeeder::class,
+            EventSeeder::class,
         ]);
     }
 }

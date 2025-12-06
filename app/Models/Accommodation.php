@@ -2,26 +2,28 @@
 
 namespace App\Models;
 
-use Spatie\Sluggable\HasSlug;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\Sluggable\SlugOptions;
-use Illuminate\Database\Eloquent\Model;
-use Spatie\MediaLibrary\InteractsWithMedia;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Filamerce\FilamentTranslatable\Traits\AstrotomicTranslatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Accommodation extends Model implements HasMedia, TranslatableContract
 {
-    use HasFactory, InteractsWithMedia, HasSlug;
+    use AstrotomicTranslatable;
+    use HasFactory;
+    use HasSlug;
+    use InteractsWithMedia;
 
-    protected $fillalbe = [
-        'name',
+    protected $fillable = [
         'address',
         'email',
         'phone',
         'phone2',
         'website',
-        'content',
         'is_available',
     ];
 
@@ -42,6 +44,12 @@ class Accommodation extends Model implements HasMedia, TranslatableContract
             ->saveSlugsTo('slug');
     }
 
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('image')
+            ->useFallbackUrl('https://picsum.photos/600/600')
+            ->singleFile();
+    }
 
     public function casts(): array
     {
