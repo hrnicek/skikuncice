@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Spatie\Sluggable\HasSlug;
 use Spatie\MediaLibrary\HasMedia;
+use Spatie\Sluggable\SlugOptions;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
-class Accommodation extends Model implements HasMedia
+class Accommodation extends Model implements HasMedia, TranslatableContract
 {
-    use HasFactory, InteractsWithMedia;
+    use HasFactory, InteractsWithMedia, HasSlug;
 
     protected $fillalbe = [
         'name',
@@ -21,6 +24,24 @@ class Accommodation extends Model implements HasMedia
         'content',
         'is_available',
     ];
+
+    protected $with = ['translations'];
+
+    public $translatedAttributes = [
+        'name',
+        'content',
+    ];
+
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
+    }
+
 
     public function casts(): array
     {

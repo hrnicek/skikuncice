@@ -34,6 +34,7 @@ Route::group(
         Route::get('/udalost/{event:slug}', [EventsController::class, 'show'])->name('events.show');
         Route::get('/kalendar-akci/archiv', [EventsController::class, 'past'])->name('events.past');
         Route::get('/ubytovani', [AccommodationController::class, 'index'])->name('accommodation');
+        Route::get('/ubytovani/{accommodation}', [AccommodationController::class, 'show'])->name('accommodation.show');
         Route::get('/kontakt', [ContactController::class, 'index'])->name('contact');
 
         // winter
