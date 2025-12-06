@@ -2,8 +2,8 @@
 
 return [
     'winter' => [
-        'title' => 'Lyžovačka pro celou rodinu',
-        'subtitle' => 'Za perfektní lyžovačkou nemusíte do Alp',
+        'title' => 'Hory, kde uslyšíte ticho',
+        'subtitle' => 'Jen vy, sníh a nekonečný klid',
     ],
     'summer' => [
         'title' => 'Letní aktivity pro celou rodinu',
