@@ -50,3 +50,13 @@ export interface Event {
     image?: string;
     show_time?: boolean;
 }
+
+export interface RestaurantMenu {
+    id: number;
+    type: 'food' | 'drinks';
+    from_date: string;
+    to_date: string;
+    is_published: boolean;
+    note?: string;
+    download_url?: string;
+}

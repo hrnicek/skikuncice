@@ -3,6 +3,12 @@ import AppLayout from '@/layouts/AppLayout.vue';
 import PageHeader from '@/components/PageHeader.vue';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { trans } from 'laravel-vue-i18n';
+import type { RestaurantMenu } from '@/types';
+
+defineProps<{
+  foodMenu?: RestaurantMenu | null;
+  drinksMenu?: RestaurantMenu | null;
+}>();
 </script>
 
 <template>
@@ -32,20 +38,24 @@ import { trans } from 'laravel-vue-i18n';
             <div class="rounded-lg border p-4">
               <div class="text-sm font-semibold text-foreground">Hospoda U Rumařů</div>
               <div class="mt-3 flex flex-wrap gap-2">
-                <a aria-label="Jídelní lístek U Rumařů" href="#" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary opacity-50 pointer-events-none">Jídelní lístek (PDF)</a>
-                <a aria-label="Nápojový lístek U Rumařů" href="#" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
+                <a v-if="foodMenu?.download_url" aria-label="Jídelní lístek U Rumařů" :href="foodMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Jídelní lístek (PDF)</a>
+                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Jídelní lístek (PDF)</span>
+                <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek U Rumařů" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
+                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
               </div>
             </div>
             <div class="rounded-lg border p-4">
               <div class="text-sm font-semibold text-foreground">Restaurace Hájovna</div>
               <div class="mt-3 flex flex-wrap gap-2">
-                <a aria-label="Nápojový lístek Hájovna" href="#" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
+                <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek Hájovna" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
+                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
               </div>
             </div>
             <div class="rounded-lg border p-4">
               <div class="text-sm font-semibold text-foreground">Skibar Kulaťák</div>
               <div class="mt-3 flex flex-wrap gap-2">
-                <a aria-label="Nápojový lístek Kulaťák" href="#" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
+                <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek Kulaťák" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
+                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
               </div>
             </div>
           </div>
@@ -80,8 +90,10 @@ import { trans } from 'laravel-vue-i18n';
             </div>
             <p class="mt-3">Jednou za čas si můžete na terase pochutnat i na grilovaném selátku.</p>
             <div class="mt-4 flex flex-wrap gap-3">
-              <a aria-label="Jídelní lístek U Rumařů" href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary opacity-50 pointer-events-none">Jídelní lístek (PDF)</a>
-              <a aria-label="Nápojový lístek U Rumařů" href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
+              <a v-if="foodMenu?.download_url" aria-label="Jídelní lístek U Rumařů" :href="foodMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Jídelní lístek (PDF)</a>
+              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Jídelní lístek (PDF)</span>
+              <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek U Rumařů" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
+              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
             </div>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
@@ -110,7 +122,8 @@ import { trans } from 'laravel-vue-i18n';
               </div>
             </div>
             <div class="mt-4 flex flex-wrap gap-3">
-              <a aria-label="Nápojový lístek Hájovna" href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
+              <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek Hájovna" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
+              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
             </div>
           </CardContent>
         </Card>
@@ -131,7 +144,8 @@ import { trans } from 'laravel-vue-i18n';
               </div>
             </div>
             <div class="mt-4 flex flex-wrap gap-3">
-              <a aria-label="Nápojový lístek Kulaťák" href="#" class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary opacity-50 pointer-events-none">Nápojový lístek (PDF)</a>
+              <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek Kulaťák" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
+              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
             </div>
           </CardContent>
         </Card>

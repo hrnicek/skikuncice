@@ -9,10 +9,13 @@ import PartnersSection from '@/components/PartnersSection.vue';
 import HomeRestaurantSection from '@/components/HomeRestaurantSection.vue';
 import InstaGrid from '@/components/InstaGrid.vue';
 import CallToActionScholl from '@/components/CallToActionScholl.vue';
+import type { RestaurantMenu } from '@/types';
 
 defineProps<{
   events: Array<any>;
   nearestEvent: any;
+  foodMenu?: RestaurantMenu | null;
+  drinksMenu?: RestaurantMenu | null;
 }>();
 
 </script>
@@ -24,7 +27,7 @@ defineProps<{
     <NearnestEventSection v-if="nearestEvent" :event="nearestEvent" />
     <HomeServiceList />
     <EventsSection :events="events" />
-    <HomeRestaurantSection />
+    <HomeRestaurantSection :food-menu="foodMenu" :drinks-menu="drinksMenu" />
     <CallToActionScholl />
     <InstaGrid />
     <PartnersSection />

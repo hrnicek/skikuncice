@@ -1,8 +1,15 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-vue-next';
 import { trans } from 'laravel-vue-i18n';
 import { Link } from '@inertiajs/vue3';
+import { route } from 'ziggy-js';
+import type { RestaurantMenu } from '@/types';
+
+defineProps<{
+  foodMenu?: RestaurantMenu | null;
+  drinksMenu?: RestaurantMenu | null;
+}>();
 
 </script>
 
@@ -21,14 +28,39 @@ import { Link } from '@inertiajs/vue3';
                         <p>{{ trans('home_restaurant_section.opening_hours_value') }}</p>
                     </div>
                     <div class="relative m-8 z-20">
-                    <div class="p-4 text-white flex items-center bg-primary hover:bg-primary rounded-md mb-4">
+                    <a 
+                        v-if="foodMenu?.download_url" 
+                        :href="foodMenu.download_url" 
+                        target="_blank"
+                        download
+                        class="p-4 text-white flex items-center bg-primary hover:bg-primary/90 rounded-md mb-4 transition-colors cursor-pointer"
+                    >
+                        <p>{{ trans('home_restaurant_section.menu') }}</p>
+                        <ArrowRight class="w-6 h-6 ml-4" />
+                    </a>
+                    <div 
+                        v-else
+                        class="p-4 text-white/50 flex items-center bg-primary/50 rounded-md mb-4 cursor-not-allowed"
+                    >
                         <p>{{ trans('home_restaurant_section.menu') }}</p>
                         <ArrowRight class="w-6 h-6 ml-4" />
                     </div>
-                     <div class="p-4 text-white flex items-center bg-primary hover:bg-primary rounded-md w-full">
-                        <p>
-                            {{ trans('home_restaurant_section.drinks_menu') }}
-                        </p>
+
+                    <a 
+                        v-if="drinksMenu?.download_url" 
+                        :href="drinksMenu.download_url" 
+                        target="_blank"
+                        download
+                        class="p-4 text-white flex items-center bg-primary hover:bg-primary/90 rounded-md w-full transition-colors cursor-pointer"
+                    >
+                        <p>{{ trans('home_restaurant_section.drinks_menu') }}</p>
+                        <ArrowRight class="w-6 h-6 ml-4" />
+                    </a>
+                    <div 
+                        v-else
+                        class="p-4 text-white/50 flex items-center bg-primary/50 rounded-md w-full cursor-not-allowed"
+                    >
+                        <p>{{ trans('home_restaurant_section.drinks_menu') }}</p>
                         <ArrowRight class="w-6 h-6 ml-4" />
                     </div>
                    
