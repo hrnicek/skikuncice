@@ -134,6 +134,56 @@ const formatDate = (date: string) => {
           <h3 class="text-lg font-medium text-gray-900">Data nejsou k dispozici</h3>
           <p class="text-gray-500">Bohužel se nepodařilo načíst aktuální předpověď počasí.</p>
         </div>
+
+        <!-- Webcams Section -->
+        <div class="space-y-6">
+          <div class="text-center space-y-2">
+            <h2 class="text-3xl font-bold">Webkamery</h2>
+            <p class="text-gray-500">Živé záběry ze skiareálu a okolí</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Webcam 1 -->
+            <UCard>
+              <div class="space-y-3">
+                <h3 class="text-lg font-semibold">Areál Hájovna, lyžařská škola a dětské hřiště</h3>
+                <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg flex items-center justify-center">
+                  <UIcon name="i-heroicons-camera" class="w-16 h-16 text-gray-400" />
+                </div>
+              </div>
+            </UCard>
+
+            <!-- Webcam 2 -->
+            <UCard>
+              <div class="space-y-3">
+                <h3 class="text-lg font-semibold">Horní stanice LD Triangl</h3>
+                <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg flex items-center justify-center">
+                  <UIcon name="i-heroicons-camera" class="w-16 h-16 text-gray-400" />
+                </div>
+              </div>
+            </UCard>
+
+            <!-- Webcam 3 -->
+            <UCard>
+              <div class="space-y-3">
+                <h3 class="text-lg font-semibold">Dolní stanice LD Triangl</h3>
+                <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg flex items-center justify-center">
+                  <UIcon name="i-heroicons-camera" class="w-16 h-16 text-gray-400" />
+                </div>
+              </div>
+            </UCard>
+
+            <!-- Webcam 4 -->
+            <UCard>
+              <div class="space-y-3">
+                <h3 class="text-lg font-semibold">Triangl parkoviště</h3>
+                <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg flex items-center justify-center">
+                  <UIcon name="i-heroicons-camera" class="w-16 h-16 text-gray-400" />
+                </div>
+              </div>
+            </UCard>
+          </div>
+        </div>
       </div>
     </div>
   </AppLayout>
