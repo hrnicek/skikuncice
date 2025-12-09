@@ -24,7 +24,6 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
-            .component('AppLayout', AppLayout)
             .use(i18nVue, {
 				lang: props.initialPage.props.locale, /* use correct language server-side */
                 resolve: async lang => {
@@ -33,6 +32,7 @@ createInertiaApp({
 				    return await langs[`../../lang/${lang}.json`]();
 			    },
             })
+            .component('AppLayout', AppLayout)
             .mount(el);
     },
     progress: {
