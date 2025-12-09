@@ -144,6 +144,13 @@ const services: { title: string, href: string, description: string, image: strin
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
+        <NavigationMenuItem>
+        <NavigationMenuLink as-child>
+          <Link href="/pocasi" :class="navigationMenuTriggerStyle()">
+           Počasí
+          </Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
           <Link href="/kontakt" :class="navigationMenuTriggerStyle()">
