@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
 import Hero from '@/components/Hero.vue';
+import PhilosophySection from '@/components/PhilosophySection.vue';
 import NearnestEventSection from '@/components/NearnestEventSection.vue';
 import EventsSection from '@/components/EventsSection.vue';
 import HomeServiceList from '@/components/HomeServiceList.vue';
@@ -19,6 +20,7 @@ defineProps<{
 <template>
   <AppLayout>
     <Hero />
+    <PhilosophySection />
     <NearnestEventSection v-if="nearestEvent" :event="nearestEvent" />
     <HomeServiceList />
     <EventsSection :events="events" />

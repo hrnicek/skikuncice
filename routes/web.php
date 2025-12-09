@@ -36,6 +36,7 @@ Route::group(
         Route::get('/ubytovani', [AccommodationController::class, 'index'])->name('accommodation');
         Route::get('/ubytovani/{accommodation}', [AccommodationController::class, 'show'])->name('accommodation.show');
         Route::get('/kontakt', [ContactController::class, 'index'])->name('contact');
+        Route::get('/pocasi', [App\Http\Controllers\WeatherController::class, '__invoke'])->name('weather');
 
         // winter
         Route::get('o-arealu', [AboutController::class, 'index'])->name('about');

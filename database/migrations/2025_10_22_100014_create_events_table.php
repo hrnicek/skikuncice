@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('perex')->nullable();
             $table->dateTime('date_from');
             $table->dateTime('date_to');
+            $table->boolean('show_time')->default(false);
             $table->longText('content');
             $table->json('program')->nullable();
             $table->boolean('published')->default(false);

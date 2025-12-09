@@ -41,7 +41,7 @@ const viewMode = ref<'card' | 'list'>('card');
                         </Button>
                     </div>
                     <Button as-child variant="outline">
-                        <a href="/events/past">{{ trans('events.index.show_past_events') }}</a>
+                        <Link :href="route('events.past')">{{ trans('events.index.show_past_events') }}</Link>
                     </Button>
                 </div>
 

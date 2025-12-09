@@ -25,6 +25,7 @@ class Event extends Model implements HasMedia
         'date_to',
         'published',
         'content',
+        'show_time',    
         'program',
         'note',
     ];
@@ -34,6 +35,7 @@ class Event extends Model implements HasMedia
         'date_to' => 'datetime',
         'published' => 'boolean',
         'program' => 'array',
+        'show_time' => 'boolean',
     ];
 
     /**

@@ -3,7 +3,7 @@
 return [
     'winter' => [
         'title' => 'Hory, kde uslyšíte ticho',
-        'subtitle' => 'Jen vy, sníh a nekonečný klid',
+        'subtitle' => 'Kde zima dává smysl — Kunčice pod Králickým Sněžníkem.',
     ],
     'summer' => [
         'title' => 'Letní aktivity pro celou rodinu',
