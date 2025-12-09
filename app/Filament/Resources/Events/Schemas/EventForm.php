@@ -30,6 +30,9 @@ class EventForm
                     DateTimePicker::make('date_to')
                         ->label('Datum do')
                         ->required(),
+                    Toggle::make('show_time')
+                        ->label('Zobrazit čas')
+                        ->required(),
                     RichEditor::make('content')
                         ->label('Obsah')
                         ->required()

@@ -48,7 +48,7 @@ const formatTime = (dateString: string) => {
                     <span class="font-medium">{{ trans('card_event.date') }}:</span>
                     {{ formatDate(event.date_from) }}
                 </p>
-                <p class="flex items-center">
+                <p v-if="event.show_time" class="flex items-center">
                     <Clock class="w-4 h-4 mr-2 text-[#081f54]" />
                     <span class="font-medium">{{ trans('card_event.time') }}:</span>
                     {{ formatTime(event.date_from) }} - {{ formatTime(event.date_to) }}
@@ -82,7 +82,7 @@ const formatTime = (dateString: string) => {
                     <span class="font-medium">{{ trans('card_event.date') }}:</span>
                     {{ formatDate(event.date_from) }}
                 </p>
-                <p class="flex items-center">
+                <p v-if="event.show_time" class="flex items-center">
                     <Clock class="w-4 h-4 mr-2 text-[#081f54]" />
                     <span class="font-medium">{{ trans('card_event.time') }}:</span>
                     {{ formatTime(event.date_from) }} - {{ formatTime(event.date_to) }}

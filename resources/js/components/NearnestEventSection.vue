@@ -56,13 +56,13 @@ const route = (window as any).route;
                 {{ event.title }}
               </h3>
 
-              <div class="text-sm text-muted-foreground space-y-1 mb-3">
+              <div  class="text-sm text-muted-foreground space-y-1 mb-3">
                 <p class="flex items-center">
                   <Calendar class="w-4 h-4 mr-2 text-[#081f54]" />
                   <span class="font-medium">{{ trans('nearnest_event_section.date') }}:</span>
                   {{ formatDate(event.date_from) }}
                 </p>
-                <p class="flex items-center">
+                <p v-if="event.show_time" class="flex items-center">
                   <Clock class="w-4 h-4 mr-2 text-[#081f54]" />
                   <span class="font-medium">{{ trans('nearnest_event_section.time') }}:</span>
                   {{ formatTime(event.date_from) }} - {{ formatTime(event.date_to) }}

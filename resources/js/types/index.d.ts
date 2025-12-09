@@ -39,13 +39,14 @@ export interface User {
 export type BreadcrumbItemType = BreadcrumbItem;
 
 export interface Event {
-  id: number;
-  title: string;
-  slug: string;
-  date_from: string;
-  date_to: string;
-  published: boolean;
-  perex?: string;
-  note?: string;
-  image?: string;
+    id: number;
+    title: string;
+    slug: string;
+    date_from: string;
+    date_to: string;
+    published: boolean;
+    perex?: string;
+    note?: string;
+    image?: string;
+    show_time?: boolean;
 }
