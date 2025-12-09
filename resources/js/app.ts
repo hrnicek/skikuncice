@@ -26,7 +26,7 @@ createInertiaApp({
             .use(ZiggyVue)
             .use(i18nVue, {
 				lang: props.initialPage.props.locale, /* use correct language server-side */
-                resolve: async lang => {
+                resolve: async (lang: string) => {
                     console.log(lang)
 				    const langs = import.meta.glob('../../lang/*.json');
 				    return await langs[`../../lang/${lang}.json`]();
