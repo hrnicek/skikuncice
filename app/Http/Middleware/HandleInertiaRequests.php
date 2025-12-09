@@ -2,9 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\MeteoblueService;
 use App\Services\SeasonService;
-use App\Services\WeatherService;
-use App\Settings\WeatherSettings;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -39,10 +38,11 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-        $weatherService = app(WeatherService::class);
         $seasonService = app(SeasonService::class);
-
         $currentSeason = $seasonService->getCurrentSeason($request);
+
+        $meteoblueService = app(MeteoblueService::class);
+        $currentWeather = $meteoblueService->currentWeather();
 
         return [
             ...parent::share($request),
@@ -55,9 +55,7 @@ class HandleInertiaRequests extends Middleware
                 'isSummer' => $seasonService->isSummer($request),
                 'available' => $seasonService->getAvailableSeasons(),
             ],
-            'weather' => [
-                ...$weatherService->getWeather(),
-            ],
+            'weather' => $currentWeather?->toArray() ?? [],
         ];
     }
 }

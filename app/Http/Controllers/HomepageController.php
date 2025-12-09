@@ -10,16 +10,12 @@ use App\Models\Event;
 use App\Models\News;
 use App\Models\Post;
 use App\Models\RestaurantMenu;
-use App\Services\WeatherService;
 
 class HomepageController extends Controller
 {
     public function index()
     {
         seo()->title('Ski Kunčice - Lyžařský areál v srdci Beskyd');
-
-        $weatherService = app(WeatherService::class);
-        $weather = $weatherService->getWeather();
 
         $latestPost = Post::query()->latest('published_at')->first();
         $events = Event::season()->published()
@@ -44,7 +40,6 @@ class HomepageController extends Controller
             ->first();
 
         return inertia('Homepage', [
-            'weather' => $weather,
             'latestPost' => $latestPost ? PostData::fromModel($latestPost) : null,
             'news' => NewsData::collect($news),
             'events' => EventData::collect($events),
