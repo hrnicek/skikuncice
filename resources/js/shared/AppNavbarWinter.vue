@@ -36,6 +36,11 @@ const arealItems: { title: string, href: string, description: string }[] = [
     title: wTrans('navbar.webcams'),
     href: "/webkamery",
     description: "Živé záběry z webkamer v areálu.",
+  },
+  {
+    title: 'Aktuální počasí',
+    href: "/pocasi",
+    description: "Aktuální počasí v areálu.",
   }
 ]
 

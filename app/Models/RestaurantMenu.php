@@ -11,7 +11,7 @@ class RestaurantMenu extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $fillable = [
-        'tpye',
+        'type',
         'from_date',
         'to_date',
         'is_published',

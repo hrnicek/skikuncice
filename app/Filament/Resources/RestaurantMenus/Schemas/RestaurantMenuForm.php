@@ -2,11 +2,12 @@
 
 namespace App\Filament\Resources\RestaurantMenus\Schemas;
 
-use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Schemas\Schema;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class RestaurantMenuForm
 {
@@ -16,6 +17,13 @@ class RestaurantMenuForm
             ->components([
                 Section::make('Základní informace')
                     ->schema([
+                        Select::make('type')
+                            ->label('Typ')
+                            ->options([
+                                'food' => 'Jídelní lístek',
+                                'drinks' => 'Nápojový lístek',
+                            ])
+                            ->required(),
                         DatePicker::make('from_date')
                             ->label('Platné od')
                             ->default(now()->next('Monday'))
@@ -33,7 +41,9 @@ class RestaurantMenuForm
                         SpatieMediaLibraryFileUpload::make('food')
                             ->label('Jídelní lístek - jídlo')
                             ->required()
-                            ->collection('food'),
+                            ->downloadable()
+                            ->disk('public')
+                            ->collection('files'),
                     ]),
             ]);
     }
