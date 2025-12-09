@@ -25,13 +25,13 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
             .component('AppLayout', AppLayout)
-            .component('Link', Link)
             .use(i18nVue, {
-                lang: props.initialPage.props.locale,
-                resolve: async (lang: string) => {
-                    const langs: any = import.meta.glob("../../lang/*.json");
-                    return await langs[`../../lang/${lang}.json`]();
-                }
+				lang: props.initialPage.props.locale, /* use correct language server-side */
+                resolve: async lang => {
+                    console.log(lang)
+				    const langs = import.meta.glob('../../lang/*.json');
+				    return await langs[`../../lang/${lang}.json`]();
+			    },
             })
             .mount(el);
     },

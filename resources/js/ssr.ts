@@ -18,7 +18,16 @@ createServer(
                     import.meta.glob<DefineComponent>('./pages/**/*.vue'),
                 ),
             setup: ({ App, props, plugin }) =>
-                createSSRApp({ render: () => h(App, props) }).use(plugin),
+                createSSRApp({ render: () => h(App, props) })
+                    .use(plugin)
+                    .use(i18nVue, {
+                        lang: 'pt',
+                        resolve: lang => {
+                            const langs = import.meta.glob('../../lang/*.json', { eager: true });
+                            return langs[`../../lang/${lang}.json`].default;
+                        },
+                    })
+                    
         }),
     { cluster: true },
 );
