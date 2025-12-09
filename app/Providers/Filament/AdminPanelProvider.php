@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Pages\ManageWeather;
+use App\Filament\Pages\ManageWebcams;
 use App\Filament\Resources\Accommodations\AccommodationResource;
 use App\Filament\Resources\Events\EventResource;
 use App\Filament\Resources\Posts\PostResource;
@@ -90,12 +91,10 @@ class AdminPanelProvider extends PanelProvider
         ]);
 
         $builder->groups([
-            NavigationGroup::make('Nastaveí')
+            NavigationGroup::make('Obsah')
                 ->items([
-                    NavigationItem::make('Stav sjezdovek')
-                        ->url(ManageWeather::getUrl())
-                        ->icon('heroicon-o-sun')
-                        ->sort(1),
+                    ...PostResource::getNavigationItems(),
+                    ...EventResource::getNavigationItems(),
                 ]),
         ]);
 
@@ -107,17 +106,19 @@ class AdminPanelProvider extends PanelProvider
         ]);
 
         $builder->groups([
-            NavigationGroup::make('Obsah')
+            NavigationGroup::make('Chaty & penziony')
                 ->items([
-                    ...PostResource::getNavigationItems(),
-                    ...EventResource::getNavigationItems(),
+                    ...AccommodationResource::getNavigationItems(),
                 ]),
         ]);
 
         $builder->groups([
-            NavigationGroup::make('Chaty & penziony')
+            NavigationGroup::make('Nastavení')
                 ->items([
-                    ...AccommodationResource::getNavigationItems(),
+                        NavigationItem::make('Webkamery')
+                        ->url(ManageWebcams::getUrl())
+                        ->icon('heroicon-o-camera')
+                        ->sort(1),
                 ]),
         ]);
 
@@ -127,6 +128,7 @@ class AdminPanelProvider extends PanelProvider
                     ...UserResource::getNavigationItems(),
                 ]),
         ]);
+
 
         return $builder;
     }
