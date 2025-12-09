@@ -14,8 +14,14 @@ class RestaurantMenu extends Model implements HasMedia
         'type',
         'from_date',
         'to_date',
+        'fixed_menu',
         'is_published',
         'note',
+    ];
+
+    protected $casts = [
+        'fixed_menu' => 'boolean',
+        'is_published' => 'boolean',
     ];
 
     public function scopeThisWeek($query)

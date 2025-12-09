@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('restaurant_menus', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->default('food');
-            $table->date('from_date');
-            $table->date('to_date');
-            $table->text('note')->nullable();
-            $table->boolean('fixed_menu')->default(true);
+            $table->timestamp('published_at')->nullable();
             $table->boolean('is_published')->default(false);
             $table->timestamps();
         });
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('restaurant_menus');
+        Schema::dropIfExists('news');
     }
 };

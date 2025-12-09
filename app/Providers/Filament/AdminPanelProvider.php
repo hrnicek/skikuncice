@@ -2,33 +2,34 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Pages\ManageWeather;
-use App\Filament\Pages\ManageWebcams;
-use App\Filament\Resources\Accommodations\AccommodationResource;
-use App\Filament\Resources\Events\EventResource;
-use App\Filament\Resources\Posts\PostResource;
-use App\Filament\Resources\RestaurantMenus\RestaurantMenuResource;
-use App\Filament\Resources\Users\UserResource;
-use Filament\Http\Middleware\Authenticate;
-use Filament\Http\Middleware\AuthenticateSession;
-use Filament\Http\Middleware\DisableBladeIconComponents;
-use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Navigation\NavigationBuilder;
-use Filament\Navigation\NavigationGroup;
-use Filament\Navigation\NavigationItem;
-use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\Pages\Dashboard;
 use Filament\Support\Colors\Color;
 use Filament\Widgets\AccountWidget;
-use Filamerce\FilamentTranslatable\Enums\TranslationMode;
-use Filamerce\FilamentTranslatable\FilamentTranslatablePlugin;
-use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
-use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
-use Illuminate\Routing\Middleware\SubstituteBindings;
+use App\Filament\Pages\ManageWeather;
+use App\Filament\Pages\ManageWebcams;
+use Filament\Navigation\NavigationItem;
+use Filament\Navigation\NavigationGroup;
+use Filament\Http\Middleware\Authenticate;
+use Filament\Navigation\NavigationBuilder;
+use App\Filament\Resources\News\NewsResource;
+use App\Filament\Resources\Posts\PostResource;
+use App\Filament\Resources\Users\UserResource;
 use Illuminate\Session\Middleware\StartSession;
+use App\Filament\Resources\Events\EventResource;
+use Illuminate\Cookie\Middleware\EncryptCookies;
+use Filament\Http\Middleware\AuthenticateSession;
+use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Filament\Http\Middleware\DisableBladeIconComponents;
+use Filamerce\FilamentTranslatable\Enums\TranslationMode;
+use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Filamerce\FilamentTranslatable\FilamentTranslatablePlugin;
+use App\Filament\Resources\Accommodations\AccommodationResource;
+use App\Filament\Resources\RestaurantMenus\RestaurantMenuResource;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -93,6 +94,7 @@ class AdminPanelProvider extends PanelProvider
         $builder->groups([
             NavigationGroup::make('Obsah')
                 ->items([
+                    ...NewsResource::getNavigationItems(),
                     ...PostResource::getNavigationItems(),
                     ...EventResource::getNavigationItems(),
                 ]),

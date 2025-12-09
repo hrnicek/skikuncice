@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Data\EventData;
+use App\Data\NewsData;
 use App\Data\PostData;
 use App\Data\RestaurantMenuData;
 use App\Models\Event;
+use App\Models\News;
 use App\Models\Post;
 use App\Models\RestaurantMenu;
 use App\Services\WeatherService;
@@ -29,6 +31,8 @@ class HomepageController extends Controller
 
         $nearestEvent = Event::season()->nearnest()->first();
 
+        $news = News::published()->latest('published_at')->get();
+
         $foodMenu = RestaurantMenu::published()
             ->byType('food')
             ->latestMenu()
@@ -42,6 +46,7 @@ class HomepageController extends Controller
         return inertia('Homepage', [
             'weather' => $weather,
             'latestPost' => $latestPost ? PostData::fromModel($latestPost) : null,
+            'news' => NewsData::collect($news),
             'events' => EventData::collect($events),
             'nearestEvent' => $nearestEvent ? EventData::fromModel($nearestEvent) : null,
             'foodMenu' => $foodMenu ? RestaurantMenuData::fromModel($foodMenu) : null,
