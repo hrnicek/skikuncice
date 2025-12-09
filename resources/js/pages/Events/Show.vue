@@ -59,7 +59,7 @@ const isSameDay = () => {
                     <Calendar class="w-5 h-5 text-[#081f54]" />
                     <span>{{ formatDate(event.date_from) }}</span>
                 </div>
-                <div class="flex items-center gap-2">
+                <div v-if="event?.show_time" class="flex items-center gap-2">
                     <Clock class="w-5 h-5 text-[#081f54]" />
                     <span>
                         {{ formatTime(event.date_from) }}
@@ -120,7 +120,7 @@ const isSameDay = () => {
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-3">
+                        <div v-if="event?.show_time" class="flex items-start gap-3">
                             <Clock class="w-5 h-5 text-[#081f54] mt-0.5 shrink-0" />
                             <div>
                                 <div class="font-medium">{{ trans('events.show.time') }}</div>
