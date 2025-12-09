@@ -14,6 +14,7 @@
         "filamerce/filament-translatable": "^3.1",
         "honeystone/laravel-seo": "^2.0",
         "inertiajs/inertia-laravel": "^2.0",
+        "kargnas/laravel-ai-translator": "^1.7",
         "laravel-lang/common": "^6.7",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",

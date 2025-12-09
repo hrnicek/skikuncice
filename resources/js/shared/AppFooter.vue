@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3'
 import { Facebook, Instagram, Youtube, MapPin, TrendingUp, Clock, Phone, Mail, Map } from 'lucide-vue-next'
+import { trans } from 'laravel-vue-i18n'
 </script>
 
 <template>
@@ -10,10 +11,9 @@ import { Facebook, Instagram, Youtube, MapPin, TrendingUp, Clock, Phone, Mail, M
         
         <!-- Logo + Social -->
         <div>
-          <img src="/img/logo.png" alt="Ski Kunčice Logo" class="h-8 mb-6" />
+          <img src="/img/logo.png" :alt="trans('footer.logo_alt')" class="h-8 mb-6" />
           <p class="text-gray-600 text-base leading-relaxed mb-8">
-            Moderní lyžařský areál v srdci Moravskoslezských Beskyd. 
-            Nabízíme kvalitní sjezdovky, profesionální služby a nezapomenutelné zážitky.
+            {{ trans('footer.description') }}
           </p>
           <div class="flex items-center space-x-5">
             <a href="#" aria-label="Facebook" class="text-gray-500 hover:text-[#081f54] transition-colors">
@@ -30,59 +30,59 @@ import { Facebook, Instagram, Youtube, MapPin, TrendingUp, Clock, Phone, Mail, M
 
         <!-- Služby -->
         <div>
-          <h4 class="font-semibold mb-5 text-gray-900 text-lg">Služby</h4>
+          <h4 class="font-semibold mb-5 text-gray-900 text-lg">{{ trans('footer.services.title') }}</h4>
           <ul class="space-y-3">
-            <li><Link :href="route('ski-rental')" class="footer-link">Půjčovna lyží</Link></li>
-            <li><Link :href="route('ski-school')" class="footer-link">Lyžařská škola</Link></li>
-            <li><Link :href="route('restaurant')" class="footer-link">Restaurace</Link></li>
-            <li><Link :href="route('kids-paradise')" class="footer-link">Dětský snowpark</Link></li>
-            <li><Link :href="route('cross-country-skiing')" class="footer-link">Běžky</Link></li>
-            <li><Link :href="route('accommodation')" class="footer-link">Ubytování</Link></li>
+            <li><Link :href="route('ski-rental')" class="footer-link">{{ trans('footer.services.ski_rental') }}</Link></li>
+            <li><Link :href="route('ski-school')" class="footer-link">{{ trans('footer.services.ski_school') }}</Link></li>
+            <li><Link :href="route('restaurant')" class="footer-link">{{ trans('footer.services.restaurant') }}</Link></li>
+            <li><Link :href="route('kids-paradise')" class="footer-link">{{ trans('footer.services.kids_paradise') }}</Link></li>
+            <li><Link :href="route('cross-country-skiing')" class="footer-link">{{ trans('footer.services.cross_country_skiing') }}</Link></li>
+            <li><Link :href="route('accommodation')" class="footer-link">{{ trans('footer.services.accommodation') }}</Link></li>
           </ul>
         </div>
 
         <!-- O areálu -->
         <div>
-          <h4 class="font-semibold mb-5 text-gray-900 text-lg">O areálu</h4>
+          <h4 class="font-semibold mb-5 text-gray-900 text-lg">{{ trans('footer.about.title') }}</h4>
           <ul class="space-y-3">
-            <li><Link :href="route('area-map')" class="footer-link">Mapa areálu</Link></li>
-            <li><Link :href="route('webcams')" class="footer-link">Webkamery</Link></li>
-            <li><Link :href="route('operating-hours')" class="footer-link">Provozní doba</Link></li>
+            <li><Link :href="route('area-map')" class="footer-link">{{ trans('footer.about.area_map') }}</Link></li>
+            <li><Link :href="route('webcams')" class="footer-link">{{ trans('footer.about.webcams') }}</Link></li>
+            <li><Link :href="route('operating-hours')" class="footer-link">{{ trans('footer.about.operating_hours') }}</Link></li>
           </ul>
 
           <div class="mt-6 space-y-3">
             <div class="info-box">
               <MapPin class="w-4 h-4 text-gray-500 mr-2" />
               <div>
-                <p class="font-medium text-gray-900 text-sm">49.6089°N, 18.1847°E</p>
-                <p class="text-gray-500 text-xs">Moravskoslezské Beskydy</p>
+                <p class="font-medium text-gray-900 text-sm">{{ trans('footer.about.coords') }}</p>
+                <p class="text-gray-500 text-xs">{{ trans('footer.about.region') }}</p>
               </div>
             </div>
 
             <div class="info-box">
               <TrendingUp class="w-4 h-4 text-gray-500 mr-2" />
-              <p class="font-medium text-gray-900 text-sm">580–750 m n. m.</p>
+              <p class="font-medium text-gray-900 text-sm">{{ trans('footer.about.elevation') }}</p>
             </div>
           </div>
         </div>
 
         <!-- Kontakt -->
         <div>
-          <h4 class="font-semibold mb-5 text-gray-900 text-lg">Kontakt</h4>
+          <h4 class="font-semibold mb-5 text-gray-900 text-lg">{{ trans('footer.contact.title') }}</h4>
           <div class="space-y-4">
             <div class="contact-card">
               <Phone class="icon" />
               <div>
-                <p class="label">Půjčovna, lyž. škola</p>
+                <p class="label">{{ trans('footer.contact.rental_school_label') }}</p>
                 <a href="tel:+420777719579" class="value hover:text-primary">+420 777 719 579</a>
-                <p class="hint">8:00 – 16:00 hod</p>
+                <p class="hint">{{ trans('footer.contact.phone_hours') }}</p>
               </div>
             </div>
 
             <div class="contact-card">
               <Mail class="icon" />
               <div>
-                <p class="label">Email</p>
+                <p class="label">{{ trans('footer.contact.email_label') }}</p>
                 <a href="mailto:info@skikuncice.cz" class="value hover:text-primary">info@skikuncice.cz</a>
               </div>
             </div>
@@ -90,17 +90,17 @@ import { Facebook, Instagram, Youtube, MapPin, TrendingUp, Clock, Phone, Mail, M
             <div class="contact-card">
               <Map class="icon" />
               <div>
-                <p class="label">Adresa</p>
-                <p class="value">Staré Město pod Sněžníkem<br />788 32 Kunčice</p>
+                <p class="label">{{ trans('footer.contact.address_label') }}</p>
+                <p class="value" v-html="trans('footer.contact.address_value_html')"></p>
               </div>
             </div>
 
             <div class="contact-card">
               <Clock class="icon" />
               <div>
-                <p class="label">Provozní doba</p>
-                <p class="value">Denně: 8:00 – 16:00</p>
-                <p class="hint">Podle sněhových podmínek</p>
+                <p class="label">{{ trans('footer.contact.operating_hours_label') }}</p>
+                <p class="value">{{ trans('footer.contact.operating_hours_value') }}</p>
+                <p class="hint">{{ trans('footer.contact.operating_hours_hint') }}</p>
               </div>
             </div>
           </div>
@@ -109,14 +109,14 @@ import { Facebook, Instagram, Youtube, MapPin, TrendingUp, Clock, Phone, Mail, M
 
       <!-- Bottom -->
       <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 gap-4">
-        <p>© 2025 Ski Kunčice. Všechna práva vyhrazena.</p>
+        <p>{{ trans('footer.bottom.copyright') }}</p>
         <div class="flex items-center gap-2">
-          <span>made by</span>
+          <span>{{ trans('footer.bottom.made_by') }}</span>
           <a href="https://zondy.cz" target="_blank" class="font-medium text-gray-700 hover:text-primary">Zondy</a>
         </div>
         <div class="flex gap-6">
-          <a href="#" class="footer-link text-sm">Ochrana osobních údajů</a>
-          <a href="#" class="footer-link text-sm">Obchodní podmínky</a>
+          <a href="#" class="footer-link text-sm">{{ trans('footer.bottom.privacy') }}</a>
+          <a href="#" class="footer-link text-sm">{{ trans('footer.bottom.terms') }}</a>
         </div>
       </div>
     </div>
