@@ -12,7 +12,7 @@ return [
     */
     'locales' => [
         'cs',
-        'pl',
+        'en',
     ],
 
     /*
