@@ -118,6 +118,14 @@ return [
             'replace_placeholders' => true,
         ],
 
+        'weather' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/weather.log'),
+            'level' => 'info',
+            'days' => env('LOG_DAILY_DAYS', 14),
+            'replace_placeholders' => true,
+        ],
+
         'null' => [
             'driver' => 'monolog',
             'handler' => NullHandler::class,

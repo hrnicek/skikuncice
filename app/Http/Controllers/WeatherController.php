@@ -11,10 +11,7 @@ class WeatherController extends Controller
 {
     public function __invoke(MeteoblueService $weatherService, WebcamSettings $webcamSettings): Response
     {
-        $forecast = $weatherService->simple();
-
         return Inertia::render('Weather', [
-            'forecast' => $forecast,
             'webcams' => $webcamSettings->getAllWebcams(),
         ]);
     }
