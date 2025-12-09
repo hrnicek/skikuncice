@@ -35,4 +35,19 @@ class RestaurantMenu extends Model implements HasMedia
         return $query->where('from_date', '<=', $endOfNextWeek)
             ->where('to_date', '>=', $startOfNextWeek);
     }
+
+    public function scopePublished($query)
+    {
+        return $query->where('is_published', true);
+    }
+
+    public function scopeByType($query, string $type)
+    {
+        return $query->where('type', $type);
+    }
+
+    public function scopeLatestMenu($query)
+    {
+        return $query->orderBy('from_date', 'desc');
+    }
 }
