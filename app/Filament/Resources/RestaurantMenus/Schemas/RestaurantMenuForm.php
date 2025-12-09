@@ -42,6 +42,7 @@ class RestaurantMenuForm
                             ->label('Jídelní lístek - jídlo')
                             ->required()
                             ->downloadable()
+                            ->preserveFilenames(true)
                             ->disk('public')
                             ->collection('files'),
                     ]),

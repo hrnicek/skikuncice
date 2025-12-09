@@ -14,16 +14,22 @@ class AccommodationsTable
     {
         return $table
             ->columns([
-                TextColumn::make('created_at')
-                    ->label('Vytvořeno')
-                    ->dateTime()
+                TextColumn::make('name')
+                    ->label('Název')
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->label('Upraveno')
-                    ->dateTime()
+                    ->searchable(),
+                TextColumn::make('phone')
+                    ->label('Tel.')
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->searchable(),
+                TextColumn::make('email')
+                    ->label('Email')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('address')
+                    ->label('Adresa')
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([
                 //

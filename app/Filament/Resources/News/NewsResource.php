@@ -28,6 +28,16 @@ class NewsResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Aktuální informace';
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::published()->count();
+    }
+
+    public static function getNavigationBadgeTooltip(): ?string
+    {
+        return 'Aktivní informace';
+    }
+
     public static function form(Schema $schema): Schema
     {
         return NewsForm::configure($schema);

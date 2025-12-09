@@ -21,41 +21,41 @@ defineProps<{
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <nav aria-label="Navigace sekcí" class="sticky top-2 z-20 mb-6">
         <div class="flex flex-wrap gap-2 rounded-full bg-card/80 p-2 shadow ring-1 ring-black/5 border">
-          <a href="#rumaru" class="inline-flex items-center rounded-full bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">Hospoda U Rumařů</a>
-          <a href="#hajovna" class="inline-flex items-center rounded-full bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">Restaurace Hájovna</a>
-          <a href="#kulatak" class="inline-flex items-center rounded-full bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">Skibar Kulaťák</a>
-          <a href="#hours" class="inline-flex items-center rounded-full bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">Otevírací doba</a>
-          <a href="#facilities" class="inline-flex items-center rounded-full bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">Zázemí</a>
+          <a href="#rumaru" class="inline-flex items-center rounded-full bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">{{ trans('restaurant.nav.rumaru') }}</a>
+          <a href="#hajovna" class="inline-flex items-center rounded-full bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">{{ trans('restaurant.nav.hajovna') }}</a>
+          <a href="#kulatak" class="inline-flex items-center rounded-full bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">{{ trans('restaurant.nav.kulatak') }}</a>
+          <a href="#hours" class="inline-flex items-center rounded-full bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">{{ trans('restaurant.nav.hours') }}</a>
+          <a href="#facilities" class="inline-flex items-center rounded-full bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">{{ trans('restaurant.nav.facilities') }}</a>
         </div>
       </nav>
 
       <Card id="downloads" class="scroll-mt-24 rounded-lg shadow-lg ring-1 ring-black/5 border">
         <CardHeader>
-          <CardTitle class="text-xl font-semibold text-foreground">Menu ke stažení</CardTitle>
+          <CardTitle class="text-xl font-semibold text-foreground">{{ trans('restaurant.downloads.title') }}</CardTitle>
         </CardHeader>
         <CardContent>
           <div class="grid gap-4 md:grid-cols-3">
             <div class="rounded-lg border p-4">
-              <div class="text-sm font-semibold text-foreground">Hospoda U Rumařů</div>
+              <div class="text-sm font-semibold text-foreground">{{ trans('restaurant.rumaru.title') }}</div>
               <div class="mt-3 flex flex-wrap gap-2">
-                <a v-if="foodMenu?.download_url" aria-label="Jídelní lístek U Rumařů" :href="foodMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Jídelní lístek (PDF)</a>
-                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Jídelní lístek (PDF)</span>
-                <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek U Rumařů" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
-                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
+                <a v-if="foodMenu?.download_url" :aria-label="trans('restaurant.buttons.food_menu_aria')" :href="foodMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">{{ trans('restaurant.buttons.food_menu') }}</a>
+                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">{{ trans('restaurant.buttons.food_menu') }}</span>
+                <a v-if="drinksMenu?.download_url" :aria-label="trans('restaurant.buttons.drinks_menu_aria')" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">{{ trans('restaurant.buttons.drinks_menu') }}</a>
+                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">{{ trans('restaurant.buttons.drinks_menu') }}</span>
               </div>
             </div>
             <div class="rounded-lg border p-4">
-              <div class="text-sm font-semibold text-foreground">Restaurace Hájovna</div>
+              <div class="text-sm font-semibold text-foreground">{{ trans('restaurant.hajovna.title') }}</div>
               <div class="mt-3 flex flex-wrap gap-2">
-                <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek Hájovna" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
-                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
+                <a v-if="drinksMenu?.download_url" :aria-label="trans('restaurant.buttons.drinks_menu_aria')" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">{{ trans('restaurant.buttons.drinks_menu') }}</a>
+                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">{{ trans('restaurant.buttons.drinks_menu') }}</span>
               </div>
             </div>
             <div class="rounded-lg border p-4">
-              <div class="text-sm font-semibold text-foreground">Skibar Kulaťák</div>
+              <div class="text-sm font-semibold text-foreground">{{ trans('restaurant.kulatak.title') }}</div>
               <div class="mt-3 flex flex-wrap gap-2">
-                <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek Kulaťák" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
-                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
+                <a v-if="drinksMenu?.download_url" :aria-label="trans('restaurant.buttons.drinks_menu_aria')" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">{{ trans('restaurant.buttons.drinks_menu') }}</a>
+                <span v-else class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">{{ trans('restaurant.buttons.drinks_menu') }}</span>
               </div>
             </div>
           </div>
@@ -64,43 +64,43 @@ defineProps<{
       <div class="rounded-lg bg-card/80 shadow-xl ring-1 ring-black/5 p-6 md:p-8 border">
         <div class="flex items-center gap-4">
           <img src="/img/icons/restaurace.png" alt="Restaurace" class="h-10 w-10" />
-          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">Restaurace a občerstvení ve Skiareálu Kunčice</h2>
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">{{ trans('restaurant.intro.title') }}</h2>
         </div>
-        <p class="mt-4 text-lg leading-relaxed text-foreground/80">Během dne stráveného na svahu budete potřebovat nabrat síly a dostatečně se osvěžit. Využijte některé z našich gastro zařízení, které máte ve skiareálu Kunčice přímo u sjezdovek.</p>
+        <p class="mt-4 text-lg leading-relaxed text-foreground/80">{{ trans('restaurant.intro.p1') }}</p>
         <div class="mt-6 overflow-hidden rounded-lg ring-1 ring-border">
-          <img src="/img/services/restaurace.jpg" alt="Restaurace ve skiareálu Kunčice" class="h-64 w-full object-cover" />
+          <img src="/img/services/restaurace.jpg" :alt="trans('restaurant.alt.area_restaurant')" class="h-64 w-full object-cover" />
         </div>
       </div>
 
       <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <Card id="rumaru" class="scroll-mt-24 rounded-lg shadow-lg ring-1 ring-black/5 border">
           <CardHeader>
-            <CardTitle class="text-xl font-semibold text-foreground">Hospoda u Rumařů</CardTitle>
+            <CardTitle class="text-xl font-semibold text-foreground">{{ trans('restaurant.rumaru.title') }}</CardTitle>
           </CardHeader>
           <CardContent class="text-foreground/80">
-            <p>Nabízí 100 míst k sezení v příjemném, dřevem obloženém interiéru s výhledem na sjezdovky a slunečnou terasu. Najdete ji přímo u nástupní stanice lanové dráhy.</p>
+            <p>{{ trans('restaurant.rumaru.p1') }}</p>
             <div class="mt-3">
-              <p class="font-medium text-foreground">Na jídelním lístku najdete:</p>
+              <p class="font-medium text-foreground">{{ trans('restaurant.rumaru.menu.title') }}</p>
               <ul class="mt-2 space-y-1">
-                <li>Polévky, hotová jídla a minutky</li>
-                <li>Speciality z klasické udírny a grilu</li>
-                <li>Pochoutky pro děti: palačinky, borůvkové knedlíky, párek v rohlíku, hranolky, langoše, kukuřice a další</li>
-                <li>Široký výběr teplých i chlazených alko i nealko nápojů</li>
+                <li>{{ trans('restaurant.rumaru.menu.i1') }}</li>
+                <li>{{ trans('restaurant.rumaru.menu.i2') }}</li>
+                <li>{{ trans('restaurant.rumaru.menu.i3') }}</li>
+                <li>{{ trans('restaurant.rumaru.menu.i4') }}</li>
               </ul>
             </div>
-            <p class="mt-3">Jednou za čas si můžete na terase pochutnat i na grilovaném selátku.</p>
+            <p class="mt-3">{{ trans('restaurant.rumaru.p2') }}</p>
             <div class="mt-4 flex flex-wrap gap-3">
-              <a v-if="foodMenu?.download_url" aria-label="Jídelní lístek U Rumařů" :href="foodMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Jídelní lístek (PDF)</a>
-              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Jídelní lístek (PDF)</span>
-              <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek U Rumařů" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
-              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
+              <a v-if="foodMenu?.download_url" :aria-label="trans('restaurant.buttons.food_menu_aria')" :href="foodMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">{{ trans('restaurant.buttons.food_menu') }}</a>
+              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">{{ trans('restaurant.buttons.food_menu') }}</span>
+              <a v-if="drinksMenu?.download_url" :aria-label="trans('restaurant.buttons.drinks_menu_aria')" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">{{ trans('restaurant.buttons.drinks_menu') }}</a>
+              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">{{ trans('restaurant.buttons.drinks_menu') }}</span>
             </div>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/services/restaurace.jpg" alt="Hospoda u Rumařů" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/services/restaurace.jpg" :alt="trans('restaurant.alt.rumaru')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/home/restaurace.jpg" alt="Interiér restaurace" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/home/restaurace.jpg" :alt="trans('restaurant.alt.interior')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
             </div>
           </CardContent>
@@ -108,65 +108,65 @@ defineProps<{
 
         <Card id="hajovna" class="scroll-mt-24 rounded-lg shadow-lg ring-1 ring-black/5 border">
           <CardHeader>
-            <CardTitle class="text-xl font-semibold text-foreground">Restaurace u vleku Hájovna</CardTitle>
+            <CardTitle class="text-xl font-semibold text-foreground">{{ trans('restaurant.hajovna.title') }}</CardTitle>
           </CardHeader>
           <CardContent class="text-foreground/80">
-            <p>Stravování a osvěžení na Hájovně zajišťuje restaurace s obsluhou s 50 místy k sezení.</p>
-            <p class="mt-3">Za příznivého počasí potěší slunečná terasa se závětřím a výhledem na hřebeny hor, dětské hřiště a dětský vlek.</p>
+            <p>{{ trans('restaurant.hajovna.p1') }}</p>
+            <p class="mt-3">{{ trans('restaurant.hajovna.p2') }}</p>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/hero-winter.jpg" alt="Terasa u Hájovny" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/hero-winter.jpg" :alt="trans('restaurant.alt.terasa_hajovna')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/cta-skoly.jpg" alt="Výhled na dětský vlek" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/cta-skoly.jpg" :alt="trans('restaurant.alt.view_kids_lift')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
             </div>
             <div class="mt-4 flex flex-wrap gap-3">
-              <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek Hájovna" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
-              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
+              <a v-if="drinksMenu?.download_url" :aria-label="trans('restaurant.buttons.drinks_menu_aria')" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">{{ trans('restaurant.buttons.drinks_menu') }}</a>
+              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">{{ trans('restaurant.buttons.drinks_menu') }}</span>
             </div>
           </CardContent>
         </Card>
 
         <Card id="kulatak" class="scroll-mt-24 rounded-lg shadow-lg ring-1 ring-black/5 border">
           <CardHeader>
-            <CardTitle class="text-xl font-semibold text-foreground">Skibar Kulaťák</CardTitle>
+            <CardTitle class="text-xl font-semibold text-foreground">{{ trans('restaurant.kulatak.title') }}</CardTitle>
           </CardHeader>
           <CardContent class="text-foreground/80">
-            <p>Panoramatický skibar nacházející se asi 100 metrů pod výstupní stanicí lanovky. Nabízí teplé i studené, alko i nealko nápoje a lehkou svačinku.</p>
-            <p class="mt-3">Za příznivého počasí se můžete těšit na neopakovatelné výhledy na okolní panoramata našich krásných hor.</p>
+            <p>{{ trans('restaurant.kulatak.p1') }}</p>
+            <p class="mt-3">{{ trans('restaurant.kulatak.p2') }}</p>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/hero-winter.jpg" alt="Skibar Kulaťák zima" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/hero-winter.jpg" :alt="trans('restaurant.alt.kulatak_winter')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/hero-summer.jpg" alt="Skibar Kulaťák léto" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/hero-summer.jpg" :alt="trans('restaurant.alt.kulatak_summer')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
             </div>
             <div class="mt-4 flex flex-wrap gap-3">
-              <a v-if="drinksMenu?.download_url" aria-label="Nápojový lístek Kulaťák" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">Nápojový lístek (PDF)</a>
-              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">Nápojový lístek (PDF)</span>
+              <a v-if="drinksMenu?.download_url" :aria-label="trans('restaurant.buttons.drinks_menu_aria')" :href="drinksMenu.download_url" target="_blank" download class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-secondary">{{ trans('restaurant.buttons.drinks_menu') }}</a>
+              <span v-else class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-secondary shadow-sm opacity-50 pointer-events-none">{{ trans('restaurant.buttons.drinks_menu') }}</span>
             </div>
           </CardContent>
         </Card>
 
         <Card id="hours" class="scroll-mt-24 rounded-lg shadow-lg ring-1 ring-black/5 md:col-span-2 lg:col-span-3 border">
           <CardHeader>
-            <CardTitle class="text-xl font-semibold text-foreground">Otevírací doba</CardTitle>
+            <CardTitle class="text-xl font-semibold text-foreground">{{ trans('restaurant.hours.title') }}</CardTitle>
           </CardHeader>
           <CardContent>
             <div class="grid gap-4 md:grid-cols-3">
               <div class="rounded-lg bg-card ring-1 ring-border p-4">
-                <p class="font-semibold text-foreground">Hospoda U Rumařů</p>
-                <p class="mt-1 text-foreground/80">Pondělí – pátek: 11:00 – 15:00</p>
+                <p class="font-semibold text-foreground">{{ trans('restaurant.hours.rumaru.title') }}</p>
+                <p class="mt-1 text-foreground/80">{{ trans('restaurant.hours.rumaru.value') }}</p>
               </div>
               <div class="rounded-lg bg-card ring-1 ring-border p-4">
-                <p class="font-semibold text-foreground">Restaurace na Hájovně</p>
-                <p class="mt-1 text-foreground/80">Zavřeno</p>
+                <p class="font-semibold text-foreground">{{ trans('restaurant.hours.hajovna.title') }}</p>
+                <p class="mt-1 text-foreground/80">{{ trans('restaurant.hours.hajovna.value') }}</p>
               </div>
               <div class="rounded-lg bg-card ring-1 ring-border p-4">
-                <p class="font-semibold text-foreground">Skibar Kulaťák</p>
-                <p class="mt-1 text-foreground/80">Zavřeno</p>
+                <p class="font-semibold text-foreground">{{ trans('restaurant.hours.kulatak.title') }}</p>
+                <p class="mt-1 text-foreground/80">{{ trans('restaurant.hours.kulatak.value') }}</p>
               </div>
             </div>
           </CardContent>
@@ -174,17 +174,17 @@ defineProps<{
 
         <Card id="facilities" class="scroll-mt-24 rounded-lg shadow-lg ring-1 ring-black/5 md:col-span-2 lg:col-span-3 border">
           <CardHeader>
-            <CardTitle class="text-xl font-semibold text-foreground">Vyhřívané převlékárny a toalety</CardTitle>
+            <CardTitle class="text-xl font-semibold text-foreground">{{ trans('restaurant.facilities.title') }}</CardTitle>
           </CardHeader>
           <CardContent class="text-foreground/80">
-            <p>Lyžárna a vyhřívaná šatna jsou v našem skiareálu opravdu praktické. V teple se zde převlečete a do uzamykatelné skříňky si uložíte cennosti. Můžete se zde také ohřát u topení.</p>
-            <p class="mt-3">Dobře fungující zázemí doplňují vyhřívané a udržované toalety s teplou vodou. Jsou přístupné u dolní stanice lanovky Triangl a vleku Hájovna a dojedete k nim i na lyžích, protože nemusíte nikam do schodů.</p>
+            <p>{{ trans('restaurant.facilities.p1') }}</p>
+            <p class="mt-3">{{ trans('restaurant.facilities.p2') }}</p>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/services/restaurace.jpg" alt="Zázemí u nástupních stanic" class="h-56 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/services/restaurace.jpg" :alt="trans('restaurant.alt.facility_station')" class="h-56 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/pizza.avif" alt="Občerstvení" class="h-56 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/pizza.avif" :alt="trans('restaurant.alt.food')" class="h-56 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
             </div>
             <div class="mt-6 flex flex-wrap gap-3">

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { type PropType, ref, computed, onMounted, onUnmounted } from 'vue'
+import { trans } from 'laravel-vue-i18n'
 
 interface Webcam {
   name: string
@@ -53,8 +54,8 @@ const hasWebcams = computed(() => props.webcams && props.webcams.length > 0)
 <template>
   <div class="space-y-6">
     <div v-if="props.showTitle" class="text-center space-y-2">
-      <h2 class="text-3xl font-bold">Webkamery</h2>
-      <p class="text-gray-500">Živé záběry ze skiareálu a okolí</p>
+      <h2 class="text-3xl font-bold">{{ trans('webcams_section.title') }}</h2>
+      <p class="text-gray-500">{{ trans('webcams_section.subtitle') }}</p>
     </div>
 
     <div v-if="hasWebcams" class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -72,7 +73,7 @@ const hasWebcams = computed(() => props.webcams && props.webcams.length > 0)
             />
             <div v-else class="absolute inset-0 flex flex-col items-center justify-center gap-2">
               <UIcon name="i-heroicons-camera" class="w-16 h-16 text-gray-400" />
-              <span class="text-sm text-gray-500">Kamera není momentálně dostupná</span>
+              <span class="text-sm text-gray-500">{{ trans('webcams_section.camera_unavailable') }}</span>
             </div>
           </div>
         </div>
@@ -80,7 +81,7 @@ const hasWebcams = computed(() => props.webcams && props.webcams.length > 0)
     </div>
     <div v-else class="text-center py-12 text-gray-500">
       <UIcon name="i-heroicons-video-camera-slash" class="w-12 h-12 mx-auto mb-2 opacity-50" />
-      <p>Momentálně nejsou k dispozici žádné webkamery.</p>
+      <p>{{ trans('webcams_section.no_webcams') }}</p>
     </div>
   </div>
 </template>

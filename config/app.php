@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'available_locales' => ['cs', 'pl'],
+    'available_locales' => ['cs', 'en'],
 
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'cs'),
 

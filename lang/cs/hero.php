@@ -9,4 +9,7 @@ return [
         'title' => 'Letní aktivity pro celou rodinu',
         'subtitle' => 'Objevte krásy Jeseníků i v létě',
     ],
+    'alt' => [
+        'intro_photo' => 'Úvodní fotografie',
+    ],
 ];

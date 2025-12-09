@@ -16,7 +16,7 @@ const mainItems: { title: string, href: string, description: string }[] = [
   {
     title: wTrans('navbar.summer'),
     href: "/leto",
-    description: "Letní aktivity a služby v areálu.",
+    description: wTrans('navbar.summer_desc'),
   },
 ]
 
@@ -25,22 +25,22 @@ const vacationTips: { title: string, href: string, description: string }[] = [
   {
     title: wTrans('navbar.tips_for_families'),
     href: "/tipy-rodiny-deti",
-    description: "Doporučení pro rodinnou dovolenou s dětmi.",
+    description: wTrans('navbar.tips_for_families_desc'),
   },
   {
     title: wTrans('navbar.tips_for_seniors'),
     href: "/tipy-seniory",
-    description: "Speciální nabídka pro starší návštěvníky.",
+    description: wTrans('navbar.tips_for_seniors_desc'),
   },
   {
     title: wTrans('navbar.tips_for_couples'),
     href: "/tipy-zamilovany-par",
-    description: "Romantické tipy pro páry.",
+    description: wTrans('navbar.tips_for_couples_desc'),
   },
   {
     title: wTrans('navbar.tips_for_youth'),
     href: "/tipy-partu-mladych",
-    description: "Aktivity pro skupiny mladých lidí.",
+    description: wTrans('navbar.tips_for_youth_desc'),
   },
 ]
 
@@ -49,42 +49,42 @@ const additionalServices: { title: string, href: string, description: string }[]
   {
     title: wTrans('navbar.webcams'),
     href: "/webkamery",
-    description: "Živé záběry z webkamer v areálu.",
+    description: wTrans('navbar.webcams_desc'),
   },
   {
     title: wTrans('navbar.events_calendar'),
     href: "/kalendar-akci",
-    description: "Letní akce a události v areálu.",
+    description: wTrans('navbar.events_calendar_desc'),
   },
   {
     title: wTrans('navbar.activities'),
     href: "/aktivity",
-    description: "Všechny dostupné letní aktivity.",
+    description: wTrans('navbar.activities_desc'),
   },
   {
     title: wTrans('navbar.interesting_places'),
     href: "/zajimave-cile-regionu",
-    description: "Turistické atrakce v okolí.",
+    description: wTrans('navbar.interesting_places_desc'),
   },
   {
     title: wTrans('navbar.bike_trips'),
     href: "/cyklovylety",
-    description: "Cyklistické trasy a výlety.",
+    description: wTrans('navbar.bike_trips_desc'),
   },
   {
     title: wTrans('navbar.scooters'),
     href: "/kolobezky",
-    description: "Půjčovna a trasy pro koloběžky.",
+    description: wTrans('navbar.scooters_desc'),
   },
   {
     title: wTrans('navbar.agrotourism'),
     href: "/agroturistika",
-    description: "Agroturistické služby a farma.",
+    description: wTrans('navbar.agrotourism_desc'),
   },
   {
     title: wTrans('navbar.bike_center'),
     href: "/cyklocentrum",
-    description: "Centrum pro cyklisty a servis.",
+    description: wTrans('navbar.bike_center_desc'),
   },
 ]
 </script>

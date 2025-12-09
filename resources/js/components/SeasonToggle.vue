@@ -4,6 +4,7 @@ import { router } from '@inertiajs/vue3'
 import { Switch } from '@/components/ui/switch'
 import { Snowflake, Sun } from 'lucide-vue-next'
 import { useSeason } from '@/composables/useSeason'
+import { trans } from 'laravel-vue-i18n'
 
 // Use season composable
 const { seasonData, isWinter, isSummer, seasonLabel } = useSeason()
@@ -54,7 +55,7 @@ defineExpose({
 <template>
   <div class="flex items-center space-x-3 font-medium bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
     <span class="text-sm font-medium text-gray-700">
-      {{ seasonLabel || 'Zimní sezóna' }}
+      {{ seasonLabel || trans('season_toggle.winter_season') }}
     </span>
     
     <Switch 

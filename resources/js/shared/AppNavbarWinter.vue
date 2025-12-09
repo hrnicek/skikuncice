@@ -15,32 +15,32 @@ const arealItems: { title: string, href: string, description: string }[] = [
    {
     title: wTrans('navbar.about_us'),
     href: "/o-arealu",
-    description: "Nejdelší historie v Králickém Sněžníku.",
+    description: wTrans('navbar.about_area_desc'),
   },
   {
     title: wTrans('navbar.operating_hours'),
     href: "/provozni-doba",
-    description: "Informace o otevíracích hodinách areálu.",
+    description: wTrans('navbar.operating_hours_desc'),
   },
     {
     title: wTrans('navbar.events_calendar'),
     href: "/kalendar-akci",
-    description: "Zimní akce a události v areálu.",
+    description: wTrans('navbar.events_calendar_desc'),
   },
   {
     title: wTrans('navbar.area_map'),
     href: "/mapa-arealu",
-    description: "Interaktivní mapa lyžařského areálu.",
+    description: wTrans('navbar.area_map_desc'),
   },
   {
     title: wTrans('navbar.webcams'),
     href: "/webkamery",
-    description: "Živé záběry z webkamer v areálu.",
+    description: wTrans('navbar.webcams_desc'),
   },
   {
-    title: 'Aktuální počasí',
+    title: wTrans('navbar.weather'),
     href: "/pocasi",
-    description: "Aktuální počasí v areálu.",
+    description: wTrans('navbar.weather_desc'),
   }
 ]
 
@@ -48,43 +48,43 @@ const services: { title: string, href: string, description: string, image: strin
   {
     title: wTrans('navbar.ski_school'),
     href: "/lyzarska-skola",
-    description: "Kurzy lyžování pro všechny úrovně.",
+    description: wTrans('navbar.ski_school_desc'),
     image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=32&h=32&fit=crop&crop=center",
   },
   {
     title: wTrans('navbar.ski_rental'),
     href: "/pujcovna-lyzi",
-    description: "Pronájem lyží a zimního vybavení.",
+    description: wTrans('navbar.ski_rental_desc'),
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
   },
   {
     title: wTrans('navbar.restaurant'),
     href: "/restaurace",
-    description: "Teplé občerstvení po lyžování.",
+    description: wTrans('navbar.restaurant_desc'),
     image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=32&h=32&fit=crop&crop=center",
   },
   {
     title: wTrans('navbar.tourist_service_center'),
     href: "/centrum-sluzeb-turistum",
-    description: "Informace a služby pro zimní turisty.",
+    description: wTrans('navbar.tourist_service_center_desc'),
     image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=32&h=32&fit=crop&crop=center",
   },
   {
     title: wTrans('navbar.children_snowpark'),
     href: "/detsky-raj",
-    description: "Zimní aktivity pro děti.",
+    description: wTrans('navbar.children_snowpark_desc'),
     image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=32&h=32&fit=crop&crop=center",
   },
   {
     title: wTrans('navbar.cross_country_skiing'),
     href: "/bezky",
-    description: "Běžecké lyžování a trasy.",
+    description: wTrans('navbar.cross_country_skiing_desc'),
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=32&h=32&fit=crop&crop=center",
   },
   {
     title: wTrans('navbar.evening_skiing'),
     href: "/vecerni-lyzovani",
-    description: "Lyžování pod umělým osvětlením.",
+    description: wTrans('navbar.evening_skiing_desc'),
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
   },
 ]
@@ -152,7 +152,7 @@ const services: { title: string, href: string, description: string, image: strin
         <NavigationMenuItem>
         <NavigationMenuLink as-child>
           <Link href="/pocasi" :class="navigationMenuTriggerStyle()">
-           Počasí
+           {{ trans('navbar.weather') }}
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
