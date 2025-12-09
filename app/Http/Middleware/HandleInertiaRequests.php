@@ -43,7 +43,6 @@ class HandleInertiaRequests extends Middleware
         $seasonService = app(SeasonService::class);
 
         $currentSeason = $seasonService->getCurrentSeason($request);
-        $weatherSettings = app(WeatherSettings::class)->toArray();
 
         return [
             ...parent::share($request),
@@ -59,7 +58,6 @@ class HandleInertiaRequests extends Middleware
             'weather' => [
                 ...$weatherService->getWeather(),
             ],
-            'weatherSettings' => $weatherSettings,
         ];
     }
 }
