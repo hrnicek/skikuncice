@@ -25,9 +25,13 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
+        'middleware' => [
+            'localeSessionRedirect', // 1.
+            'localizationRedirect',  // 2.
+            'localeViewPath'         // 3.
+        ],
     ], function () {
-        Route::get('/', [HomepageController::class, 'index'])->name('home');
+        Route::get(LaravelLocalization::transRoute('routes.home'), [HomepageController::class, 'index'])->name('home');
 
         // global (translated routes)
         Route::get(LaravelLocalization::transRoute('routes.events.index'), [EventsController::class, 'index'])->name('events.index');
@@ -57,10 +61,10 @@ Route::group(
 
     });
 
-Route::get('set-lang/{locale}', [LangSwitcherController::class, 'switch'])->name('lang.switch');
-
 // Season management routes
 Route::prefix('api/season')->group(function () {
     Route::post('/set', [SeasonController::class, 'setSeason'])->name('season.set');
     Route::post('/toggle', [SeasonController::class, 'toggle'])->name('season.toggle');
 });
+
+Route::get('lang/{locale}', [LangSwitcherController::class, 'switch'])->name('lang.switch');

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'home' => '/',
     'events' => [
         'index' => 'kalendar-akci',
         'show' => 'udalost/{event:slug}',

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'home' => '/',
     'events' => [
         'index' => 'events',
         'show' => 'event/{event:slug}',
