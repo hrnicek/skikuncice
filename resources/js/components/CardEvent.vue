@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock } from 'lucide-vue-next';
 import { Link } from '@inertiajs/vue3';
-import { route } from 'ziggy-js';
+// import { route } from 'ziggy-js';
 import type { Event } from '@/types';
 import { trans } from 'laravel-vue-i18n';
 

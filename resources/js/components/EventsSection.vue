@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, Clock } from 'lucide-vue-next';
 import { Link } from '@inertiajs/vue3';
-import { route } from 'ziggy-js';
+// import { route } from 'ziggy-js';
 import CardEvent from '@/components/CardEvent.vue';
 import type { Event } from '@/types';
 import { trans } from 'laravel-vue-i18n';

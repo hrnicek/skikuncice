@@ -26,7 +26,7 @@ const formatTime = (dateString: string) => {
   });
 };
 
-const route = (window as any).route;
+// const route = (window as any).route;
 </script>
 
 <template>

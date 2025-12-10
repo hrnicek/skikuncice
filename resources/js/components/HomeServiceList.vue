@@ -2,7 +2,10 @@
 import { computed, h } from 'vue'
 import { useSeason } from '@/composables/useSeason'
 import { Link } from '@inertiajs/vue3';
-import { route } from 'ziggy-js';
+// import { route } from 'ziggy-js';
+import { inject } from 'vue';
+
+const route = inject('route') as (name: string, params?: any) => string;
 import { trans } from 'laravel-vue-i18n';
 
 interface Service {

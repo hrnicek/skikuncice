@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-vue-next';
 import { trans } from 'laravel-vue-i18n';
 import { Link } from '@inertiajs/vue3';
-import { route } from 'ziggy-js';
+// import { route } from 'ziggy-js';
 import type { RestaurantMenu } from '@/types';
 
 defineProps<{
