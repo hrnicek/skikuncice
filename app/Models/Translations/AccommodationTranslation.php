@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Translations;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PostTranslation extends Model
+class AccommodationTranslation extends Model
 {
     public $timestamps = false;
 
     protected $fillable = [
-        'post_id',
+        'accommodation_id',
         'locale',
-        'title',
+        'name',
         'content',
     ];
 }

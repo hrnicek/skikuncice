@@ -20,8 +20,8 @@ class AccommodationController extends Controller
                     'phone' => $accommodation->phone,
                     'email' => $accommodation->email,
                     'website' => $accommodation->website,
-                    'image' => $accommodation->getFirstMediaUrl('default') ?: null,
-                    'banner' => $accommodation->getFirstMediaUrl('default') ?: null,
+                    'image' => $accommodation->getFirstMediaUrl('image') ?: null,
+                    'banner' => $accommodation->getFirstMediaUrl('image') ?: null,
                 ]),
         ]);
     }

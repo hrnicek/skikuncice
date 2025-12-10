@@ -19,6 +19,8 @@ class Accommodation extends Model implements HasMedia, TranslatableContract
     use InteractsWithMedia;
 
     protected $fillable = [
+        'name',
+        'content',
         'address',
         'email',
         'phone',

@@ -64,7 +64,7 @@ return [
     | locale. Note that 'use_fallback' must be enabled.
     |
      */
-    'use_property_fallback' => true,
+    'use_property_fallback' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +92,7 @@ return [
     | set this to 'App\Translations'.
     |
     */
-    'translation_model_namespace' => null,
+    'translation_model_namespace' => 'App\Models\Translations',
 
     /*
     |--------------------------------------------------------------------------

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('news_id')->constrained()->cascadeOnDelete();
             $table->string('locale')->index();
-            $table->string('title');
-            $table->text('content');
+            $table->string('title')->nullable();
+            $table->text('content')->nullable();
             
             $table->unique(['news_id', 'locale']);
         });

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('accommodation_id')->constrained()->onDelete('cascade');
             $table->string('locale')->index();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->longText('content')->nullable();
             $table->unique(['accommodation_id', 'locale']);
         });
