@@ -18,7 +18,7 @@ class NewsForm
         return $schema
             ->components([
                 Grid::make()->schema([
-                    Translations::make('translations_general')
+                    Translations::make('translations')
                         ->vertical()
                         ->schema([
                             TextInput::make('title')

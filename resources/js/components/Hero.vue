@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import HeroBento from './HeroBento.vue'
 import { useSeason } from '@/composables/useSeason'
-import { trans } from 'laravel-vue-i18n'
+import { wTrans } from 'laravel-vue-i18n'
 
 const { isWinter } = useSeason()
 
@@ -13,13 +13,13 @@ const backgroundImage = computed(() => {
 const heroContent = computed(() => {
   if (isWinter.value) {
     return {
-      title: trans('hero.winter.title'),
-      subtitle: trans('hero.winter.subtitle')
+      title: wTrans('hero.winter.title'),
+      subtitle: wTrans('hero.winter.subtitle')
     }
   } else {
     return {
-      title: trans('hero.summer.title'),
-      subtitle: trans('hero.summer.subtitle')
+      title: wTrans('hero.summer.title'),
+      subtitle: wTrans('hero.summer.subtitle')
     }
   }
 })
@@ -28,8 +28,7 @@ const heroContent = computed(() => {
 <template>
     <div>
         <div class="relative h-screen md:h-[650px] overflow-hidden">
-            <img v-if="!isWinter" :src="backgroundImage" :alt="trans('hero.alt.intro_photo')" class="absolute inset-0 w-full h-full object-cover">
-            <video v-else src="/videos/kuncice-spot.mp4" autoplay loop muted class="absolute inset-0 w-full h-full object-cover"></video>
+            <video src="/videos/kuncice-spot.mp4" autoplay loop muted class="absolute inset-0 w-full h-full object-cover" loading="lazy"></video>
             <div class="absolute inset-0 bg-black/30"></div>
 
             <div class="relative container z-10 flex flex-col justify-between h-full p-4 sm:p-6 md:p-8">

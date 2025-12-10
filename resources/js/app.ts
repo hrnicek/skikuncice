@@ -10,7 +10,6 @@ import { i18nVue } from 'laravel-vue-i18n'
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 import AppLayout from './layouts/AppLayout.vue';
-import { Link } from '@inertiajs/vue3';
 
 createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
@@ -23,15 +22,14 @@ createInertiaApp({
                             
         createApp({ render: () => h(App, props) })
             .use(plugin)
-            .use(ZiggyVue)
             .use(i18nVue, {
-				lang: props.initialPage.props.locale, /* use correct language server-side */
-                resolve: async lang => {
-                    console.log(lang)
-				    const langs = import.meta.glob('../../lang/*.json');
-				    return await langs[`../../lang/${lang}.json`]();
-			    },
+                lang: props.initialPage.props.locale,
+                resolve: async (lang: string) => {
+                    const langs = import.meta.glob('../../lang/*.json');
+                    return await langs[`../../lang/${lang}.json`]();
+                },
             })
+            .use(ZiggyVue)
             .component('AppLayout', AppLayout)
             .mount(el);
     },

@@ -46,7 +46,7 @@ class HandleInertiaRequests extends Middleware
 
         return [
             ...parent::share($request),
-            'locale' => LaravelLocalization::getCurrentLocale(),
+            'locale' => app()->getLocale(),
             'available_locales' => config('app.available_locales'),
             'season' => [
                 'current' => $currentSeason,

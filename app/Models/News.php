@@ -13,12 +13,12 @@ class News extends Model implements TranslatableContract
 
     protected $with = ['translations'];
 
-    public $translatedAttributes = ['title', 'content'];
-
     protected $fillable = [
         'published_at',
         'is_published',
     ];
+
+    public $translatedAttributes = ['title', 'content'];
 
     protected $casts = [
         'published_at' => 'datetime',

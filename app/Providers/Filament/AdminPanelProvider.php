@@ -56,7 +56,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugin(FilamentTranslatablePlugin::make()
                 ->translationMode(TranslationMode::Astrotomic)
-                ->displayFlagsInLocaleLabels(true)
+                ->displayFlagsInLocaleLabels(false)
+                ->defaultLocale('cs')
                 ->locales([
                     'cs' => 'Čeština',
                     'en' => 'English',
