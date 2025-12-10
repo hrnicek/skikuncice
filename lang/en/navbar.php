@@ -5,6 +5,7 @@ return [
     'about_area' => 'About the Area',
     'operating_hours' => 'Opening Hours',
     'events_calendar' => 'Events Calendar',
+    'pricing' => 'Pricing',
     'area_map' => 'Area Map',
     'webcams' => 'Webcams',
     'photo_gallery' => 'Photo Gallery',

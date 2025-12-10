@@ -4,6 +4,7 @@ import MobileMenuSheet from './MobileMenuSheet.vue';
 import { Button } from '@/components/ui/button';
 import { Link } from '@inertiajs/vue3';
 import { route } from 'ziggy-js';
+import { trans } from 'laravel-vue-i18n';
 
 
 </script>
@@ -29,15 +30,15 @@ import { route } from 'ziggy-js';
 
          <div class="flex space-x-4 ">
             <Button variant="secondary" size="lg" as-child class="hidden md:inline-flex">
-            <Link :href="route('events.index')">
-                Kalendaíř akcí
-            </Link>
-        </Button>
+                <Link :href="route('events.index')">
+                    {{ trans('navbar.events_calendar') }}
+                </Link>
+            </Button>
          <Button size="lg" as-child class="hidden md:inline-flex">
-            <Link href="/cenik">
-                Ceník
-            </Link>
-        </Button>
+             <Link href="/cenik">
+                 {{ trans('navbar.pricing') }}
+             </Link>
+         </Button>
          </div>
        
       </div>

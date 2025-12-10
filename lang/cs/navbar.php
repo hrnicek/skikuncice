@@ -5,6 +5,7 @@ return [
     'about_area' => 'O areálu',
     'operating_hours' => 'Provozní doba',
     'events_calendar' => 'Kalendář akcí',
+    'pricing' => 'Ceník',
     'area_map' => 'Mapa areálu',
     'webcams' => 'Webkamery',
     'photo_gallery' => 'Fotogalerie',

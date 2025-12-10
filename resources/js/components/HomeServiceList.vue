@@ -2,6 +2,7 @@
 import { computed, h } from 'vue'
 import { useSeason } from '@/composables/useSeason'
 import { Link } from '@inertiajs/vue3';
+import { route } from 'ziggy-js';
 import { trans } from 'laravel-vue-i18n';
 
 interface Service {

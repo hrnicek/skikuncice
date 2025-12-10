@@ -7,4 +7,3 @@ return [
     ],
     'content' => 'Photos from the area and activities.',
 ];
-

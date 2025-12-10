@@ -7,4 +7,3 @@ return [
     ],
     'content' => 'Videos from skiing and the area.',
 ];
-

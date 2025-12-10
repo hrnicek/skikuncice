@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { trans } from 'laravel-vue-i18n';
+import { trans, wTrans } from 'laravel-vue-i18n';
 
 interface Photo {
     id: number;
@@ -22,7 +22,7 @@ const displayPhotos = computed(() => {
     return Array.from({ length: 8 }, (_, i) => ({
         id: i + 1,
         url: `https://picsum.photos/300/300?random=${i + 1}`,
-        alt: `${trans('insta_grid.photo')} ${i + 1}`
+        alt: `${wTrans('insta_grid.photo')} ${i + 1}`
     }));
 });
 </script>
