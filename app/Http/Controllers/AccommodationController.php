@@ -33,7 +33,7 @@ class AccommodationController extends Controller
             abort(404);
         }
 
-        seo()->title($accommodation->name);
+        seo()->title('Ubytování ' . $accommodation->name);
 
         return inertia('Accommodation/Show', [
             'accommodation' => [
