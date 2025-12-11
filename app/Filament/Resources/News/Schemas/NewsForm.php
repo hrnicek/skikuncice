@@ -2,14 +2,15 @@
 
 namespace App\Filament\Resources\News\Schemas;
 
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
-use Filamerce\FilamentTranslatable\Forms\Component\Translations;
-use Filament\Schemas\Components\Section;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Grid;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\DateTimePicker;
+use Filamerce\FilamentTranslatable\Forms\Component\Translations;
 
 class NewsForm
 {
@@ -24,9 +25,8 @@ class NewsForm
                             TextInput::make('title')
                                 ->label('Titulek')
                                 ->requiredDefaultLocale(),
-                            Textarea::make('content')
+                            RichEditor::make('content')
                                 ->label('Obsah')
-                                ->rows(5)
                                 ->requiredDefaultLocale()
                                 ->columnSpanFull(),
                         ])->columnSpan(2),
