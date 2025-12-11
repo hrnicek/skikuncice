@@ -7,6 +7,7 @@ import { Link } from '@inertiajs/vue3';
 interface Accommodation {
   id: number;
   name: string;
+  slug: string;
   address: string | null;
   image: string | null;
 }
@@ -65,7 +66,7 @@ defineProps<{
                  Detail ubytování
               </span>
                <Link 
-                :href="route('accommodation.show', accommodation.id)"
+                :href="route('accommodation.show', accommodation.slug)"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[var(--brand-secondary)]/10 text-[var(--brand-secondary)] group-hover:bg-[var(--brand-secondary)] group-hover:text-white transition-all duration-300"
                >
                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -16,6 +16,7 @@ class AccommodationController extends Controller
                 ->map(fn ($accommodation) => [
                     'id' => $accommodation->id,
                     'name' => $accommodation->name,
+                    'slug' => $accommodation->slug,
                     'address' => $accommodation->address,
                     'phone' => $accommodation->phone,
                     'email' => $accommodation->email,
@@ -38,6 +39,7 @@ class AccommodationController extends Controller
             'accommodation' => [
                 'id' => $accommodation->id,
                 'name' => $accommodation->name,
+                'slug' => $accommodation->slug,
                 'address' => $accommodation->address,
                 'phone' => $accommodation->phone,
                 'phone2' => $accommodation->phone2,
