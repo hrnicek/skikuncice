@@ -133,12 +133,12 @@ defineProps<{
             </div>
           </div>
 
-          <!-- Pizza Image -->
           <div class="relative rounded-2xl overflow-hidden shadow-md aspect-[4/3]">
             <img 
-              src="/img/pizza.avif" 
-              alt="Pizza" 
+              src="/img/services/restaurace.webp" 
+              alt="Restaurace" 
               class="absolute inset-0 w-full h-full object-cover" 
+              loading="lazy"
             />
           </div>
         </div>
