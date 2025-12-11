@@ -17,7 +17,7 @@ defineProps<{
 
 <template>
   <section class="py-16 my-16 bg-muted relative">
-    <img src="/img/bg-ice.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+    <img src="/img/bg-ice-1280.webp" alt="Background" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
     <div class="container relative z-10">
       <div class="rounded-md">
         <div class="text-left mb-6">

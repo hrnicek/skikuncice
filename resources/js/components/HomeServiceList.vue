@@ -33,7 +33,7 @@ const services = computed<Service[]>(() => {
             {
                 title: trans('home_service_list.summer.s3.title'),
                 description: trans('home_service_list.summer.s3.description'),
-                image: '/img/services/ubytovani.jpg',
+                image: '/img/services/ubytovani.webp',
                 link: '#'
             },
             {
@@ -45,7 +45,7 @@ const services = computed<Service[]>(() => {
             {
                 title: trans('home_service_list.summer.s5.title'),
                 description: trans('home_service_list.summer.s5.description'),
-                image: '/img/services/restaurace.jpg',
+                image: '/img/services/restaurace.webp',
                 link: '#'
             }
         ];
@@ -54,31 +54,31 @@ const services = computed<Service[]>(() => {
             {
                 title: trans('home_service_list.winter.s1.title'),
                 description: trans('home_service_list.winter.s1.description'),
-                image: '/img/services/skiskola.jpg',
+                image: '/img/services/skiskola.webp',
                 link: route('ski-school')
             },
             {
                 title: trans('home_service_list.winter.s2.title'),
                 description: trans('home_service_list.winter.s2.description'),
-                image: '/img/services/ubytovani.jpg',
+                image: '/img/services/ubytovani.webp',
                 link: route('accommodation.index')
             },
             {
                 title: trans('home_service_list.winter.s3.title'),
                 description: trans('home_service_list.winter.s3.description'),
-                image: '/img/services/restaurace.jpg',
+                image: '/img/services/restaurace.webp',
                 link: route('restaurant')
             },
             {
                 title: trans('home_service_list.winter.s4.title'),
                 description: trans('home_service_list.winter.s4.description'),
-                image: '/img/skirental-box.png',
+                image: '/img/skirental-box.webp',
                 link: route('ski-rental')
             },
             {
                 title: trans('home_service_list.winter.s5.title'),
                 description: trans('home_service_list.winter.s5.description'),
-                image: '/img/services/centrum.jpg',
+                image: '/img/services/centrum.webp',
                 link: route('tourist-services-center')
             }
         ];

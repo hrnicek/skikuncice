@@ -43,7 +43,7 @@ const formatDate = (date: string) => {
   <Head :title="trans('weather.page_header.title')" />
   
   <AppLayout>
-        <div class="w-screen relative h-[600px] bg-[url('/img/hero-winter.jpg')] bg-cover bg-opacity-50 bg-center mb-16">
+        <div class="w-screen relative h-[600px] bg-[url('/img/hero-winter.webp')] bg-cover bg-opacity-50 bg-center mb-16">
           <div class="absolute inset-0 bg-black/50 z-10"></div>
           <div class="flex justify-center">
             <div class="relative z-20">

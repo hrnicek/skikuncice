@@ -44,7 +44,7 @@ import { trans } from 'laravel-vue-i18n';
       >
         <div class="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-gray-200">
           <img 
-            :src="('/img/cta-skoly.jpg')"
+            :src="('/img/cta-skoly.webp')"
             :alt="trans('call_to_action_scholl.image_alt')"
             class="h-80 w-full object-cover lg:h-full"
             loading="lazy"

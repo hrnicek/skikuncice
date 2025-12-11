@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -51,5 +52,13 @@ class Post extends Model implements HasMedia, TranslatableContract
         $this->addMediaCollection('image')
             ->useFallbackUrl('https://picsum.photos/600/600')
             ->singleFile();
+    }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')
+              ->width(100)
+              ->height(100)
+              ->sharpen(10);
     }
 }

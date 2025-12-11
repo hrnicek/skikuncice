@@ -49,12 +49,12 @@ defineProps<{
       </Card>
       <div class="rounded-lg bg-card/80 shadow-xl ring-1 ring-black/5 p-6 md:p-8 border">
         <div class="flex items-center gap-4">
-          <img src="/img/icons/restaurace.png" alt="Restaurace" class="h-10 w-10" />
+          <img src="/img/icons/restaurace.webp" alt="Restaurace" class="h-10 w-10" />
           <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">{{ trans('restaurant.intro.title') }}</h2>
         </div>
         <p class="mt-4 text-lg leading-relaxed text-foreground/80">{{ trans('restaurant.intro.p1') }}</p>
         <div class="mt-6 overflow-hidden rounded-lg ring-1 ring-border">
-          <img src="/img/services/restaurace.jpg" :alt="trans('restaurant.alt.area_restaurant')" class="h-64 w-full object-cover" />
+          <img src="/img/services/restaurace.webp" :alt="trans('restaurant.alt.area_restaurant')" class="h-64 w-full object-cover" />
         </div>
       </div>
 
@@ -83,10 +83,10 @@ defineProps<{
             </div>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/services/restaurace.jpg" :alt="trans('restaurant.alt.rumaru')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/services/restaurace.webp" :alt="trans('restaurant.alt.rumaru')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/home/restaurace.jpg" :alt="trans('restaurant.alt.interior')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/home/restaurace.webp" :alt="trans('restaurant.alt.interior')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
             </div>
           </CardContent>
@@ -101,10 +101,10 @@ defineProps<{
             <p class="mt-3">{{ trans('restaurant.hajovna.p2') }}</p>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/hero-winter.jpg" :alt="trans('restaurant.alt.terasa_hajovna')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/hero-winter.webp" :alt="trans('restaurant.alt.terasa_hajovna')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/cta-skoly.jpg" :alt="trans('restaurant.alt.view_kids_lift')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/cta-skoly.webp" :alt="trans('restaurant.alt.view_kids_lift')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
             </div>
           </CardContent>
@@ -119,10 +119,10 @@ defineProps<{
             <p class="mt-3">{{ trans('restaurant.kulatak.p2') }}</p>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/hero-winter.jpg" :alt="trans('restaurant.alt.kulatak_winter')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/hero-winter.webp" :alt="trans('restaurant.alt.kulatak_winter')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/hero-summer.jpg" :alt="trans('restaurant.alt.kulatak_summer')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/hero-summer.webp" :alt="trans('restaurant.alt.kulatak_summer')" class="h-36 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
             </div>
           </CardContent>
@@ -159,7 +159,7 @@ defineProps<{
             <p class="mt-3">{{ trans('restaurant.facilities.p2') }}</p>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
-                <img src="/img/services/restaurace.jpg" :alt="trans('restaurant.alt.facility_station')" class="h-56 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
+                <img src="/img/services/restaurace.webp" :alt="trans('restaurant.alt.facility_station')" class="h-56 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />
               </div>
               <div class="overflow-hidden rounded-lg ring-1 ring-border">
                 <img src="/img/pizza.avif" :alt="trans('restaurant.alt.food')" class="h-56 w-full object-cover transition duration-300 hover:scale-[1.02]" loading="lazy" decoding="async" />

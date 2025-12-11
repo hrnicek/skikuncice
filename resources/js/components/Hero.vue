@@ -8,7 +8,7 @@ import { wTrans } from 'laravel-vue-i18n'
 const { isWinter } = useSeason()
 
 const backgroundImage = computed(() => {
-  return isWinter.value ? '/img/hero-winter.jpg' : '/img/hero-summer.jpg'
+  return isWinter.value ? '/img/hero-winter.webp' : '/img/hero-summer.webp'
 })
 
 const heroContent = computed(() => {

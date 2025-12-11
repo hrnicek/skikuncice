@@ -32,7 +32,7 @@ import { trans } from 'laravel-vue-i18n';
       <!-- Right Image -->
       <div class="w-1/2 rounded-lg overflow-hidden border border-white/20 shadow-sm shrink-0 group-hover:border-white/40 transition-colors h-20 relative">
         <img 
-          src="/img/webcam-preview.jpg" 
+          src="/img/webcam-preview.webp" 
           alt="Webcam Preview" 
           class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
         />

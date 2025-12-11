@@ -6,9 +6,9 @@ import { ref } from 'vue';
 import VueEasyLightbox from 'vue-easy-lightbox';
 
 const imgs = [
-  '/img/bezky-trasy/trasa1_1.png',
-  '/img/bezky-trasy/Trasa2.png',
-  '/img/bezky-trasy/trasa3.png',
+  '/img/bezky-trasy/trasa1_1.webp',
+  '/img/bezky-trasy/Trasa2.webp',
+  '/img/bezky-trasy/trasa3.webp',
 ];
 const visible = ref(false);
 const index = ref(0);

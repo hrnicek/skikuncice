@@ -11,7 +11,7 @@ import { trans } from 'laravel-vue-i18n'
         
         <!-- Logo + Social -->
         <div>
-          <img src="/img/logo.png" :alt="trans('footer.logo_alt')" class="h-8 mb-6" />
+          <img src="/img/logo.webp" :alt="trans('footer.logo_alt')" class="h-8 mb-6" />
           <p class="text-gray-600 text-base leading-relaxed mb-8">
             {{ trans('footer.description') }}
           </p>

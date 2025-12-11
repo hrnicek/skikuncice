@@ -6,7 +6,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  backgroundImage: '/img/hero-winter.jpg'
+  backgroundImage: '/img/hero-winter.webp'
 })
 </script>
 

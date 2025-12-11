@@ -15,17 +15,17 @@ const props = withDefaults(defineProps<PartnersSectionProps>(), {
   logos: () => [
     {
       name: "ELEKTROURBANEK",
-      logo: "/img/partners/ELEKTROURBANEK-logo_1.png",
+      logo: "/img/partners/ELEKTROURBANEK-logo_1.webp",
       className: "h-12 w-auto",
     },
     {
       name: "Jeseníky JSCR",
-      logo: "/img/partners/jeseniky+jscr_barevne_logo.jpg",
+      logo: "/img/partners/jeseniky+jscr_barevne_logo.webp",
       className: "h-12 w-auto",
     },
     {
       name: "Kudy z nudy",
-      logo: "/img/partners/Kudy-z-nudy-barevne.png",
+      logo: "/img/partners/Kudy-z-nudy-barevne.webp",
       className: "h-12 w-auto",
     },
   ],

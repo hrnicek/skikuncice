@@ -14,7 +14,7 @@
     <SheetContent side="left" class="w-[300px] sm:w-[350px] flex flex-col">
       <SheetHeader class="text-left flex-shrink-0">
         <SheetTitle class="flex items-center gap-2">
-          <img src="/img/logo.png" alt="Logo" class="h-6 w-6" />
+          <img src="/img/logo.webp" alt="Logo" class="h-6 w-6" />
           SKI Kunčice
         </SheetTitle>
       </SheetHeader>
