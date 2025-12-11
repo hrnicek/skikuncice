@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import { computed, h } from 'vue'
+import { computed } from 'vue'
 import { useSeason } from '@/composables/useSeason'
 import { Link } from '@inertiajs/vue3';
-// import { route } from 'ziggy-js';
-import { inject } from 'vue';
 
-const route = inject('route') as (name: string, params?: any) => string;
 import { trans } from 'laravel-vue-i18n';
 
 interface Service {
@@ -64,7 +61,7 @@ const services = computed<Service[]>(() => {
                 title: trans('home_service_list.winter.s2.title'),
                 description: trans('home_service_list.winter.s2.description'),
                 image: '/img/services/ubytovani.jpg',
-                link: route('accommodation')
+                link: route('accommodation.index')
             },
             {
                 title: trans('home_service_list.winter.s3.title'),

@@ -37,7 +37,7 @@ import { trans } from 'laravel-vue-i18n'
             <li><Link :href="route('restaurant')" class="footer-link">{{ trans('footer.services.restaurant') }}</Link></li>
             <li><Link :href="route('kids-paradise')" class="footer-link">{{ trans('footer.services.kids_paradise') }}</Link></li>
             <li><Link :href="route('cross-country-skiing')" class="footer-link">{{ trans('footer.services.cross_country_skiing') }}</Link></li>
-            <li><Link :href="route('accommodation')" class="footer-link">{{ trans('footer.services.accommodation') }}</Link></li>
+            <li><Link :href="route('accommodation.index')" class="footer-link">{{ trans('footer.services.accommodation') }}</Link></li>
           </ul>
         </div>
 

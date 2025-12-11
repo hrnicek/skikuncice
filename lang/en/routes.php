@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'home' => '/',
     'events' => [
         'index' => 'events',
         'show' => 'event/{event:slug}',
@@ -9,7 +8,7 @@ return [
     ],
     'accommodation' => [
         'index' => 'accommodation',
-        'show' => 'accommodation/{accommodation}',
+        'show' => 'accommodation/{accommodation:slug}',
     ],
     'contact' => 'contact',
     'weather' => 'weather',

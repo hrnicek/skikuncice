@@ -2,14 +2,17 @@
 import AppLayout from '@/layouts/AppLayout.vue';
 import Hero from '@/components/Hero.vue';
 import PhilosophySection from '@/components/PhilosophySection.vue';
-import NearnestEventSection from '@/components/NearnestEventSection.vue';
-import EventsSection from '@/components/EventsSection.vue';
-import HomeServiceList from '@/components/HomeServiceList.vue';
-import PartnersSection from '@/components/PartnersSection.vue';
-import HomeRestaurantSection from '@/components/HomeRestaurantSection.vue';
-import InstaGrid from '@/components/InstaGrid.vue';
-import CallToActionScholl from '@/components/CallToActionScholl.vue';
 import type { RestaurantMenu } from '@/types';
+import HomeServiceList from '@/components/HomeServiceList.vue';
+import EventsSection from '@/components/EventsSection.vue';
+import HomeRestaurantSection from '@/components/HomeRestaurantSection.vue';
+import NearnestEventSection from '@/components/NearnestEventSection.vue';
+import CallToActionScholl from '@/components/CallToActionScholl.vue';
+import InstaGrid from '@/components/InstaGrid.vue';
+import PartnersSection from '@/components/PartnersSection.vue';
+defineOptions({
+  layout: AppLayout
+})
 
 defineProps<{
   events: Array<any>;
@@ -21,7 +24,6 @@ defineProps<{
 </script>
 
 <template>
-  <AppLayout>
     <Hero />
     <PhilosophySection />
     <NearnestEventSection v-if="nearestEvent" :event="nearestEvent" />
@@ -31,6 +33,5 @@ defineProps<{
     <CallToActionScholl />
     <InstaGrid />
     <PartnersSection />
-  </AppLayout>
 </template>
 

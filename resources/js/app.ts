@@ -1,15 +1,14 @@
 import '../css/app.css';
 
-import { createInertiaApp } from '@inertiajs/vue3';
+import { createInertiaApp, Link, router } from '@inertiajs/vue3';
+import { i18nVue } from 'laravel-vue-i18n'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import type { DefineComponent } from 'vue';
+import { ZiggyVue } from 'ziggy';
 import { createApp, h } from 'vue';
-import { ZiggyVue } from '../../vendor/tightenco/ziggy';
-import { i18nVue } from 'laravel-vue-i18n'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
-import AppLayout from './layouts/AppLayout.vue';
 
 createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
@@ -19,18 +18,18 @@ createInertiaApp({
             import.meta.glob<DefineComponent>('./pages/**/*.vue'),
         ),
     setup({ el, App, props, plugin }) {
-                            
         createApp({ render: () => h(App, props) })
             .use(plugin)
+            .use(ZiggyVue)
+            .component('Link', Link)
             .use(i18nVue, {
-                lang: props.initialPage.props.locale,
-                resolve: async (lang: string) => {
+                lang: props.initialPage.props.app.locale,
+                resolve: async lang => {
+                    console.log(lang);
                     const langs = import.meta.glob('../../lang/*.json');
                     return await langs[`../../lang/${lang}.json`]();
                 },
             })
-            .use(ZiggyVue)
-            .component('AppLayout', AppLayout)
             .mount(el);
     },
     progress: {

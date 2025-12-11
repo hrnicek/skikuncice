@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { trans } from 'laravel-vue-i18n';
+import { wTrans } from 'laravel-vue-i18n';
 
 interface Logo {
   name: string;
@@ -8,14 +8,10 @@ interface Logo {
 }
 
 interface PartnersSectionProps {
-  title?: string;
-  subtitle?: string;
   logos?: Logo[];
 }
 
 const props = withDefaults(defineProps<PartnersSectionProps>(), {
-  title: trans('partners_section.title'),
-  subtitle: trans('partners_section.subtitle'),
   logos: () => [
     {
       name: "ELEKTROURBANEK",
@@ -41,7 +37,7 @@ const props = withDefaults(defineProps<PartnersSectionProps>(), {
     <div class="container">
         <div class="text-center flex items-center">
             <h2 class="text-3xl font-bold text-foreground mb-2">
-                {{ title }}
+                {{ wTrans('partners_section.title') }}
             </h2>
             <div class="flex flex-wrap mx-auto justify-center gap-x-8 gap-y-6 lg:gap-24">
                 <img

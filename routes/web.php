@@ -1,43 +1,35 @@
 <?php
 
-use App\Http\Controllers\AccommodationController;
-use App\Http\Controllers\AgrotourismController;
-use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventsController;
-use App\Http\Controllers\HomepageController;
-use App\Http\Controllers\LangSwitcherController;
 use App\Http\Controllers\SeasonController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\AgrotourismController;
+use App\Http\Controllers\LangSwitcherController;
 use App\Http\Controllers\Winter\AboutController;
-use App\Http\Controllers\Winter\AreaMapController;
-use App\Http\Controllers\Winter\CrossCountrySkiingController;
-use App\Http\Controllers\Winter\KidsParadiseController;
-use App\Http\Controllers\Winter\OperatingHoursController;
-use App\Http\Controllers\Winter\PricingController;
-use App\Http\Controllers\Winter\RestaurantController;
+use App\Http\Controllers\AccommodationController;
 use App\Http\Controllers\Winter\SkiBusController;
+use App\Http\Controllers\Winter\AreaMapController;
+use App\Http\Controllers\Winter\PricingController;
+use App\Http\Controllers\Winter\WebcamsController;
 use App\Http\Controllers\Winter\SkiRentalController;
 use App\Http\Controllers\Winter\SkiSchoolController;
-use App\Http\Controllers\Winter\TouristServicesCenterController;
-use App\Http\Controllers\Winter\WebcamsController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Winter\RestaurantController;
+use App\Http\Controllers\Winter\KidsParadiseController;
+use App\Http\Controllers\Winter\OperatingHoursController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\Winter\CrossCountrySkiingController;
+use App\Http\Controllers\Winter\TouristServicesCenterController;
 
-Route::group(
-    [
-        'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [
-            'localeSessionRedirect', // 1.
-            'localizationRedirect',  // 2.
-            'localeViewPath'         // 3.
-        ],
-    ], function () {
-        Route::get(LaravelLocalization::transRoute('routes.home'), [HomepageController::class, 'index'])->name('home');
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localize', 'localeSessionRedirect', 'localizationRedirect']], function () {
+        Route::get('/', [HomepageController::class, 'index'])->name('home');
 
         // global (translated routes)
         Route::get(LaravelLocalization::transRoute('routes.events.index'), [EventsController::class, 'index'])->name('events.index');
         Route::get(LaravelLocalization::transRoute('routes.events.show'), [EventsController::class, 'show'])->name('events.show');
         Route::get(LaravelLocalization::transRoute('routes.events.past'), [EventsController::class, 'past'])->name('events.past');
-        Route::get(LaravelLocalization::transRoute('routes.accommodation.index'), [AccommodationController::class, 'index'])->name('accommodation');
+        Route::get(LaravelLocalization::transRoute('routes.accommodation.index'), [AccommodationController::class, 'index'])->name('accommodation.index');
         Route::get(LaravelLocalization::transRoute('routes.accommodation.show'), [AccommodationController::class, 'show'])->name('accommodation.show');
         Route::get(LaravelLocalization::transRoute('routes.contact'), [ContactController::class, 'index'])->name('contact');
         Route::get(LaravelLocalization::transRoute('routes.weather'), [App\Http\Controllers\WeatherController::class, '__invoke'])->name('weather');
@@ -58,7 +50,6 @@ Route::group(
 
         // Summer (translated routes)
         Route::get(LaravelLocalization::transRoute('routes.agrotourism'), [AgrotourismController::class, 'index'])->name('agrotourism');
-
     });
 
 // Season management routes

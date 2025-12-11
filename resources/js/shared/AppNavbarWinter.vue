@@ -14,32 +14,32 @@ import {
 const arealItems: { title: string, href: string, description: string }[] = [
    {
     title: wTrans('navbar.about_us'),
-    href: "/o-arealu",
+    href: route('about'),
     description: wTrans('navbar.about_area_desc'),
   },
   {
     title: wTrans('navbar.operating_hours'),
-    href: "/provozni-doba",
+    href: route('operating-hours'),
     description: wTrans('navbar.operating_hours_desc'),
   },
     {
     title: wTrans('navbar.events_calendar'),
-    href: "/kalendar-akci",
+    href: route('events.index'),
     description: wTrans('navbar.events_calendar_desc'),
   },
   {
     title: wTrans('navbar.area_map'),
-    href: "/mapa-arealu",
+    href: route('area-map'),
     description: wTrans('navbar.area_map_desc'),
   },
   {
     title: wTrans('navbar.webcams'),
-    href: "/webkamery",
+    href: route('webcams'),
     description: wTrans('navbar.webcams_desc'),
   },
   {
     title: wTrans('navbar.weather'),
-    href: "/pocasi",
+    href: route('weather'),
     description: wTrans('navbar.weather_desc'),
   }
 ]
@@ -47,46 +47,46 @@ const arealItems: { title: string, href: string, description: string }[] = [
 const services: { title: string, href: string, description: string, image: string }[] = [
   {
     title: wTrans('navbar.ski_school'),
-    href: "/lyzarska-skola",
+    href: route('ski-school'),
     description: wTrans('navbar.ski_school_desc'),
     image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=32&h=32&fit=crop&crop=center",
   },
   {
     title: wTrans('navbar.ski_rental'),
-    href: "/pujcovna-lyzi",
+    href: route('ski-rental'),
     description: wTrans('navbar.ski_rental_desc'),
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
   },
   {
     title: wTrans('navbar.restaurant'),
-    href: "/restaurace",
+    href: route('restaurant'),
     description: wTrans('navbar.restaurant_desc'),
     image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=32&h=32&fit=crop&crop=center",
   },
   {
     title: wTrans('navbar.tourist_service_center'),
-    href: "/centrum-sluzeb-turistum",
+    href: route('tourist-services-center'),
     description: wTrans('navbar.tourist_service_center_desc'),
     image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=32&h=32&fit=crop&crop=center",
   },
   {
     title: wTrans('navbar.children_snowpark'),
-    href: "/detsky-raj",
+    href: route('kids-paradise'),
     description: wTrans('navbar.children_snowpark_desc'),
     image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=32&h=32&fit=crop&crop=center",
   },
   {
     title: wTrans('navbar.cross_country_skiing'),
-    href: "/bezky",
+    href: route('cross-country-skiing'),
     description: wTrans('navbar.cross_country_skiing_desc'),
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=32&h=32&fit=crop&crop=center",
   },
-  {
-    title: wTrans('navbar.evening_skiing'),
-    href: "/vecerni-lyzovani",
-    description: wTrans('navbar.evening_skiing_desc'),
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
-  },
+  // {
+  //   title: wTrans('navbar.evening_skiing'),
+  //   href: route('evening-skiing'),
+  //   description: wTrans('navbar.evening_skiing_desc'),
+  //   image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=32&h=32&fit=crop&crop=center",
+  // },
 ]
 </script>
 
@@ -137,28 +137,28 @@ const services: { title: string, href: string, description: string, image: strin
 </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
-          <Link href="/restaurace" :class="navigationMenuTriggerStyle()">
+          <Link :href="route('restaurant')" :class="navigationMenuTriggerStyle()">
             {{ trans('navbar.restaurant') }}
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
-          <Link href="/ubytovani" :class="navigationMenuTriggerStyle()">
+          <Link href="" :class="navigationMenuTriggerStyle()">
             {{ trans('navbar.accommodation') }}
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
         <NavigationMenuItem>
         <NavigationMenuLink as-child>
-          <Link href="/pocasi" :class="navigationMenuTriggerStyle()">
+          <Link :href="route('weather')" :class="navigationMenuTriggerStyle()">
            {{ trans('navbar.weather') }}
           </Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
-          <Link href="/kontakt" :class="navigationMenuTriggerStyle()">
+          <Link :href="route('contact')" :class="navigationMenuTriggerStyle()">
             {{ trans('navbar.contact') }}
           </Link>
         </NavigationMenuLink>

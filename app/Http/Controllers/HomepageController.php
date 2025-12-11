@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Data\EventData;
-use App\Data\NewsData;
-use App\Data\PostData;
-use App\Data\RestaurantMenuData;
-use App\Models\Event;
 use App\Models\News;
 use App\Models\Post;
+use Inertia\Inertia;
+use App\Models\Event;
+use App\Data\NewsData;
+use App\Data\PostData;
+use App\Data\EventData;
 use App\Models\RestaurantMenu;
+use App\Data\RestaurantMenuData;
 
 class HomepageController extends Controller
 {
@@ -39,7 +40,7 @@ class HomepageController extends Controller
             ->latestMenu()
             ->first();
 
-        return inertia('Homepage', [
+        return Inertia::render('Homepage', [
             'latestPost' => $latestPost ? PostData::fromModel($latestPost) : null,
             'news' => NewsData::collect($news),
             'events' => EventData::collect($events),

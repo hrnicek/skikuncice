@@ -2,10 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use App\Services\MeteoblueService;
-use App\Services\SeasonService;
-use Illuminate\Http\Request;
 use Inertia\Middleware;
+use Tighten\Ziggy\Ziggy;
+use Illuminate\Http\Request;
+use App\Services\SeasonService;
+use App\Services\MeteoblueService;
+use Illuminate\Support\Facades\App;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class HandleInertiaRequests extends Middleware
@@ -45,8 +47,9 @@ class HandleInertiaRequests extends Middleware
         $currentWeather = $meteoblueService->currentWeather();
 
         return array_merge(parent::share($request), [
-            'locale' => LaravelLocalization::getCurrentLocale(),
-            'available_locales' => LaravelLocalization::getLocalesOrder(),
+            'app' => [
+                'locale' => App::getLocale(),
+            ],
             'season' => [
                 'current' => $currentSeason,
                 'label' => $seasonService->getSeasonLabel($currentSeason),
@@ -55,11 +58,10 @@ class HandleInertiaRequests extends Middleware
                 'available' => $seasonService->getAvailableSeasons(),
             ],
             'weather' => $currentWeather?->toArray() ?? [],
-            'ziggy' => function () use ($request) {
-                return array_merge((new \Tighten\Ziggy\Ziggy)->toArray(), [
-                    'location' => $request->url(),
-                ]);
-            },
+            'ziggy' => fn () => [
+                ...(new Ziggy)->toArray(),
+                'location' => $request->url(),
+            ],
         ]);
     }
 }

@@ -1,9 +1,12 @@
 /// <reference types="vite/client" />
 /// <reference types="../../vendor/tightenco/ziggy/dist/index.d.ts" />
 
-declare module 'vue' {
+import { route } from '../../vendor/tightenco/ziggy/dist/index';
+import 'vue';
+
+declare module '@vue/runtime-core' {
     interface ComponentCustomProperties {
-        route: typeof import('../../vendor/tightenco/ziggy/dist/index').route;
+        route: typeof route;
     }
 }
 

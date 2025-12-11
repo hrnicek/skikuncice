@@ -1,16 +1,13 @@
 <?php
 
 return [
-    'home' => '/',
     'events' => [
         'index' => 'kalendar-akci',
         'show' => 'udalost/{event:slug}',
         'past' => 'kalendar-akci/archiv',
     ],
-    'accommodation' => [
-        'index' => 'ubytovani',
-        'show' => 'ubytovani/{accommodation}',
-    ],
+    'accommodation-index' => 'ubytovani',
+    'accommodation-show' => 'ubytovani/{accommodation}',
     'contact' => 'kontakt',
     'weather' => 'pocasi',
     'about' => 'o-arealu',

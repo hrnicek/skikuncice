@@ -2,11 +2,11 @@
 import { ref, watch } from 'vue'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Mail } from 'lucide-vue-next'
-import { router, usePage } from '@inertiajs/vue3'
+import { router, usePage, Link } from '@inertiajs/vue3'
 
 // 1. Získání props s typovou kontrolou (pokud používáte TS)
 const page = usePage()
-const currentLocale = page.props.locale as string // Přetypování, pokud TS hlásí chybu
+const currentLocale = page.props.app.locale as string // Přetypování, pokud TS hlásí chybu
 
 const currentLanguage = ref(currentLocale)
 
@@ -24,7 +24,7 @@ const languages = [
 ]
 
 // Sledování změny v Selectu
-watch(currentLanguage, (newLang) => {
+watch(currentLanguage, (newLang: string) => {
   if (newLang !== currentLocale) {
       switchLanguage(newLang)
   }
@@ -37,6 +37,10 @@ const switchLanguage = (language: string) => {
    router.get(`/lang/${language}`, {}, {
      preserveState: false, // Důležité: Chceme kompletní reset stavu při změně jazyka
      preserveScroll: true, // Zachová pozici na stránce
+     onSuccess: () => {
+       // Po úspěšné změně jazyka, můžeme aktualizovat currentLanguage
+       window.location.reload()
+     }
    })
 }
 </script>

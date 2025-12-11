@@ -66,7 +66,7 @@ return [
     */
 
     'timezone' => 'Europe/Prague',
-    
+
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -91,9 +91,7 @@ return [
     |
     */
 
-    'available_locales' => ['cs', 'en'],
-
-    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'cs'),
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'cs_CZ'),
 
