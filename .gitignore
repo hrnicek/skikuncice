@@ -25,4 +25,4 @@ Thumbs.db
 AGENTS.md
 public/sitemap.xml
 bootstrap/ssr
-# lang/php_*.json
+lang/php_*.json

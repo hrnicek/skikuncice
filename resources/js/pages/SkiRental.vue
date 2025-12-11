@@ -89,25 +89,25 @@ import { trans } from 'laravel-vue-i18n';
       </div>
 
       <div class="bg-white rounded-md shadow-lg p-8">
-        <h2 class="text-2xl font-semibold text-primary mb-6">Prohlédněte si ceník naší půjčovny lyží a snowboardů</h2>
+        <h2 class="text-2xl font-semibold text-primary mb-6">{{ trans('ski_rental.pricing.title') }}</h2>
         <div class="overflow-x-auto">
           <table class="min-w-full border-collapse">
             <thead>
               <tr class="bg-primary/5 text-primary">
-                <th class="p-3 text-left font-semibold">Půjčovna</th>
-                <th class="p-3 text-left">4 hodiny</th>
-                <th class="p-3 text-left">1 den</th>
-                <th class="p-3 text-left">2 dny</th>
-                <th class="p-3 text-left">3 dny</th>
-                <th class="p-3 text-left">4 dny</th>
-                <th class="p-3 text-left">5 dnů</th>
-                <th class="p-3 text-left">6 - 7 dní</th>
-                <th class="p-3 text-left">Záloha</th>
+                <th class="p-3 text-left font-semibold">{{ trans('ski_rental.pricing.table.rental') }}</th>
+                <th class="p-3 text-left">{{ trans('ski_rental.pricing.table.4h') }}</th>
+                <th class="p-3 text-left">{{ trans('ski_rental.pricing.table.1day') }}</th>
+                <th class="p-3 text-left">{{ trans('ski_rental.pricing.table.2days') }}</th>
+                <th class="p-3 text-left">{{ trans('ski_rental.pricing.table.3days') }}</th>
+                <th class="p-3 text-left">{{ trans('ski_rental.pricing.table.4days') }}</th>
+                <th class="p-3 text-left">{{ trans('ski_rental.pricing.table.5days') }}</th>
+                <th class="p-3 text-left">{{ trans('ski_rental.pricing.table.6_7days') }}</th>
+                <th class="p-3 text-left">{{ trans('ski_rental.pricing.table.deposit') }}</th>
               </tr>
             </thead>
             <tbody class="text-gray-700">
               <tr class="border-t">
-                <td class="p-3 font-medium">Ski/SNB set bez helmy a brýlí</td>
+                <td class="p-3 font-medium">{{ trans('ski_rental.pricing.items.ski_snb_set_no_helmet') }}</td>
                 <td class="p-3">300 Kč</td>
                 <td class="p-3">450 Kč</td>
                 <td class="p-3">725 Kč</td>
@@ -118,7 +118,7 @@ import { trans } from 'laravel-vue-i18n';
                 <td class="p-3">2000 Kč</td>
               </tr>
               <tr class="border-t">
-                <td class="p-3 font-medium">Ski/SNB</td>
+                <td class="p-3 font-medium">{{ trans('ski_rental.pricing.items.ski_snb') }}</td>
                 <td class="p-3">250 Kč</td>
                 <td class="p-3">400 Kč</td>
                 <td class="p-3">670 Kč</td>
@@ -129,7 +129,7 @@ import { trans } from 'laravel-vue-i18n';
                 <td class="p-3">1500 Kč</td>
               </tr>
               <tr class="border-t">
-                <td class="p-3 font-medium">Ski/SNB boty</td>
+                <td class="p-3 font-medium">{{ trans('ski_rental.pricing.items.ski_snb_boots') }}</td>
                 <td class="p-3">200 Kč</td>
                 <td class="p-3">300 Kč</td>
                 <td class="p-3">410 Kč</td>
@@ -140,7 +140,7 @@ import { trans } from 'laravel-vue-i18n';
                 <td class="p-3">500 Kč</td>
               </tr>
               <tr class="border-t">
-                <td class="p-3 font-medium">Hole/Brýle/Helma za kus</td>
+                <td class="p-3 font-medium">{{ trans('ski_rental.pricing.items.poles_goggles_helmet') }}</td>
                 <td class="p-3">100 Kč</td>
                 <td class="p-3">180 Kč</td>
                 <td class="p-3">300 Kč</td>
@@ -151,7 +151,7 @@ import { trans } from 'laravel-vue-i18n';
                 <td class="p-3">500 Kč</td>
               </tr>
               <tr class="border-t">
-                <td class="p-3 font-medium">VIP set Rossignol</td>
+                <td class="p-3 font-medium">{{ trans('ski_rental.pricing.items.vip_set_rossignol') }}</td>
                 <td class="p-3">450 Kč</td>
                 <td class="p-3">600 Kč</td>
                 <td class="p-3">1000 Kč</td>
@@ -164,62 +164,62 @@ import { trans } from 'laravel-vue-i18n';
             </tbody>
           </table>
         </div>
-        <p class="mt-4 text-sm text-gray-700">Při vypůjčení je nutné předložit doklad totožnosti a složit vratnou zálohu na materiál.</p>
+        <p class="mt-4 text-sm text-gray-700">{{ trans('ski_rental.pricing.note') }}</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-white rounded-md shadow-lg p-8">
-          <h3 class="text-xl font-semibold text-primary mb-4">Půjčovna pro lyžařské výcvikové kurzy</h3>
+          <h3 class="text-xl font-semibold text-primary mb-4">{{ trans('ski_rental.training_courses.title') }}</h3>
           <div class="flex items-center justify-between">
-            <span class="text-gray-700">Celý týden – Ski/SNB komplet vč. helmy</span>
-            <span class="font-semibold text-primary">1200 Kč/osoba</span>
+            <span class="text-gray-700">{{ trans('ski_rental.training_courses.week_rental') }}</span>
+            <span class="font-semibold text-primary">{{ trans('ski_rental.training_courses.price') }}</span>
           </div>
         </div>
         <div class="bg-white rounded-md shadow-lg p-8">
-          <h3 class="text-xl font-semibold text-primary mb-4">Půjčovna pro klienty školy</h3>
+          <h3 class="text-xl font-semibold text-primary mb-4">{{ trans('ski_rental.school_clients.title') }}</h3>
           <div class="grid grid-cols-2 gap-4">
             <div class="rounded-md bg-primary/5 p-4">
-              <div class="text-sm text-gray-700">1 hod</div>
-              <div class="font-semibold">150 Kč</div>
+              <div class="text-sm text-gray-700">{{ trans('ski_rental.school_clients.1h') }}</div>
+              <div class="font-semibold">{{ trans('ski_rental.school_clients.1h_price') }}</div>
             </div>
             <div class="rounded-md bg-primary/5 p-4">
-              <div class="text-sm text-gray-700">2 hod</div>
-              <div class="font-semibold">250 Kč</div>
+              <div class="text-sm text-gray-700">{{ trans('ski_rental.school_clients.2h') }}</div>
+              <div class="font-semibold">{{ trans('ski_rental.school_clients.2h_price') }}</div>
             </div>
           </div>
-          <div class="mt-3 text-sm text-gray-700">Ski/SNB komplet vč. helmy</div>
+          <div class="mt-3 text-sm text-gray-700">{{ trans('ski_rental.school_clients.details') }}</div>
         </div>
       </div>
 
       <div class="bg-white rounded-md shadow-lg p-8">
-        <h3 class="text-xl font-semibold text-primary mb-4">Servis</h3>
+        <h3 class="text-xl font-semibold text-primary mb-4">{{ trans('ski_rental.service.title') }}</h3>
         <div class="grid md:grid-cols-2 gap-4">
           <div class="flex items-center justify-between">
-            <span class="text-gray-700">Voskování lyží</span>
-            <span class="font-semibold">200 Kč</span>
+            <span class="text-gray-700">{{ trans('ski_rental.service.ski_waxing') }}</span>
+            <span class="font-semibold">{{ trans('ski_rental.service.ski_waxing_price') }}</span>
           </div>
           <div class="flex items-center justify-between">
-            <span class="text-gray-700">Voskování SNB</span>
-            <span class="font-semibold">250 Kč</span>
+            <span class="text-gray-700">{{ trans('ski_rental.service.snb_waxing') }}</span>
+            <span class="font-semibold">{{ trans('ski_rental.service.snb_waxing_price') }}</span>
           </div>
           <div class="flex items-center justify-between">
-            <span class="text-gray-700">Seřízení vázání</span>
-            <span class="font-semibold">50 Kč</span>
+            <span class="text-gray-700">{{ trans('ski_rental.service.binding_adjustment') }}</span>
+            <span class="font-semibold">{{ trans('ski_rental.service.binding_adjustment_price') }}</span>
           </div>
           <div class="flex items-center justify-between">
-            <span class="text-gray-700">Montáž vázání</span>
-            <span class="font-semibold">700 Kč</span>
+            <span class="text-gray-700">{{ trans('ski_rental.service.binding_mounting') }}</span>
+            <span class="font-semibold">{{ trans('ski_rental.service.binding_mounting_price') }}</span>
           </div>
           <div class="flex items-center justify-between">
-            <span class="text-gray-700">Broušení hran</span>
-            <span class="font-semibold">350 Kč</span>
+            <span class="text-gray-700">{{ trans('ski_rental.service.edge_sharpening') }}</span>
+            <span class="font-semibold">{{ trans('ski_rental.service.edge_sharpening_price') }}</span>
           </div>
           <div class="flex items-center justify-between">
-            <span class="text-gray-700">Oprava skluznice</span>
-            <span class="font-semibold">od 100 Kč</span>
+            <span class="text-gray-700">{{ trans('ski_rental.service.base_repair') }}</span>
+            <span class="font-semibold">{{ trans('ski_rental.service.base_repair_price') }}</span>
           </div>
         </div>
-        <p class="mt-4 text-sm text-gray-700">Uvedené ceny jsou včetně příslušného DPH.</p>
+        <p class="mt-4 text-sm text-gray-700">{{ trans('ski_rental.service.vat_note') }}</p>
       </div>
       
       <div class="text-center bg-primary text-white rounded-md p-8">
