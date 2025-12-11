@@ -72,14 +72,14 @@ const services = computed<Service[]>(() => {
             {
                 title: trans('home_service_list.winter.s4.title'),
                 description: trans('home_service_list.winter.s4.description'),
-                image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
-                link: '#'
+                image: '/img/skirental-box.png',
+                link: route('ski-rental')
             },
             {
                 title: trans('home_service_list.winter.s5.title'),
                 description: trans('home_service_list.winter.s5.description'),
-                image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&crop=center',
-                link: '#'
+                image: '/img/services/centrum.jpg',
+                link: route('tourist-services-center')
             }
         ];
     }
@@ -100,7 +100,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-2 lg:col-span-3 lg:row-span-2">
                     <Link :href="services[0]?.link">
                         <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                            <img :src="services[0]?.image" :alt="services[0]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105">
+                            <img :src="services[0]?.image" :alt="services[0]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-6 text-white bg-overlay">
                                 <h3 class="text-2xl font-bold mb-2">{{ services[0]?.title }}</h3>
@@ -115,7 +115,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
                     <Link :href="services[1]?.link">
                         <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                            <img :src="services[1]?.image" :alt="services[1]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105">
+                            <img :src="services[1]?.image" :alt="services[1]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                                 <h3 class="text-lg font-semibold mb-1">{{ services[1]?.title }}</h3>
                                 <p class="text-xs opacity-90 line-clamp-2">{{ services[1]?.description }}</p>
@@ -125,34 +125,40 @@ const sectionTitle = computed(() => {
                 </div>
 
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
+                    <Link :href="services[2]?.link">
                     <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                        <img :src="services[2]?.image" :alt="services[2]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105">
+                        <img :src="services[2]?.image" :alt="services[2]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                             <h3 class="text-lg font-semibold mb-1">{{ services[2]?.title }}</h3>
                             <p class="text-xs opacity-90 line-clamp-2">{{ services[2]?.description }}</p>
                         </div>
                     </div>
+                </Link>
                 </div>
 
                 <!-- Bottom row cards -->
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
+                    <Link :href="services[3]?.link">
                     <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                        <img :src="services[3]?.image" :alt="services[3]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105">
+                        <img :src="services[3]?.image" :alt="services[3]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                             <h3 class="text-base font-semibold mb-1">{{ services[3]?.title }}</h3>
                             <p class="text-xs opacity-90 line-clamp-2">{{ services[3]?.description }}</p>
                         </div>
                     </div>
+                </Link>
                 </div>
 
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
+                    <Link :href="services[4]?.link">
                     <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                        <img :src="services[4]?.image" :alt="services[4]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105">
+                        <img :src="services[4]?.image" :alt="services[4]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                             <h3 class="text-base font-semibold mb-1">{{ services[4]?.title }}</h3>
                             <p class="text-xs opacity-90 line-clamp-2">{{ services[4]?.description }}</p>
                         </div>
                     </div>
+                </Link>
                 </div>
             </div>
         </div>
