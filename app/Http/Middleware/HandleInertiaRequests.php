@@ -2,12 +2,14 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Event;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
 use Illuminate\Http\Request;
 use App\Services\SeasonService;
 use App\Services\MeteoblueService;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Cache;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class HandleInertiaRequests extends Middleware
@@ -46,6 +48,10 @@ class HandleInertiaRequests extends Middleware
         $meteoblueService = app(MeteoblueService::class);
         $currentWeather = $meteoblueService->currentWeather();
 
+        $countEvents = Cache::remember('count_events', now()->addDay(), function () {
+            return Event::published()->count();
+        });
+
         return array_merge(parent::share($request), [
             'app' => [
                 'locale' => App::getLocale(),
@@ -62,6 +68,7 @@ class HandleInertiaRequests extends Middleware
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
+            'count_events' => $countEvents,
         ]);
     }
 }
