@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useSeason } from '@/composables/useSeason'
 import { Link } from '@inertiajs/vue3';
+import LazyBackgroundVideo from '@/components/LazyBackgroundVideo.vue';
 
 import { trans } from 'laravel-vue-i18n';
 
@@ -10,6 +11,7 @@ interface Service {
     description: string;
     image: string | null;
     video?: string;
+    videoSources?: { src: string; type: string }[];
     link?: string
 }
 
@@ -75,6 +77,10 @@ const services = computed<Service[]>(() => {
                 description: trans('home_service_list.winter.s4.description'),
                 image: '/img/skirental-box.webp',
                 video: '/videos/video1.mp4',
+                videoSources: [
+                    { src: '/videos/video1.webm', type: 'video/webm' },
+                    { src: '/videos/video1.mp4', type: 'video/mp4' }
+                ],
                 link: route('ski-rental')
             },
             {
@@ -102,7 +108,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-2 lg:col-span-3 lg:row-span-2">
                     <Link :href="services[0]?.link">
                         <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                            <video v-if="services[0]?.video" :src="services[0]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" autoplay muted loop playsinline></video>
+                            <LazyBackgroundVideo v-if="services[0]?.video" :src="services[0]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
                             <img v-else :src="services[0]?.image ?? undefined" :alt="services[0]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-6 text-white bg-overlay">
@@ -118,7 +124,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
                     <Link :href="services[1]?.link">
                         <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                            <video v-if="services[1]?.video" :src="services[1]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" autoplay muted loop playsinline></video>
+                            <LazyBackgroundVideo v-if="services[1]?.video" :src="services[1]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
                             <img v-else :src="services[1]?.image ?? undefined" :alt="services[1]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                                 <h3 class="text-lg font-semibold mb-1">{{ services[1]?.title }}</h3>
@@ -131,7 +137,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
                     <Link :href="services[2]?.link">
                     <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                        <video v-if="services[2]?.video" :src="services[2]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" autoplay muted loop playsinline></video>
+                        <LazyBackgroundVideo v-if="services[2]?.video" :src="services[2]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
                         <img v-else :src="services[2]?.image ?? undefined" :alt="services[2]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                             <h3 class="text-lg font-semibold mb-1">{{ services[2]?.title }}</h3>
@@ -145,7 +151,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
                     <Link :href="services[3]?.link">
                     <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                        <video v-if="services[3]?.video" :src="services[3]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" autoplay muted loop playsinline></video>
+                        <LazyBackgroundVideo v-if="services[3]?.video" :src="services[3]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
                         <img v-else :src="services[3]?.image ?? undefined" :alt="services[3]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                             <h3 class="text-base font-semibold mb-1">{{ services[3]?.title }}</h3>
@@ -158,7 +164,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
                     <Link :href="services[4]?.link">
                     <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                        <video v-if="services[4]?.video" :src="services[4]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" autoplay muted loop playsinline></video>
+                        <LazyBackgroundVideo v-if="services[4]?.video" :src="services[4]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
                         <img v-else :src="services[4]?.image ?? undefined" :alt="services[4]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                             <h3 class="text-base font-semibold mb-1">{{ services[4]?.title }}</h3>
