@@ -10,7 +10,7 @@ class NewsData extends Data
 {
     public function __construct(
         public int $id,
-        public string $title,
+        public ?string $title,
         public ?string $content,
         public ?Carbon $published_at,
     ) {}

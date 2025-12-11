@@ -64,7 +64,7 @@ return [
     | locale. Note that 'use_fallback' must be enabled.
     |
      */
-    'use_property_fallback' => false,
+    'use_property_fallback' => true,
 
     /*
     |--------------------------------------------------------------------------
