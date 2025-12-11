@@ -13,6 +13,7 @@ return [
             'title' => 'Kalendář akcí - archiv',
             'subtitle' => 'Přehled všech probělých akcí a událostí',
         ],
+        'no_events' => 'Žádné akce nebyly nalezeny',
     ],
     'show' => [
         'important_info' => 'Důležité informace',

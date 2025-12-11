@@ -22,7 +22,7 @@ class MeteoblueService
         $this->cacheTtl = request()->hasMacro('withoutCache') ? 0 : (int) config('meteoblue.cache_ttl', 0);
     }
 
-    public function currentWeather(float $lat = 50.190, float $lon = 16.942): ?CurrentWeatherData
+    public function currentWeather(float $lat = 50.19, float $lon = 16.94): ?CurrentWeatherData
     {
         $cacheKey = "meteoblue_current_weather_{$lat}_{$lon}";
 
