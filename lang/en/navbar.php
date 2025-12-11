@@ -11,6 +11,8 @@ return [
     'photo_gallery' => 'Photo Gallery',
     'videos' => 'Videos',
     'winter_services' => 'Winter Services',
+    'summer_services' => 'Summer Services',
+    'open_mobile_menu' => 'Open mobile menu',
     'ski_school' => 'Ski School',
     'ski_rental' => 'Ski Rental',
     'skibus' => 'Ski Bus',

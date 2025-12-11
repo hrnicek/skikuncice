@@ -61,7 +61,7 @@ const switchLanguage = (language: string) => {
 
       <!-- Right side: Language Switcher -->
       <Select v-model="currentLanguage">
-        <SelectTrigger class="w-[110px] h-8 border-gray-200 hover:border-gray-300 focus:outline-none transition-colors">
+        <SelectTrigger class="w-[130px] h-8 border-gray-200 hover:border-gray-300 focus:outline-none transition-colors">
           <SelectValue>
              <div class="flex items-center gap-2">
                  <div

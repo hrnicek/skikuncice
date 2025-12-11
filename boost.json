@@ -1,11 +1,13 @@
 {
     "agents": [
         "claude_code",
-        "codex"
+        "gemini"
     ],
     "editors": [
         "vscode"
     ],
-    "guidelines": [],
+    "guidelines": [
+        "filament/filament"
+    ],
     "herd_mcp": true
 }

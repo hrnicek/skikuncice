@@ -11,6 +11,8 @@ return [
     'photo_gallery' => 'Fotogalerie',
     'videos' => 'Videa',
     'winter_services' => 'Zimní služby',
+    'summer_services' => 'Letní služby',
+    'open_mobile_menu' => 'Otevřít mobilní menu',
     'ski_school' => 'Lyžařská škola',
     'ski_rental' => 'Půjčovna lyží',
     'skibus' => 'Skibus',

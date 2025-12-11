@@ -3,7 +3,6 @@ import AppNavbar from './AppNavbar.vue';
 import MobileMenuSheet from './MobileMenuSheet.vue';
 import { Button } from '@/components/ui/button';
 import { Link } from '@inertiajs/vue3';
-// import { route } from 'ziggy-js';
 import { trans } from 'laravel-vue-i18n';
 
 
@@ -30,7 +29,7 @@ import { trans } from 'laravel-vue-i18n';
 
          <div class="flex space-x-4 ">
             <Button variant="secondary" size="lg" as-child class="hidden md:inline-flex">
-                <Link :href="route('events.index')">
+                <Link :href="route('events.index')" prefetch>
                     {{ trans('navbar.events_calendar') }}
                 </Link>
             </Button>
