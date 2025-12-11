@@ -94,8 +94,8 @@ const modules = [Autoplay, Pagination, Navigation];
 
 /* Custom pagination bullets */
 .philosophy-swiper :deep(.swiper-pagination-bullet) {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   background: var(--primary);
   opacity: 0.3;
   transition: all 0.3s ease;
@@ -104,8 +104,8 @@ const modules = [Autoplay, Pagination, Navigation];
 .philosophy-swiper :deep(.swiper-pagination-bullet-active) {
   background: var(--brand-secondary);
   opacity: 1;
-  width: 32px;
-  border-radius: 6px;
+  width: 42px;
+  border-radius: 8px;
 }
 
 /* Responsive adjustments */
