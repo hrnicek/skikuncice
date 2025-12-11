@@ -108,7 +108,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-2 lg:col-span-3 lg:row-span-2">
                     <Link :href="services[0]?.link">
                         <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                            <LazyBackgroundVideo v-if="services[0]?.video" :src="services[0]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
+                            <LazyBackgroundVideo v-if="services[0]?.video || services[0]?.videoSources" :src="services[0]?.video" :sources="services[0]?.videoSources" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
                             <img v-else :src="services[0]?.image ?? undefined" :alt="services[0]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-6 text-white bg-overlay">
@@ -124,7 +124,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
                     <Link :href="services[1]?.link">
                         <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                            <LazyBackgroundVideo v-if="services[1]?.video" :src="services[1]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
+                            <LazyBackgroundVideo v-if="services[1]?.video || services[1]?.videoSources" :src="services[1]?.video" :sources="services[1]?.videoSources" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
                             <img v-else :src="services[1]?.image ?? undefined" :alt="services[1]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                                 <h3 class="text-lg font-semibold mb-1">{{ services[1]?.title }}</h3>
@@ -137,7 +137,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
                     <Link :href="services[2]?.link">
                     <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                        <LazyBackgroundVideo v-if="services[2]?.video" :src="services[2]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
+                        <LazyBackgroundVideo v-if="services[2]?.video || services[2]?.videoSources" :src="services[2]?.video" :sources="services[2]?.videoSources" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
                         <img v-else :src="services[2]?.image ?? undefined" :alt="services[2]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                             <h3 class="text-lg font-semibold mb-1">{{ services[2]?.title }}</h3>
@@ -151,7 +151,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
                     <Link :href="services[3]?.link">
                     <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                        <LazyBackgroundVideo v-if="services[3]?.video" :src="services[3]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
+                        <LazyBackgroundVideo v-if="services[3]?.video || services[3]?.videoSources" :src="services[3]?.video" :sources="services[3]?.videoSources" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
                         <img v-else :src="services[3]?.image ?? undefined" :alt="services[3]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                             <h3 class="text-base font-semibold mb-1">{{ services[3]?.title }}</h3>
@@ -164,7 +164,7 @@ const sectionTitle = computed(() => {
                 <div class="md:col-span-1 lg:col-span-1 lg:row-span-1">
                     <Link :href="services[4]?.link">
                     <div class="bg-white rounded-md overflow-hidden h-full relative group">
-                        <LazyBackgroundVideo v-if="services[4]?.video" :src="services[4]?.video" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
+                        <LazyBackgroundVideo v-if="services[4]?.video || services[4]?.videoSources" :src="services[4]?.video" :sources="services[4]?.videoSources" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
                         <img v-else :src="services[4]?.image ?? undefined" :alt="services[4]?.title" class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" loading="lazy">
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-overlay">
                             <h3 class="text-base font-semibold mb-1">{{ services[4]?.title }}</h3>
