@@ -12,7 +12,7 @@ import { trans } from 'laravel-vue-i18n';
     <header class="w-full sticky top-0 border-b py-4 md:py-6 z-50 bg-white">
       <div class="flex justify-between items-center container px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between w-full md:w-auto md:space-x-16">
-            <Link :href="route('home')" class="flex-shrink-0" prefetch>
+            <Link :href="route('home')" class="shrink-0" prefetch>
                 <img src="/img/logo.webp" alt="Logo SKI Kunčice" class="h-6 md:h-8">
             </Link>
 
