@@ -62,6 +62,41 @@ const scrollToSection = (href: string) => {
         <p class="text-lg md:text-xl text-muted-foreground leading-relaxed">
           {{ trans('restaurant.intro.p1') }}
         </p>
+        
+        <!-- Menu Downloads - Location 1 -->
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-6">
+          <a 
+            v-if="foodMenu?.download_url" 
+            :href="foodMenu.download_url" 
+            target="_blank" 
+            download 
+            class="group flex items-center gap-3 pl-4 pr-5 py-3 rounded-xl bg-white border border-border shadow-sm hover:shadow-md hover:border-brand-secondary/30 transition-all duration-300"
+          >
+            <div class="p-2 rounded-lg bg-brand-secondary/10 group-hover:bg-brand-secondary/20 transition-colors">
+              <Download class="w-5 h-5 text-brand-secondary" />
+            </div>
+            <div class="text-left">
+              <div class="text-xs font-medium text-muted-foreground uppercase tracking-wide">PDF Menu</div>
+              <div class="font-semibold text-foreground group-hover:text-brand-secondary transition-colors">{{ trans('restaurant.buttons.food_menu') }}</div>
+            </div>
+          </a>
+          
+          <a 
+            v-if="drinksMenu?.download_url" 
+            :href="drinksMenu.download_url" 
+            target="_blank" 
+            download
+            class="group flex items-center gap-3 pl-4 pr-5 py-3 rounded-xl bg-white border border-border shadow-sm hover:shadow-md hover:border-brand-secondary/30 transition-all duration-300"
+          >
+            <div class="p-2 rounded-lg bg-brand-secondary/10 group-hover:bg-brand-secondary/20 transition-colors">
+              <Download class="w-5 h-5 text-brand-secondary" />
+            </div>
+            <div class="text-left">
+              <div class="text-xs font-medium text-muted-foreground uppercase tracking-wide">PDF Menu</div>
+              <div class="font-semibold text-foreground group-hover:text-brand-secondary transition-colors">{{ trans('restaurant.buttons.drinks_menu') }}</div>
+            </div>
+          </a>
+        </div>
       </section>
 
       <!-- Hospoda u Rumařů Section -->
@@ -212,7 +247,7 @@ const scrollToSection = (href: string) => {
         <!-- Kulaták -->
         <article id="kulatak" class="space-y-6 scroll-mt-24">
            <div class="aspect-video rounded-2xl overflow-hidden shadow-md mb-6 relative group">
-              <img src="/img/hero-summer.webp" :alt="trans('restaurant.alt.kulatak_summer')" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" />
+              <img src="/img/skibar-kulatak.jpg" :alt="trans('restaurant.alt.kulatak_summer')" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" />
                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
                  <h3 class="text-2xl font-bold text-white">{{ trans('restaurant.kulatak.title') }}</h3>
               </div>
@@ -245,6 +280,41 @@ const scrollToSection = (href: string) => {
             <p class="text-muted-foreground">
               {{ trans('restaurant.facilities.p2') }}
             </p>
+
+            <!-- Menu Downloads - Location 3 -->
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a 
+                v-if="foodMenu?.download_url" 
+                :href="foodMenu.download_url" 
+                target="_blank" 
+                download 
+                class="group flex items-center gap-3 pl-4 pr-5 py-3 rounded-xl bg-white border border-border shadow-sm hover:shadow-md hover:border-brand-secondary/30 transition-all duration-300"
+              >
+                <div class="p-2 rounded-lg bg-brand-secondary/10 group-hover:bg-brand-secondary/20 transition-colors">
+                  <Download class="w-5 h-5 text-brand-secondary" />
+                </div>
+                <div class="text-left">
+                  <div class="text-xs font-medium text-muted-foreground uppercase tracking-wide">PDF Menu</div>
+                  <div class="font-semibold text-foreground group-hover:text-brand-secondary transition-colors">{{ trans('restaurant.buttons.food_menu') }}</div>
+                </div>
+              </a>
+              
+              <a 
+                v-if="drinksMenu?.download_url" 
+                :href="drinksMenu.download_url" 
+                target="_blank" 
+                download
+                class="group flex items-center gap-3 pl-4 pr-5 py-3 rounded-xl bg-white border border-border shadow-sm hover:shadow-md hover:border-brand-secondary/30 transition-all duration-300"
+              >
+                <div class="p-2 rounded-lg bg-brand-secondary/10 group-hover:bg-brand-secondary/20 transition-colors">
+                  <Download class="w-5 h-5 text-brand-secondary" />
+                </div>
+                <div class="text-left">
+                  <div class="text-xs font-medium text-muted-foreground uppercase tracking-wide">PDF Menu</div>
+                  <div class="font-semibold text-foreground group-hover:text-brand-secondary transition-colors">{{ trans('restaurant.buttons.drinks_menu') }}</div>
+                </div>
+              </a>
+            </div>
 
             <div class="flex flex-col sm:flex-row gap-4 pt-4">
               <a href="tel:+420777719579" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brand-secondary text-white font-medium hover:bg-brand-secondary/90 transition-colors shadow-sm">
