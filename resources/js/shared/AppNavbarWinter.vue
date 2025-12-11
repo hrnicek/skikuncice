@@ -144,7 +144,7 @@ const services: { title: string, href: string, description: string, image: strin
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink as-child>
-          <Link href="" :class="navigationMenuTriggerStyle()">
+          <Link :href="route('accommodation.index')" :class="navigationMenuTriggerStyle()">
             {{ trans('navbar.accommodation') }}
           </Link>
         </NavigationMenuLink>
