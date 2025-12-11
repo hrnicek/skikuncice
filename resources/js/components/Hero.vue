@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import HeroBento from './HeroBento.vue'
+import HeroSideMenu from './HeroSideMenu.vue'
 import { useSeason } from '@/composables/useSeason'
 import { wTrans } from 'laravel-vue-i18n'
 
@@ -43,6 +44,11 @@ const heroContent = computed(() => {
                 </div>
 
                 <HeroBento />
+                
+                <!-- Side Menu -->
+                <div class="absolute right-4 top-1/2 -translate-y-1/2 hidden md:block z-20">
+                    <HeroSideMenu />
+                </div>
             </div>
         </div>
     </div>

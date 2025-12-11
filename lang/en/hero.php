@@ -9,6 +9,7 @@ return [
         'title' => 'Summer activities for the whole family',
         'subtitle' => 'Discover the beauty of Jeseníky also in summer',
     ],
+    'ski_map' => 'SKI Map',
     'alt' => [
         'intro_photo' => 'Introductory photo',
     ],

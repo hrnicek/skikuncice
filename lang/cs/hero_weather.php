@@ -1,11 +1,13 @@
 <?php
 
 return [
-    'temperature' => 'Teplota',
+    'temperature' => 'Teplota vzduchu',
+    'temperature_short' => 'Teplota',
     'loading' => 'Načítání...',
     'humidity' => 'Vlhkost',
     'relative_humidity' => 'Relativní vlhkost',
     'wind' => 'Vítr',
+    'wind_short' => 'Vítr',
     'wind_speed' => 'Rychlost větru',
     'snow' => 'Sníh',
     'on_piste' => 'na sjezdovkách',

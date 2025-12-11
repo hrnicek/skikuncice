@@ -16,7 +16,7 @@ class HomepageController extends Controller
 {
     public function index()
     {
-        seo()->title('Ski Kunčice - Lyžařský areál v srdci Beskyd');
+        seo()->title('Hory, kde uslyšíte ticho');
 
         $latestPost = Post::query()->latest('published_at')->first();
         $events = Event::season()->published()
@@ -28,7 +28,7 @@ class HomepageController extends Controller
 
         $nearestEvent = Event::season()->nearnest()->first();
 
-        $news = News::published()->latest('published_at')->get();
+        $news = News::published()->latest('published_at')->take(1)->get();
 
         $foodMenu = RestaurantMenu::published()
             ->byType('food')

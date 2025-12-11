@@ -2,27 +2,23 @@
 import HeroWeather from './HeroWeather.vue'
 import HeroWebcam from './HeroWebcam.vue'
 import HeroNews from './HeroNews.vue'
-import { trans } from 'laravel-vue-i18n';
 </script>
 
 <template>
-  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4 container w-full items-start">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 container w-full items-stretch">
+    <!-- News Section (Priority) -->
+    <div class="md:col-span-1 h-full">
+      <HeroNews />
+    </div>
+
     <!-- Weather Section -->
-    <div class="flex flex-col h-full col-span-3">
-      <h2 class="text-white text-lg sm:text-xl font-bold mb-2 sm:mb-4 drop-shadow-lg">{{ trans('hero_bento.weather') }}</h2>
+    <div class="md:col-span-1 h-full">
       <HeroWeather />
     </div>
 
     <!-- Webcam Section -->
-    <div class="flex flex-col h-full">
-      <h2 class="text-white text-lg sm:text-xl font-bold mb-2 sm:mb-4 drop-shadow-lg">{{ trans('hero_bento.webcams') }}</h2>
+    <div class="md:col-span-1 h-full">
       <HeroWebcam />
-    </div>
-
-    <!-- News Section -->
-    <div class="flex flex-col h-full col-span-2 md:col-span-2 lg:col-span-2">
-      <h2 class="text-white text-lg sm:text-xl font-bold mb-2 sm:mb-4 drop-shadow-lg">{{ trans('hero_bento.news') }}</h2>
-      <HeroNews />
     </div>
   </div>
 </template>

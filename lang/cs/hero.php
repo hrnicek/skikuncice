@@ -9,6 +9,7 @@ return [
         'title' => 'Letní aktivity pro celou rodinu',
         'subtitle' => 'Objevte krásy Jeseníků i v létě',
     ],
+    'ski_map' => 'SKI Mapa',
     'alt' => [
         'intro_photo' => 'Úvodní fotografie',
     ],

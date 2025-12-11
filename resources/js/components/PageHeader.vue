@@ -11,8 +11,8 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="container mt-6">
-    <div class="relative overflow-hidden rounded-2xl shadow-xl">
+  <div class="mt-0">
+    <div class="relative overflow-hidden shadow-xl">
       <img :src="backgroundImage" :alt="title" class="absolute inset-0 w-full h-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-b from-[var(--primary)]/70 via-[var(--primary)]/40 to-black/60"></div>
       <div class="relative z-10 flex items-center justify-center px-6 py-16 md:px-10 md:py-24">
