@@ -29,7 +29,17 @@ const heroContent = computed(() => {
 <template>
     <div>
         <div class="relative h-screen md:h-[650px] overflow-hidden">
-            <video src="/videos/kuncice-spot.mp4" autoplay loop muted class="absolute inset-0 w-full h-full object-cover" loading="lazy"></video>
+            <video 
+                autoplay 
+                loop 
+                muted 
+                playsinline
+                :poster="backgroundImage"
+                class="absolute inset-0 w-full h-full object-cover"
+            >
+                <source src="/videos/kuncice-spot.webm" type="video/webm">
+                <source src="/videos/kuncice-spot.mp4" type="video/mp4">
+            </video>
             <div class="absolute inset-0 bg-black/30"></div>
 
             <div class="relative container z-10 flex flex-col justify-between h-full p-4 sm:p-6 md:p-8">
