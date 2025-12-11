@@ -1,6 +1,6 @@
 <template>
   <div class="snow-container" aria-hidden="true">
-    <div class="snowflake" v-for="i in 50" :key="i" :style="getSnowflakeStyle(i)">❄</div>
+    <div class="snowflake" v-for="i in 30" :key="i" :style="getSnowflakeStyle(i)">❄</div>
   </div>
 </template>
 
