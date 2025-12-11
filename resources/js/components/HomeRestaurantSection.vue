@@ -49,7 +49,7 @@ defineProps<{
               </div>
             </div>
 
-            <Button variant="outline" as-child class="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20">
+            <Button variant="outline" as-child class="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 ml-4">
               <Link :href="route('restaurant')" class="inline-flex items-center gap-2">
                 {{ trans('home_restaurant_section.more_info') }}
                 <ArrowRight class="w-4 h-4" />
